@@ -1,5 +1,5 @@
 class Body {
 	constructor(name){
-		qewqeweq	
+		this.name = name;
 	}	
 }
