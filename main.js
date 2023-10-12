@@ -33,7 +33,9 @@ class Templ {
 	  this.latestarticle = latestarticle;
 	  this.skills = skills;
 	}
-	static displayAbout
+	static displayAbout() {
+		
+	}
   }
   let templ = new Templ(Head, Main);
   
