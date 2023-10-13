@@ -4,10 +4,10 @@ class Templ {
 	  this.main = main;
 	  }
 	static displayHead() {
-	  document.getElementById('bodymain').appendChild(head);
+	  document.getElementById('bodymain').appendChild(this.head);
 	}
 	static displayMain() {
-	  document.getElementById('bodymain').appendChild(main);
+	  document.getElementById('bodymain').appendChild(this.main);
 	}
   }
   class Head {
@@ -34,7 +34,22 @@ class Templ {
 	  this.skills = skills;
 	}
 	static displayAbout() {
-		
+		main.innerHTML = document.createElement('div');
+		main.innerHTML = document.createElement('div');
+	}
+	static displayLatestarticle() {
+		const divLast = document.createElement('div');
+		for (let i = 0; i < 3; i++) {
+		  const latestUp = main.innerHTML;
+		  latestUp.innerHTML = this.latestarticle;
+		  header.appendChild(item);
+		}
+		header.appendChild(nav);
+	}
+	static displaySkills() {
+		const mySkills = document.createElement('div');
+		main.innerHTML.appendChild(mySkills);
+		mySkill.appendChild(this.skills)
 	}
   }
   let templ = new Templ(Head, Main);
