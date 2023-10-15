@@ -1,5 +1,6 @@
-body {
-  color: #fcbe24;
+#bodymain {
+  background-color: black;
+  color: white;
   padding: 0 24px;
   margin: 0;
   height: 100vh;

@@ -3,19 +3,19 @@ class Templ {
 	  this.head = head;
 	  this.main = main;
 	  }
-	static displayHead() {
+	displayHead() {
 	  document.getElementById('bodymain').appendChild(this.head);
 	}
-	static displayMain() {
+	displayMain() {
 	  document.getElementById('bodymain').appendChild(this.main);
 	}
-  }
-  class Head {
+}
+class Head {
 	constructor() {
 	  this.nav = nav;
 	  this.header = header;
 	}
-	static displayNav() {
+	displayNav() {
 	  const header = document.createElement('header');
 	  const nav = document.createElement('nav');
 	  for (let i = 0; i < this.nav.length; i++) {
@@ -25,43 +25,41 @@ class Templ {
 		header.appendChild(item);
 	  }
 	  header.appendChild(nav);
+	  const textnode = document.createTextNode("Water");
+	  nav.appendChild(textnode);
 	}
-  }
-  class Main {
+}
+class Main {
 	constructor() {
 	  this.about = about;
 	  this.latestarticle = latestarticle;
 	  this.skills = skills;
 	}
-	static displayAbout() {
-		main.innerHTML = document.createElement('div');
-		main.innerHTML = document.createElement('div');
+	displayAbout() {
+		innerHTML = document.createElement('div');
 	}
-	static displayLatestarticle() {
+	displayLatestarticle() {
 		const divLast = document.createElement('div');
 		for (let i = 0; i < 3; i++) {
-		  const latestUp = main.innerHTML;
+		  const latestUp = article.md;
 		  latestUp.innerHTML = this.latestarticle;
-		  header.appendChild(item);
+		  divLast.appendChild(latestUp);
 		}
-		header.appendChild(nav);
 	}
-	static displaySkills() {
+	displaySkills() {
 		const mySkills = document.createElement('div');
-		main.innerHTML.appendChild(mySkills);
-		mySkill.appendChild(this.skills)
+		innerHTML.appendChild(mySkills);
+		mySkills.appendChild(this.skills)
 	}
-  }
-  let templ = new Templ(Head, Main);
+}
+let templ = new Templ(Head, Main);
+templ.displayHead;
+templ.displayMain;
   
   
-  const header = document.createElement('header');
-  const main = document.createElement('main');
-  const textnode = document.createTextNode("Water");
-  const textnode1 = document.createTextNode("Water");
-  header.appendChild(textnode);
-  main.appendChild(textnode1);
-  document.getElementById('bodymain').appendChild(header);
-  document.getElementById('bodymain').appendChild(main);
-  
-  
+const header = document.createElement('header');
+const textnode = document.createTextNode("Water");
+header.appendChild(textnode);
+document.getElementById('bodymain').appendChild(header);
+
+console.log('Kek');
