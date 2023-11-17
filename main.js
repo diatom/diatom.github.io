@@ -59,12 +59,20 @@ let templ = new Templ(main, head);
 templ.displayHead;
 templ.displayMain;
 
+class TemplMain extends HTMLElement {
+  constructor() {
+    super();
+  }
+  displayHead() {
+    
+  }
+  displayMain() {
 
+  }
+  displayFooter() {
 
-  
-// const header = document.createElement(`header`);
-// const textnode = document.createTextNode(`Water`);
-// header.appendChild(textnode);
-// document.getElementById(`bodymain`).appendChild(header);
-
-// console.log(`Kek`);
+  }
+  render() {
+    this.appendChild
+  }
+}
