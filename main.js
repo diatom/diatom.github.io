@@ -59,9 +59,9 @@ let templ = new Templ(main, head);
 templ.displayHead;
 templ.displayMain;
 
-class TemplMain extends HTMLElement {
+class TemplMain {
   constructor() {
-    super();
+    this.main = document.createElement(`main`);
   }
   displayHead() {
     
