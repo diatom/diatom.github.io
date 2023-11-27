@@ -4,4 +4,4 @@
 Меня зовут Севери́н Богучарский.
 Здесь кратко представлены мои навыки и опыт работы.
 
-![Image](../img/severin.jpg "severin")
+![Image](../image/severin.jpg "severin")
