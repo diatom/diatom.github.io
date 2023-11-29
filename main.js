@@ -1,4 +1,4 @@
-import { menu } from './data/data.js'
+import { menu, contact } from './data/data.js'
 
 const fet = await fetch (`./main/about.md`)
 const body = await fet.text()
@@ -28,25 +28,44 @@ class Header {
     this.nav = document.createElement(`nav`)
     this.menu = menu
   }
-  createNav() {
+  createHead(menu) {
     for (const val of menu) {
       const item = document.createElement(`a`)
       item.innerHTML = val
       this.nav.appendChild(item)
     }
-      }
-  createHead(menu) {
-    header.appendChild(this.createNav(menu))
+    this.header.appendChild(this.nav)
     return this.header
   }
 }
-// customElements.define('header-nav', Header)
 const header = new Header()
+
+
+class Footer {
+  constructor() {
+    this.footer = document.createElement(`footer`)
+    this.div = document.createElement(`div`)
+  }
+  createFooter() {
+    for (const val of contact) {
+      for (let [key, value] of Object.entries(val)) {
+        const item = document.createElement(`a`)
+        item.innerHTML = `${key}`
+        item.setAttribute(`name`, key)
+        item.setAttribute(`href`, value)
+        this.div.appendChild(item)
+      }
+    }
+  this.footer.appendChild(this.div)
+  return this.footer
+  }
+}
+const footer = new Footer()
 
 const templ = new Templ()
 templ.displayHead(header.createHead(menu))
 templ.displayMain
-templ.displayFooter
+templ.displayFooter(footer.createFooter(contact))
 
 
 
@@ -74,27 +93,8 @@ class Main {
     mySkills.appendChild(this.skills)
   }
 }
-let head = new Head()
-let main = new Main()
 
 
-class TemplMain {
-  constructor() {
-    this.main = document.createElement(`main`)
-  }
-  displayHead() {
-    
-  }
-  displayMain() {
-
-  }
-  displayFooter() {
-
-  }
-  render() {
-    this.appendChild
-  }
-}
 
 
 
