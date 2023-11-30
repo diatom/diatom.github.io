@@ -1,5 +1,5 @@
-Как сделать генерацию новых http адресов на веб-сайте по нажатию кнопки с помощью JavaScript?   
-Для создания генерации новых HTTP-адресов на веб-сайте с помощью JavaScript, вы можете использовать следующий код:
+// Как сделать генерацию новых http адресов на веб-сайте по нажатию кнопки с помощью JavaScript?   
+// Для создания генерации новых HTTP-адресов на веб-сайте с помощью JavaScript, вы можете использовать следующий код:
 
 // Функция для генерации случайного HTTP-адреса
 function generateRandomHttpAddress() {
@@ -49,6 +49,34 @@ function generateRandomHttpAddress(path) {
 
 function generateRandomHttpAddress(path) {
   let httpAddress = window.location.origin + path;
-  ...
+  ``
   return httpAddress;
 }
+
+
+
+// Example. Register a custom element with a method that takes parameters
+customElements.define("my-element", class MyElement extends HTMLElement {
+  constructor() {
+    super()
+  }
+  setParams(params) {
+    // Do something with the parameters
+    this.innerHTML = `<style>div { color: ${params.color} }</style>`
+  }
+  render() {
+    return `
+      <style>
+        div {
+          color: ${this.params.color}
+        }
+      </style>
+      <div>${this.params.message}</div>
+    `
+  }
+})
+// Usage
+const elem = document.createElement("my-element");
+elem.params = { color: "red", message: "Hello, world!" };
+elem.setParams(elem.params);
+document.body.appendChild(elem);

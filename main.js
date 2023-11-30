@@ -6,7 +6,7 @@ const body = await fet.text()
 console.log(body)
 
 
-class About extends HTMLAbout {
+class About extends HTMLElement {
     displayAbout() {
         innerHTML = document.createElement(`div`)
     }

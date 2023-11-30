@@ -70,30 +70,3 @@ class Footer {
   }
 }
 export const footer = new Footer()
-
-
-// Example. Register a custom element with a method that takes parameters
-// customElements.define("my-element", class MyElement extends HTMLElement {
-//   constructor() {
-//     super()
-//   }
-//   setParams(params) {
-//     // Do something with the parameters
-//     this.innerHTML = `<style>div { color: ${params.color} }</style>`
-//   }
-//   render() {
-//     return `
-//       <style>
-//         div {
-//           color: ${this.params.color}
-//         }
-//       </style>
-//       <div>${this.params.message}</div>
-//     `
-//   }
-// })
-// // Usage
-// const elem = document.createElement("my-element");
-// elem.params = { color: "red", message: "Hello, world!" };
-// elem.setParams(elem.params);
-// document.body.appendChild(elem);
