@@ -1,10 +1,3 @@
-import { menu, contact } from './data/data.js'
-
-const fet = await fetch (`./main/about.md`)
-const body = await fet.text()
-console.log(body)
-
-
 class Templ {
   constructor(head, main, footer) {
     this.head = head
@@ -21,7 +14,7 @@ class Templ {
     document.body.appendChild(footer)
   }
 }
-const templ = new Templ()
+export const templ = new Templ()
 
 
 class Header {
@@ -40,15 +33,29 @@ class Header {
     return this.header
   }
 }
-const header = new Header()
+export const header = new Header()
+
+
+class Main {
+  constructor(mainImp) {
+    this.main = document.createElement(`main`)
+    this.mainImp = mainImp
+  }
+  displayMain(mainImp) {
+    this.main.innerHTML = mainImp
+    return this.main
+  }
+}
+export const main = new Main()
 
 
 class Footer {
-  constructor() {
+  constructor(contact) {
     this.footer = document.createElement(`footer`)
     this.div = document.createElement(`div`)
+    this.contact = contact
   }
-  createFooter() {
+  createFooter(contact) {
     for (const val of contact) {
       for (let [key, value] of Object.entries(val)) {
         const item = document.createElement(`a`)
@@ -62,27 +69,7 @@ class Footer {
   return this.footer
   }
 }
-const footer = new Footer()
-
-
-class Main {
-  constructor(mainImp) {
-    this.main = document.createElement(`main`)
-    this.mainImp = mainImp
-  }
-  displayMain(mainImp) {
-    this.main.innerHTML = mainImp
-    return this.main
-  }
-}
-const main = new Main()
-
-
-templ.displayHead(header.createHead(menu))
-templ.displayMain(main.displayMain(body))
-templ.displayFooter(footer.createFooter(contact))
-
-
+export const footer = new Footer()
 
 
 // Example. Register a custom element with a method that takes parameters
