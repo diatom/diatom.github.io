@@ -2,27 +2,34 @@ import { menu, contact } from './data/data.js'
 import { templ, header, main, footer } from './templ.js'
 
 const fet = await fetch (`./main/about.md`)
-const body = await fet.text()
-console.log(body)
+const info = await fet.text()
+console.log(info)
 
 
 class About extends HTMLElement {
-    displayAbout() {
-        innerHTML = document.createElement(`div`)
+    displayAbout(me) {
+        this.innerHTML = me
+    }
+    render() {
+        return displayAbout()
     }
 }
 customElements.define('about', About)
 const about = document.createElement('about')
+about.me = info
+about.displayAbout(about.me)
 
 
 class LatestArticles extends HTMLElement {
-    displayLatestarticles() {
-        const divLast = document.createElement(`div`)
-        for (let i = 0; i < 3; i++) {
-          const latestUp = article.md
-          latestUp.innerHTML = this.latestarticle
-          divLast.appendChild(latestUp)
+    displayLatestarticles(articles) {
+        for (const art of articles) {
+          const divLast = document.createElement(`div`)
+          divLast.innerHTML = art
+          this.appendChild(divLast)
         }
+    }
+    render() {
+        return displayLatestarticles()
     }
 }
 customElements.define('latest-articles', LatestArticles)
@@ -58,5 +65,5 @@ const skills = document.createElement('skills')
 
 
 templ.displayHead(header.createHead(menu))
-templ.displayMain(main.displayMain(body))
+templ.displayMain(main.displayMain(info))
 templ.displayFooter(footer.createFooter(contact))
