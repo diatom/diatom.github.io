@@ -34,6 +34,8 @@ class LatestArticles extends HTMLElement {
 }
 customElements.define('latest-articles', LatestArticles)
 const latestArticles = document.createElement('latest-articles')
+latestArticles.articles = article
+latestArticles.displayLatestarticles(latestArticles.articles)
 
 
 class Skills extends HTMLElement {
