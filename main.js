@@ -1,9 +1,13 @@
 import { menu, contact } from './data/data.js'
 import { templ, header, main, footer } from './templ.js'
 
-const fet = await fetch (`./main/about.md`)
-const info = await fet.text()
-console.log(info)
+const fetAbout = await fetch (`./main/about.md`)
+const fetArticles = await fetch (`./articles/articles.md`)
+const fetSkills = await fetch (`./main/skills.md`)
+const aboutS = await fetAbout.text()
+const articlesS = await fetArticles.text()
+const skillsS = await fetSkills.text()
+console.log(aboutS)
 
 
 class About extends HTMLElement {
@@ -16,7 +20,7 @@ class About extends HTMLElement {
 }
 customElements.define('about', About)
 const about = document.createElement('about')
-about.me = info
+about.me = aboutS
 about.displayAbout(about.me)
 
 
@@ -34,7 +38,7 @@ class LatestArticles extends HTMLElement {
 }
 customElements.define('latest-articles', LatestArticles)
 const latestArticles = document.createElement('latest-articles')
-latestArticles.articles = article
+latestArticles.articles = articlesS
 latestArticles.displayLatestarticles(latestArticles.articles)
 
 
@@ -50,7 +54,7 @@ class Skills extends HTMLElement {
 }
 customElements.define('skills', Skills)
 const skills = document.createElement('skills')
-skills.myskill = skill
+skills.myskill = skillsS
 skills.displaySkills(skills.myskill)
 
 
