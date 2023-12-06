@@ -15,7 +15,7 @@ class About extends HTMLElement {
         this.innerHTML = me
     }
     connectedCallback() {
-        return displayAbout()
+        this.displayAbout()
     }
 }
 const ab = customElements.define('about-me', About)
@@ -33,7 +33,7 @@ class LatestArticles extends HTMLElement {
         // }
     }
     connectedCallback() {
-        return displayLatestarticles()
+        this.displayLatestarticles()
     }
 }
 const la = customElements.define('latest-articles', LatestArticles)
@@ -49,7 +49,7 @@ class Skills extends HTMLElement {
         this.appendChild(mySkills)
     }
     connectedCallback() {
-        return displaySkills()
+        this.displaySkills()
     }
 }
 const sk = customElements.define('my-skills', Skills)
@@ -78,8 +78,3 @@ const main = new Main()
 templ.displayHead(header.createHead(menu))
 templ.displayMain(main.displayMain(ab, la, sk))
 templ.displayFooter(footer.createFooter(contact))
-
-
-
-
-
