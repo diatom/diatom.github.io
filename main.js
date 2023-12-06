@@ -39,14 +39,21 @@ latestArticles.displayLatestarticles(latestArticles.articles)
 
 
 class Skills extends HTMLElement {
-    displaySkills() {
+    displaySkills(myskill) {
         const mySkills = document.createElement(`div`)
-        innerHTML.appendChild(mySkills)
-        mySkills.appendChild(this.skills)
+        mySkills.innerHTML = myskill
+        this.appendChild(mySkills)
+    }
+    render() {
+        return displaySkills()
     }
 }
 customElements.define('skills', Skills)
 const skills = document.createElement('skills')
+skills.myskill = skill
+skills.displaySkills(skills.myskill)
+
+
 
 
 // class Main {
