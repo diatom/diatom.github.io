@@ -36,17 +36,17 @@ class Header {
 export const header = new Header()
 
 
-class Main {
-  constructor(mainImp) {
-    this.main = document.createElement(`main`)
-    this.mainImp = mainImp
-  }
-  displayMain(mainImp) {
-    this.main.innerHTML = mainImp
-    return this.main
-  }
-}
-export const main = new Main()
+// class Main {
+//   constructor(mainImp) {
+//     this.main = document.createElement(`main`)
+//     this.mainImp = mainImp
+//   }
+//   displayMain(mainImp) {
+//     this.main.innerHTML = mainImp
+//     return this.main
+//   }
+// }
+// export const main = new Main()
 
 
 class Footer {
