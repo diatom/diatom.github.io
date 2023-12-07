@@ -61,20 +61,20 @@ skills.displaySkills(skills.myskill)
 class Main {
     constructor(about, latestArticles, skills) {
       this.main = document.createElement(`main`)
-    //   this.about = about
-    //   this.latestArticles = latestArticles
-    //   this.skills = skills
+      this.about = about
+      this.latestArticles = latestArticles
+      this.skills = skills
     }
-    displayMain(about, latestArticles, skills) {
+    displayMain() {
       this.main.appendChild(about)
       this.main.appendChild(latestArticles)
       this.main.appendChild(skills)
       return this.main
     }
   }
-const main = new Main()
+const main = new Main(ab, la, sk)
 
 
 templ.displayHead(header.createHead(menu))
-templ.displayMain(main.displayMain(ab, la, sk))
+templ.displayMain(main.displayMain())
 templ.displayFooter(footer.createFooter(contact))
