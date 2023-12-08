@@ -3,9 +3,8 @@ body {
   color: white;
   padding: 0 24px;
   margin: 0;
-  height: 100vh;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -24,4 +23,13 @@ a {
 
 a:hover {
   text-decoration: underline 2px solid #ffffff;
+}
+
+main {
+  width: 50%;
+  margin: 0;
+  padding: 0;
+}
+main div {
+  padding: 1em 0 1em 0;
 }

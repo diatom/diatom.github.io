@@ -1,3 +1,5 @@
+import { menu } from './data/data.js'
+
 class Templ {
   constructor(head, main, footer) {
     this.head = head
@@ -23,6 +25,18 @@ class Header {
     this.nav = document.createElement(`nav`)
     this.menu = menu
   }
+  // createNav(menu) {
+  //   for (const val of menu) {
+  //     const item = document.createElement(`a`)
+  //     item.innerHTML = val
+  //     this.nav.appendChild(item)
+  //   }
+  //   return this.nav
+  // }
+  // createHead(menu) {
+  //   this.header.appendChild(this.nav)
+  //   return this.header
+  // }
   createHead(menu) {
     for (const val of menu) {
       const item = document.createElement(`a`)
@@ -34,19 +48,6 @@ class Header {
   }
 }
 export const header = new Header()
-
-
-// class Main {
-//   constructor(mainImp) {
-//     this.main = document.createElement(`main`)
-//     this.mainImp = mainImp
-//   }
-//   displayMain(mainImp) {
-//     this.main.innerHTML = mainImp
-//     return this.main
-//   }
-// }
-// export const main = new Main()
 
 
 class Footer {
@@ -66,6 +67,7 @@ class Footer {
       }
     }
   this.footer.appendChild(this.div)
+  // this.footer.appendChild(header.createNav(menu))
   return this.footer
   }
 }

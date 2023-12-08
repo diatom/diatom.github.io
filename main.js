@@ -12,10 +12,12 @@ console.log(aboutS)
 
 class About extends HTMLElement {
     displayAbout(me) {
+        // const myAbout = document.createElement(`div`)
+        // this.appendChild(myAbout)
         this.innerHTML = me
     }
     connectedCallback() {
-        this.displayAbout()
+        return displayAbout()
     }
 }
 const ab = customElements.define('about-me', About)
