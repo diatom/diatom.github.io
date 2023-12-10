@@ -35,7 +35,7 @@ class LatestArticles extends HTMLElement {
         // }
     }
     connectedCallback() {
-        this.displayLatestarticles()
+        return displayLatestarticles()
     }
 }
 const la = customElements.define('latest-articles', LatestArticles)
@@ -51,7 +51,7 @@ class Skills extends HTMLElement {
         this.appendChild(mySkills)
     }
     connectedCallback() {
-        this.displaySkills()
+        return displaySkills()
     }
 }
 const sk = customElements.define('my-skills', Skills)
