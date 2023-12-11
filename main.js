@@ -11,19 +11,20 @@ console.log(aboutS)
 
 
 class About extends HTMLElement {
-    displayAbout(me) {
+    render() {
         // const myAbout = document.createElement(`div`)
         // this.appendChild(myAbout)
-        this.innerHTML = me
+        this.innerHTML = aboutS
     }
     connectedCallback() {
-        return displayAbout()
+        this.render()
     }
 }
 const ab = customElements.define('about-me', About)
-const about = document.createElement('about-me')
-about.me = aboutS
-about.displayAbout(about.me)
+const about = new About()
+// const about = document.createElement('about-me')
+// about.me = aboutS
+// about.render(about.me)
 
 
 class LatestArticles extends HTMLElement {
