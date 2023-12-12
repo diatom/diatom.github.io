@@ -1,3 +1,5 @@
+import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js"
+
 import { menu, contact } from './data/data.js'
 import { templ, header, footer } from './templ.js'
 
@@ -14,7 +16,7 @@ class About extends HTMLElement {
     render() {
         // const myAbout = document.createElement(`div`)
         // this.appendChild(myAbout)
-        this.innerHTML = aboutS
+        this.innerHTML = marked.parse(aboutS)
     }
     connectedCallback() {
         this.render()
@@ -41,7 +43,7 @@ class LatestArticles extends HTMLElement {
 }
 const la = customElements.define('latest-articles', LatestArticles)
 const latestArticles = document.createElement('latest-articles')
-latestArticles.articles = articlesS
+latestArticles.articles = marked.parse(articlesS)
 latestArticles.displayLatestarticles(latestArticles.articles)
 
 
@@ -57,7 +59,7 @@ class Skills extends HTMLElement {
 }
 const sk = customElements.define('my-skills', Skills)
 const skills = document.createElement('my-skills')
-skills.myskill = skillsS
+skills.myskill = marked.parse(skillsS)
 skills.displaySkills(skills.myskill)
 
 

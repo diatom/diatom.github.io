@@ -30,6 +30,22 @@ main {
     padding: 1em 0 1em 0;
   }
 }
+about-me {
+  // display: flex;
+  h2 {
+    // display: inherit;
+    flex-grow: 1;
+    // width: 100%;
+  }
+  p {
+    // display: inline-block;
+  }
+  img {
+    width: 100px;
+    border-radius: 50%;
+  }
+}
+
 // a[href^="http"] {
 //   background: url("./image/severin.2.ico") no-repeat 100% 0;
 //   background-size: 16px 16px;
