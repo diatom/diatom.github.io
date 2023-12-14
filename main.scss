@@ -57,6 +57,11 @@ main {
 about-me {
   display: flex;
   flex-direction: row;
+  background-color: rgba(33, 48, 48, 0.411);
+  height: 20rem;
+  padding: 0 2rem;
+  margin: 10rem 0 10rem 0;
+  align-items: center;
   div {
     order: 2;
     width: 100%;

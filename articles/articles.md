@@ -1,3 +1,8 @@
+<div data-index='Gosudarstvo-kak-brend'>
+Государство как бренд
+<img src='./articles/art-images/Gosudarstvo-kak-brend.jpg' style='width: 80px'>
+</div>
+
 Государство как бренд
 =
 Проблематика: кризис ассоциации личности с государством.
