@@ -25,18 +25,15 @@ class Header {
     this.nav = document.createElement(`nav`)
     this.menu = menu
   }
-  // createNav(menu) {
-  //   for (const val of menu) {
-  //     const item = document.createElement(`a`)
-  //     item.innerHTML = val
-  //     this.nav.appendChild(item)
-  //   }
-  //   return this.nav
-  // }
-  // createHead(menu) {
-  //   this.header.appendChild(this.nav)
-  //   return this.header
-  // }
+  createNav(menu) {
+    for (const val of menu) {
+      const item = document.createElement(`a`)
+      item.innerHTML = val
+      this.nav.appendChild(item)
+    }
+    return this.nav
+  }
+
   createHead(menu) {
     for (const val of menu) {
       const item = document.createElement(`a`)
@@ -48,6 +45,8 @@ class Header {
   }
 }
 export const header = new Header()
+const nav = new Header()
+
 
 
 class Footer {
@@ -67,7 +66,7 @@ class Footer {
       }
     }
   this.footer.appendChild(this.div)
-  // this.footer.appendChild(header.createNav(menu))
+  this.footer.appendChild(nav.createNav(menu))
   return this.footer
   }
 }

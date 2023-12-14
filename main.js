@@ -1,4 +1,5 @@
-import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js"
+import { marked } from './marked-lib.js'
+// import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js'
 
 import { menu, contact } from './data/data.js'
 import { templ, header, footer } from './templ.js'
@@ -14,61 +15,50 @@ console.log(aboutS)
 
 class About extends HTMLElement {
     render() {
-        // const myAbout = document.createElement(`div`)
-        // this.appendChild(myAbout)
-        this.innerHTML = marked.parse(aboutS)
+        const myAbout = document.createElement(`div`)
+        myAbout.innerHTML = marked.parse(aboutS)
+        this.appendChild(myAbout)
     }
     connectedCallback() {
         this.render()
     }
 }
-const ab = customElements.define('about-me', About)
+customElements.define('about-me', About)
 const about = new About()
-// const about = document.createElement('about-me')
-// about.me = aboutS
-// about.render(about.me)
-
 
 class LatestArticles extends HTMLElement {
-    displayLatestarticles(articles) {
+    render() {
         // for (const art of articles) {
           const divLast = document.createElement(`div`)
-          divLast.innerHTML = articles
+          divLast.innerHTML = marked.parse(articlesS)
           this.appendChild(divLast)
         // }
     }
     connectedCallback() {
-        return displayLatestarticles()
+        this.render()
     }
 }
-const la = customElements.define('latest-articles', LatestArticles)
-const latestArticles = document.createElement('latest-articles')
-latestArticles.articles = marked.parse(articlesS)
-latestArticles.displayLatestarticles(latestArticles.articles)
+customElements.define('latest-articles', LatestArticles)
+const latestArticles = new LatestArticles()
 
 
 class Skills extends HTMLElement {
-    displaySkills(myskill) {
+    render() {
         const mySkills = document.createElement(`div`)
-        mySkills.innerHTML = myskill
+        mySkills.innerHTML = marked.parse(skillsS)
         this.appendChild(mySkills)
     }
     connectedCallback() {
-        return displaySkills()
+        this.render()
     }
 }
-const sk = customElements.define('my-skills', Skills)
-const skills = document.createElement('my-skills')
-skills.myskill = marked.parse(skillsS)
-skills.displaySkills(skills.myskill)
+customElements.define('my-skills', Skills)
+const skills = new Skills()
 
 
 class Main {
-    constructor(about, latestArticles, skills) {
+    constructor() {
       this.main = document.createElement(`main`)
-      this.about = about
-      this.latestArticles = latestArticles
-      this.skills = skills
     }
     displayMain() {
       this.main.appendChild(about)
@@ -77,7 +67,7 @@ class Main {
       return this.main
     }
   }
-const main = new Main(ab, la, sk)
+const main = new Main()
 
 
 templ.displayHead(header.createHead(menu))
