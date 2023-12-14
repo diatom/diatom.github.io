@@ -49,16 +49,17 @@ about-me {
   display: flex;
   flex-direction: row;
   div {
-    order: 1;
+    order: 2;
     width: 100%;
+    margin: 0 0 0 1rem;
    }
   p {
-    order: 2;
-    margin: 2rem 0 0 0;
+    order: 1;
   }
   img {
-    width: 150px;
-    border-radius: 50%;
+    width: 100px;
+    border-radius: 10%;
+    margin: 1rem 0 0 0;
   }
 }
 
