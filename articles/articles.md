@@ -1,17 +1,17 @@
-<div data-index='Gosudarstvo-kak-brend' style='width: 200px;'>
-<h1>Государство как бренд</h1>
-<img src='./articles/art-images/Gosudarstvo-kak-brend.jpg' style='width: 200px; height: 200px'>
+<div data-index='Gosudarstvo-kak-brend' style='width: 15rem;' class='article'>
+<h2>Государство как бренд</h2>
+<img src='./articles/art-images/Gosudarstvo-kak-brend.jpg' style='width: 15rem; height: 15rem'>
 </div>
-<div data-index='Gosudarstvo-kak-brend' style='width: 200px;'>
-<h1>Государство как бренд</h1>
-<img src='./articles/art-images/Gosudarstvo-kak-brend.jpg' style='width: 200px; height: 200px'>
+<div data-index='Grazhdane-est-gosudarstvo' style='width: 15rem;' class='article'>
+<h2>Граждане есть государство</h2>
+<img src='./articles/art-images/Grazhdane-est-gosudarstvo.jpg' style='width: 15rem; height: 15rem'>
 </div>
-<div data-index='Gosudarstvo-kak-brend' style='width: 200px;'>
-<h1>Государство как бренд</h1>
-<img src='./articles/art-images/Gosudarstvo-kak-brend.jpg' style='width: 200px; height: 200px'>
+<div data-index='Konkurenciya-istoriya' style='width: 15rem;' class='article'>
+<h2>Конкуренция, история</h2>
+<img src='./articles/art-images/Konkurenciya-istoriya.jpg' style='width: 15rem; height: 15rem'>
 </div>
-<!-- 
-Государство как бренд
+
+<!-- Государство как бренд
 =
 Проблематика: кризис ассоциации личности с государством.
 -

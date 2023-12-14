@@ -20,7 +20,6 @@ class About extends HTMLElement {
         const myAbout = document.createElement(`div`)
         myAbout.innerHTML = marked.parse(aboutS)
         this.appendChild(myAbout, this.innerHTML = marked.parse(photoS))
-        // this.appendChild()
     }
     connectedCallback() {
         this.render()
@@ -32,9 +31,14 @@ const about = new About()
 class LatestArticles extends HTMLElement {
     render() {
         // for (const art of articles) {
-          const divLast = document.createElement(`div`)
-          divLast.innerHTML = marked.parse(articlesS)
-          this.appendChild(divLast)
+        const divLast = document.createElement(`div`)
+        divLast.innerHTML = marked.parse(articlesS)
+        divLast.setAttribute('class', 'articles')
+        const head = document.createElement('h3')
+        head.innerHTML = 'Последние публикации'
+        this.appendChild(head)
+        this.appendChild(divLast)
+        // this.appendChild(head, this.divLast)
         // }
     }
     connectedCallback() {
