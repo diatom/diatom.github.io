@@ -12,7 +12,7 @@ const aboutS = await fetAbout.text()
 const photoS = await fetPhoto.text()
 const articlesS = await fetArticles.text()
 const skillsS = await fetSkills.text()
-console.log(aboutS)
+console.log(`Oh, hello =)`)
 
 
 class About extends HTMLElement {
