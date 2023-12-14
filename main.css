@@ -15,6 +15,14 @@ header, footer, nav, a {
   display: flex;
 }
 
+header a {
+  padding: 0.3rem 4rem 0.3rem 4rem;
+}
+header nav {
+  height: 5rem;
+  align-items: center;
+}
+
 footer {
   height: 15rem;
   width: 100%;
