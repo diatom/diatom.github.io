@@ -48,16 +48,16 @@ main {
 about-me {
   display: flex;
   flex-direction: row;
-  h2 {
-    // display: block;
-    flex-grow: 1;
-    // width: 100%;
-  }
+  div {
+    order: 1;
+    width: 100%;
+   }
   p {
-    // display: inline-block;
+    order: 2;
+    margin: 2rem 0 0 0;
   }
   img {
-    width: 100px;
+    width: 150px;
     border-radius: 50%;
   }
 }

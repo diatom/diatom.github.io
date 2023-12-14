@@ -54,10 +54,15 @@ about-me {
   display: flex;
   flex-direction: row;
 }
-about-me h2 {
-  flex-grow: 1;
+about-me div {
+  order: 1;
+  width: 100%;
+}
+about-me p {
+  order: 2;
+  margin: 2rem 0 0 0;
 }
 about-me img {
-  width: 100px;
+  width: 150px;
   border-radius: 50%;
 }
