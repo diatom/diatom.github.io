@@ -50,6 +50,10 @@ main div {
   padding: 1em 0 1em 0;
 }
 
+about-me {
+  display: flex;
+  flex-direction: row;
+}
 about-me h2 {
   flex-grow: 1;
 }

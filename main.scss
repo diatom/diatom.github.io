@@ -46,9 +46,10 @@ main {
   }
 }
 about-me {
-  // display: flex;
+  display: flex;
+  flex-direction: row;
   h2 {
-    // display: inherit;
+    // display: block;
     flex-grow: 1;
     // width: 100%;
   }
