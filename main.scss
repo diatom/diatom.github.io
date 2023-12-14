@@ -1,6 +1,6 @@
 body {
-  background-color: black;
-  color: white;
+  // background-color: #006363;
+  // color: white;
   padding: 0 0;
   margin: 0;
   display: flex;
@@ -14,6 +14,9 @@ header, footer, nav, a {
   display: flex;
 }
 header {
+  background-color: #1D7373;
+  justify-content: center;
+  width: 100%;
   a {
   padding: 0.3rem 4rem 0.3rem 4rem;
   }
@@ -27,7 +30,7 @@ footer {
   width: 100%;
   justify-content: center;
   align-items: center;
-  background: #130d0d;
+  background: #1D7373;
   margin-top: 10rem;
   div, nav {
     display: flex;
@@ -71,7 +74,7 @@ about-me {
     order: 1;
   }
   img {
-    width: 100px;
+    width: 150px;
     border-radius: 10%;
     margin: 1rem 0 0 0;
   }
@@ -80,15 +83,21 @@ about-me {
 latest-articles {
   display: flex;
   flex-direction: column;
-  border-top: solid white 1px;
-  border-bottom: solid white 1px;
+  // border-top: solid white 1px;
+  // border-bottom: solid white 1px;
   padding: 0 0 2rem 0;
   .articles {
     display: 100%;
     justify-content: space-between;
     display: flex;
   }
-  h3 {
+  .article {
+    width: 15rem;
+    img {
+      width: 15rem;
+    }
+  }
+  h2 {
     margin: 0.5rem 0;
   }
 }

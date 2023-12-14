@@ -1,6 +1,4 @@
 body {
-  background-color: black;
-  color: white;
   padding: 0 0;
   margin: 0;
   display: flex;
@@ -15,6 +13,11 @@ header, footer, nav, a {
   display: flex;
 }
 
+header {
+  background-color: #1D7373;
+  justify-content: center;
+  width: 100%;
+}
 header a {
   padding: 0.3rem 4rem 0.3rem 4rem;
 }
@@ -28,7 +31,7 @@ footer {
   width: 100%;
   justify-content: center;
   align-items: center;
-  background: #130d0d;
+  background: #1D7373;
   margin-top: 10rem;
 }
 footer div, footer nav {
@@ -75,7 +78,7 @@ about-me p {
   order: 1;
 }
 about-me img {
-  width: 100px;
+  width: 150px;
   border-radius: 10%;
   margin: 1rem 0 0 0;
 }
@@ -83,8 +86,6 @@ about-me img {
 latest-articles {
   display: flex;
   flex-direction: column;
-  border-top: solid white 1px;
-  border-bottom: solid white 1px;
   padding: 0 0 2rem 0;
 }
 latest-articles .articles {
@@ -92,6 +93,12 @@ latest-articles .articles {
   justify-content: space-between;
   display: flex;
 }
-latest-articles h3 {
+latest-articles .article {
+  width: 15rem;
+}
+latest-articles .article img {
+  width: 15rem;
+}
+latest-articles h2 {
   margin: 0.5rem 0;
 }

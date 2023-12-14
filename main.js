@@ -34,11 +34,10 @@ class LatestArticles extends HTMLElement {
         const divLast = document.createElement(`div`)
         divLast.innerHTML = marked.parse(articlesS)
         divLast.setAttribute('class', 'articles')
-        const head = document.createElement('h3')
+        const head = document.createElement('h2')
         head.innerHTML = 'Последние публикации'
         this.appendChild(head)
         this.appendChild(divLast)
-        // this.appendChild(head, this.divLast)
         // }
     }
     connectedCallback() {

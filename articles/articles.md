@@ -1,17 +1,18 @@
-<div data-index='Gosudarstvo-kak-brend' style='width: 15rem;' class='article'>
-<h2>Государство как бренд</h2>
-<img src='./articles/art-images/Gosudarstvo-kak-brend.jpg' style='width: 15rem; height: 15rem'>
+<div id='0' data-index='Gosudarstvo-kak-brend' class='article'>
+    <h2>Государство как бренд</h2>
+    <img src='./articles/art-images/Gosudarstvo-kak-brend.jpg'>
 </div>
-<div data-index='Grazhdane-est-gosudarstvo' style='width: 15rem;' class='article'>
-<h2>Граждане есть государство</h2>
-<img src='./articles/art-images/Grazhdane-est-gosudarstvo.jpg' style='width: 15rem; height: 15rem'>
+<div id='1' data-index='Grazhdane-est-gosudarstvo' class='article'>
+    <h2>Граждане есть государство</h2>
+    <img src='./articles/art-images/Grazhdane-est-gosudarstvo.jpg'>
 </div>
-<div data-index='Konkurenciya-istoriya' style='width: 15rem;' class='article'>
-<h2>Конкуренция, история</h2>
-<img src='./articles/art-images/Konkurenciya-istoriya.jpg' style='width: 15rem; height: 15rem'>
+<div id='2' data-index='Konkurenciya-istoriya' class='article'>
+    <h2>Конкуренция, история</h2>
+    <img src='./articles/art-images/Konkurenciya-istoriya.jpg'>
 </div>
 
-<!-- Государство как бренд
+<!-- 
+Государство как бренд
 =
 Проблематика: кризис ассоциации личности с государством.
 -
@@ -88,4 +89,5 @@
 Расизм против гуманизма
 =
 Проблематика: постоянный градус ненависти человека к человеку, убийство как решение.  
-- -->
+- 
+ -->
