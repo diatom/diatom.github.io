@@ -30,6 +30,7 @@ const about = new About()
 
 class LatestArticles extends HTMLElement {
     render() {
+        const art = document.getElementsByClassName('article')
         // for (const art of articles) {
         const divLast = document.createElement(`div`)
         divLast.innerHTML = marked.parse(articlesS)
