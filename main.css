@@ -26,20 +26,6 @@ header nav {
   align-items: center;
 }
 
-footer {
-  height: 15rem;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  background: #1D7373;
-  margin-top: 10rem;
-}
-footer div, footer nav {
-  display: flex;
-  flex-direction: column;
-  margin: 0 8rem 0 8rem;
-}
-
 a {
   font-size: 1.2rem;
   margin: 0;
@@ -72,7 +58,7 @@ about-me {
 about-me div {
   order: 2;
   width: 100%;
-  margin: 0 0 0 1rem;
+  margin: 0 1rem 0 2rem;
 }
 about-me p {
   order: 1;
@@ -101,4 +87,18 @@ latest-articles .article img {
 }
 latest-articles h2 {
   margin: 0.5rem 0;
+}
+
+footer {
+  height: 15rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background: #006363;
+  margin-top: 10rem;
+}
+footer div, footer nav {
+  display: flex;
+  flex-direction: column;
+  margin: 0 8rem 0 8rem;
 }
