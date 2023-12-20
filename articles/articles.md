@@ -1,14 +1,14 @@
 <div id='0' data-index='Gosudarstvo-kak-brend' class='article'>
     <h2>Государство как бренд</h2>
-    <img src='./articles/art-images/Gosudarstvo-kak-brend.jpg'>
+    <img src='./articles/art-images/Gosudarstvo-kak-brend.png'>
 </div>
 <div id='1' data-index='Grazhdane-est-gosudarstvo' class='article'>
     <h2>Граждане есть государство</h2>
-    <img src='./articles/art-images/Grazhdane-est-gosudarstvo.jpg'>
+    <img src='./articles/art-images/Grazhdane-est-gosudarstvo.png'>
 </div>
 <div id='2' data-index='Konkurenciya-istoriya' class='article'>
     <h2>Конкуренция, история</h2>
-    <img src='./articles/art-images/Konkurenciya-istoriya.jpg'>
+    <img src='./articles/art-images/Konkurenciya-istoriya.png'>
 </div>
 
 <!-- 
