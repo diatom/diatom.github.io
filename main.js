@@ -28,6 +28,16 @@ class About extends HTMLElement {
 customElements.define('about-me', About)
 const about = new About()
 
+
+for (let i=src.lenght; src.lenght < i-3; i++) {
+    const art = document.getElementsByClassName('article')
+    if (list.includes(src)) {
+        const fet = await fetch (`./articles/` + `${src}` + `.md`)
+
+    }
+}
+
+
 class LatestArticles extends HTMLElement {
     render() {
         const art = document.getElementsByClassName('article')
