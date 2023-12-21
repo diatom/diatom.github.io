@@ -33,14 +33,21 @@ for (let i=src.lenght; src.lenght < i-3; i++) {
     const art = document.getElementsByClassName('article')
     if (list.includes(src)) {
         const fet = await fetch (`./articles/` + `${src}` + `.md`)
-
+        const articlesS = await fet.text()
+        const divLast = document.createElement(`div`)
+        divLast.innerHTML = marked.parse(articlesS)
+        divLast.setAttribute('class', 'articles')
+        const head = document.createElement('h2')
+        head.innerHTML = 'Последние публикации'
+        this.appendChild(head)
+        this.appendChild(divLast)
     }
 }
 
 
 class LatestArticles extends HTMLElement {
     render() {
-        const art = document.getElementsByClassName('article')
+        // const art = document.getElementsByClassName('article')
         // for (const art of articles) {
         const divLast = document.createElement(`div`)
         divLast.innerHTML = marked.parse(articlesS)
