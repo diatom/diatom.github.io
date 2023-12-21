@@ -44,6 +44,10 @@ for (let i=src.lenght; src.lenght < i-3; i++) {
     }
 }
 
+for (const uni of list) {
+    
+}
+
 
 class LatestArticles extends HTMLElement {
     render() {
