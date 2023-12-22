@@ -29,23 +29,31 @@ customElements.define('about-me', About)
 const about = new About()
 
 
-for (let i=src.lenght; src.lenght < i-3; i++) {
-    const art = document.getElementsByClassName('article')
-    if (list.includes(src)) {
-        const fet = await fetch (`./articles/` + `${src}` + `.md`)
-        const articlesS = await fet.text()
-        const divLast = document.createElement(`div`)
-        divLast.innerHTML = marked.parse(articlesS)
-        divLast.setAttribute('class', 'articles')
-        const head = document.createElement('h2')
-        head.innerHTML = 'Последние публикации'
-        this.appendChild(head)
-        this.appendChild(divLast)
-    }
-}
+// for (let i=src.lenght; src.lenght < i-3; i++) {
+//     const art = document.getElementsByClassName('article')
+//     if (list.includes(src)) {
+//         const fet = await fetch (`./articles/` + `${src}` + `.md`)
+//         const articlesS = await fet.text()
+//         const divLast = document.createElement(`div`)
+//         divLast.innerHTML = marked.parse(articlesS)
+//         divLast.setAttribute('class', 'articles')
+//         const head = document.createElement('h2')
+//         head.innerHTML = 'Последние публикации'
+//         this.appendChild(head)
+//         this.appendChild(divLast)
+//     }
+// }
 
-for (const uni of list) {
-    
+
+
+for (let i = list.length - 3; i < list.length; i++) {
+    const head = document.createElement('h2')
+    const divLast = document.createElement(`div`)
+    divLast.innerHTML = list[i]
+    divLast.setAttribute('class', 'articles')
+    head.innerHTML = 'Последние публикации'
+    this.appendChild(head)
+    this.appendChild(divLast)
 }
 
 
