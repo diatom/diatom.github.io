@@ -45,22 +45,28 @@ const about = new About()
 // }
 
 
-
-for (let i = list.length - 3; i < list.length; i++) {
-    const head = document.createElement('h2')
-    const divLast = document.createElement(`div`)
-    divLast.innerHTML = list[i]
-    divLast.setAttribute('class', 'articles')
-    head.innerHTML = 'Последние публикации'
-    this.appendChild(head)
-    this.appendChild(divLast)
+class LatestArticles extends HTMLElement {
+    prerender() {
+        const head = document.createElement('h2')
+        head.innerHTML = 'Последние публикации'
+        this.appendChild(head)
+    }
+    render() {
+        for (let i = list.length - 3; i < list.length; i++) {
+            const divLast = document.createElement(`div`)
+            divLast.innerHTML = list[i]
+            divLast.setAttribute('class', 'articles')
+            this.appendChild(divLast)
+        }
+    }
+    connectedCallback() {
+        this.prerender()
+        this.render()
+    }
 }
-
 
 class LatestArticles extends HTMLElement {
     render() {
-        // const art = document.getElementsByClassName('article')
-        // for (const art of articles) {
         const divLast = document.createElement(`div`)
         divLast.innerHTML = marked.parse(articlesS)
         divLast.setAttribute('class', 'articles')
@@ -68,7 +74,6 @@ class LatestArticles extends HTMLElement {
         head.innerHTML = 'Последние публикации'
         this.appendChild(head)
         this.appendChild(divLast)
-        // }
     }
     connectedCallback() {
         this.render()
