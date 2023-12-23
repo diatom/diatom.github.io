@@ -45,6 +45,22 @@ const about = new About()
 // }
 
 
+class createArticle {
+    constructor(obj) {
+      this.divE = document.createElement('div')
+      this.obj = obj
+    }
+    createDivElement() {
+      for (let [key, value] of Object.entries(this.obj)) {
+        const pE = document.createElement('p')
+        pE.innerText = `${key}: ${value}`
+        this.divE.appendChild(pE)
+      }
+      return this.divE
+    }
+  }
+
+
 class LatestArticles extends HTMLElement {
     prerender() {
         const head = document.createElement('h2')
