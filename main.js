@@ -57,7 +57,7 @@ class createArticle {
       }
       return this.divE
     }
-  }
+}
 
 
 class LatestArticles extends HTMLElement {
@@ -80,20 +80,20 @@ class LatestArticles extends HTMLElement {
     }
 }
 
-class LatestArticles extends HTMLElement {
-    render() {
-        const divLast = document.createElement(`div`)
-        divLast.innerHTML = marked.parse(articlesS)
-        divLast.setAttribute('class', 'articles')
-        const head = document.createElement('h2')
-        head.innerHTML = 'Последние публикации'
-        this.appendChild(head)
-        this.appendChild(divLast)
-    }
-    connectedCallback() {
-        this.render()
-    }
-}
+// class LatestArticles extends HTMLElement {
+//     render() {
+//         const divLast = document.createElement(`div`)
+//         divLast.innerHTML = marked.parse(articlesS)
+//         divLast.setAttribute('class', 'articles')
+//         const head = document.createElement('h2')
+//         head.innerHTML = 'Последние публикации'
+//         this.appendChild(head)
+//         this.appendChild(divLast)
+//     }
+//     connectedCallback() {
+//         this.render()
+//     }
+// }
 customElements.define('latest-articles', LatestArticles)
 const latestArticles = new LatestArticles()
 
