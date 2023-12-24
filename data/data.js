@@ -27,18 +27,21 @@ export const list = [
     {
         'id': '0',
         'data-index': 'Gosudarstvo-kak-brend',
+        'h2': 'Государство как бренд',
         'class': 'article',
         'src': './articles/art-images/Gosudarstvo-kak-brend.png'
     },
     {
         'id': '1',
         'data-index': 'Grazhdane-est-gosudarstvo',
+        'h2': 'Граждане есть государство',
         'class': 'article',
         'src': './articles/art-images/Grazhdane-est-gosudarstvo.png'
     },
     {
         'id': '2', 
         'data-index': 'Konkurenciya-istoriya',
+        'h2': 'Конкуренция, история',
         'class': 'article',
         'src': './articles/art-images/Konkurenciya-istoriya.png'
     },
