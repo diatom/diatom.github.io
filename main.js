@@ -79,6 +79,9 @@ class LatestArticles extends HTMLElement {
         this.render()
     }
 }
+customElements.define('latest-articles', LatestArticles)
+const latestArticles = new LatestArticles()
+
 
 // class LatestArticles extends HTMLElement {
 //     render() {
@@ -94,9 +97,6 @@ class LatestArticles extends HTMLElement {
 //         this.render()
 //     }
 // }
-customElements.define('latest-articles', LatestArticles)
-const latestArticles = new LatestArticles()
-
 
 class Skills extends HTMLElement {
     render() {
