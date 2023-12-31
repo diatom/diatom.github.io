@@ -44,7 +44,6 @@ const about = new About()
 //     }
 // }
 
-
 class createArticle {
     constructor(obj) {
       this.divE = document.createElement('div')
@@ -58,7 +57,6 @@ class createArticle {
       return this.divE
     }
 }
-
 
 class LatestArticles extends HTMLElement {
     prerender() {
