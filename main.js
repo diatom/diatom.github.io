@@ -57,6 +57,8 @@ class createArticle {
       return this.divE
     }
 }
+const cla = new createArticle()
+
 
 class LatestArticles extends HTMLElement {
     prerender() {
@@ -67,8 +69,8 @@ class LatestArticles extends HTMLElement {
     render() {
         for (let i = list.length - 3; i < list.length; i++) {
             const divLast = document.createElement(`div`)
-            const cla = new createArticle(list[i])
-            divLast.innerHTML = cla
+            // const cla = new createArticle(list[i])
+            divLast.innerHTML = cla[i]
             divLast.setAttribute('class', 'articles')
             this.appendChild(divLast)
         }
