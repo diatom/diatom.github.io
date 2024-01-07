@@ -71,22 +71,24 @@ about-me img {
 
 latest-articles {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 0 0 2rem 0;
 }
 latest-articles .articles {
   display: 100%;
   justify-content: space-between;
   display: flex;
+  margin: 0;
+  padding: 0;
 }
 latest-articles .article {
-  width: 10rem;
+  width: 12rem;
+}
+latest-articles .article h2 {
+  margin: 0.5rem 0 0 0;
 }
 latest-articles .article img {
-  width: 10rem;
-}
-latest-articles h2 {
-  margin: 0.5rem 0;
+  width: 12rem;
 }
 
 footer {

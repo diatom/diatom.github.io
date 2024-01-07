@@ -27,22 +27,37 @@ export const list = [
     {
         'id': '0',
         'data-index': 'Gosudarstvo-kak-brend',
-        'h2': 'Государство как бренд',
-        'class': 'article',
+        'h3': 'Государство как бренд',
         'src': './articles/art-images/Gosudarstvo-kak-brend.png'
     },
     {
         'id': '1',
         'data-index': 'Grazhdane-est-gosudarstvo',
-        'h2': 'Граждане есть государство',
-        'class': 'article',
+        'h3': 'Граждане есть государство',
         'src': './articles/art-images/Grazhdane-est-gosudarstvo.png'
     },
     {
         'id': '2', 
         'data-index': 'Konkurenciya-istoriya',
-        'h2': 'Конкуренция, история',
-        'class': 'article',
+        'h3': 'Конкуренция, история',
+        'src': './articles/art-images/Konkurenciya-istoriya.png'
+    },
+        {
+        'id': '3',
+        'data-index': 'Gosudarstvo-kak-brend',
+        'h3': 'Государство как бренд',
+        'src': './articles/art-images/Gosudarstvo-kak-brend.png'
+    },
+    {
+        'id': '4',
+        'data-index': 'Grazhdane-est-gosudarstvo',
+        'h3': 'Граждане есть государство',
+        'src': './articles/art-images/Grazhdane-est-gosudarstvo.png'
+    },
+    {
+        'id': '5', 
+        'data-index': 'Konkurenciya-istoriya',
+        'h3': 'Конкуренция, история',
         'src': './articles/art-images/Konkurenciya-istoriya.png'
     },
 ]

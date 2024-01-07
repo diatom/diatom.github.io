@@ -71,28 +71,34 @@ about-me {
 
 latest-articles {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   // border-top: solid white 1px;
   // border-bottom: solid white 1px;
   padding: 0 0 2rem 0;
+  
   .articles {
     display: 100%;
     justify-content: space-between;
     display: flex;
+    margin: 0;
+    padding: 0;
   }
   .article {
-    width: 10rem;
+    width: 12rem;
+    h2 {
+    margin: 0.5rem 0 0 0;
+    }
+    h3 {
+    }
     img {
-      width: 10rem;
+      width: 12rem;
+      // margin-top: 2rem;
       // border: solid #52c0c0 0,5px;
       // box-shadow:
       // inset 0 -3em 3em rgba(0, 200, 0, 0.3),
       // 0 0 0 2px white,
       // 0.3em 0.3em 1em rgba(200, 0, 0, 0.6);
     }
-  }
-  h2 {
-    margin: 0.5rem 0;
   }
 }
 

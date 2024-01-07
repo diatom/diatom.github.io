@@ -29,35 +29,23 @@ customElements.define('about-me', About)
 const about = new About()
 
 
-// for (let i=src.lenght; src.lenght < i-3; i++) {
-//     const art = document.getElementsByClassName('article')
-//     if (list.includes(src)) {
-//         const fet = await fetch (`./articles/` + `${src}` + `.md`)
-//         const articlesS = await fet.text()
-//         const divLast = document.createElement(`div`)
-//         divLast.innerHTML = marked.parse(articlesS)
-//         divLast.setAttribute('class', 'articles')
-//         const head = document.createElement('h2')
-//         head.innerHTML = 'Последние публикации'
-//         this.appendChild(head)
-//         this.appendChild(divLast)
-//     }
-// }
-
 class createArticle {
     constructor(obj) {
       this.divE = document.createElement('div')
       this.obj = obj
     }
     createDivElement() {
-      for (let [key, value] of Object.entries(this.obj)) {
+      // for (let [key, value] of Object.entries(this.obj)) {
         const img = document.createElement('img')
+        const h3 = document.createElement('h3')
+        h3.innerHTML = this.obj.h3
         img.setAttribute('src', this.obj.src)
-        this.divE.innerText = this.obj.h2
+        // this.divE.innerText = this.obj.h3
+        this.divE.appendChild(h3)
         this.divE.appendChild(img)
         this.divE.setAttribute('class', 'article')
         this.divE.setAttribute('id', this.obj.id)
-      }
+      // }
       return this.divE
     }
 }
@@ -70,11 +58,11 @@ class LatestArticles extends HTMLElement {
         this.appendChild(head)
     }
     render() {
+        const divLast = document.createElement(`div`)
+        divLast.setAttribute('class', 'articles')
         for (let i = list.length - 3; i < list.length; i++) {
-            const divLast = document.createElement(`div`)
             const cla = new createArticle(list[i])
             divLast.appendChild(cla.createDivElement())
-            divLast.setAttribute('class', 'articles')
             this.appendChild(divLast)
         }
     }
@@ -86,21 +74,6 @@ class LatestArticles extends HTMLElement {
 customElements.define('latest-articles', LatestArticles)
 const latestArticles = new LatestArticles()
 
-
-// class LatestArticles extends HTMLElement {
-//     render() {
-//         const divLast = document.createElement(`div`)
-//         divLast.innerHTML = marked.parse(articlesS)
-//         divLast.setAttribute('class', 'articles')
-//         const head = document.createElement('h2')
-//         head.innerHTML = 'Последние публикации'
-//         this.appendChild(head)
-//         this.appendChild(divLast)
-//     }
-//     connectedCallback() {
-//         this.render()
-//     }
-// }
 
 class Skills extends HTMLElement {
     render() {
