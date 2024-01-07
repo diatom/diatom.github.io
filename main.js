@@ -52,12 +52,12 @@ class createArticle {
     createDivElement() {
       for (let [key, value] of Object.entries(this.obj)) {
         this.divE.innerText = this.obj.h2
+        // this.divE.innerText = `${key}: ${value}`
         this.divE.setAttribute(key, value)
       }
       return this.divE
     }
 }
-const cla = new createArticle()
 
 
 class LatestArticles extends HTMLElement {
@@ -69,8 +69,8 @@ class LatestArticles extends HTMLElement {
     render() {
         for (let i = list.length - 3; i < list.length; i++) {
             const divLast = document.createElement(`div`)
-            // const cla = new createArticle(list[i])
-            divLast.innerHTML = cla[i]
+            const cla = new createArticle(list[i])
+            divLast.appendChild(cla.createDivElement())
             divLast.setAttribute('class', 'articles')
             this.appendChild(divLast)
         }
