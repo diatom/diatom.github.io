@@ -1,8 +1,8 @@
 export const menu = [
-    'Main',
-    'Blog',
-    'Book review',
-    'Cheese'
+    'Главная',
+    'Блог',
+    'Обзоры книг',
+    'Сыр'
 ]
 
 export const contact = [

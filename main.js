@@ -6,11 +6,9 @@ import { templ, header, footer } from './templ.js'
 
 const fetAbout = await fetch (`./main/about.md`)
 const fetPhoto = await fetch (`./main/myphoto.md`)
-const fetArticles = await fetch (`./articles/articles.md`)
 const fetSkills = await fetch (`./main/skills.md`)
 const aboutS = await fetAbout.text()
 const photoS = await fetPhoto.text()
-const articlesS = await fetArticles.text()
 const skillsS = await fetSkills.text()
 console.log(`Oh, hello =)`)
 

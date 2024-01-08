@@ -48,7 +48,6 @@ export const header = new Header()
 const nav = new Header()
 
 
-
 class Footer {
   constructor(contact) {
     this.footer = document.createElement(`footer`)
