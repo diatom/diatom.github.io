@@ -33,12 +33,10 @@ class createArticle {
       this.obj = obj
     }
     createDivElement() {
-      // for (let [key, value] of Object.entries(this.obj)) {
         const img = document.createElement('img')
         const h3 = document.createElement('h3')
         h3.innerHTML = this.obj.h3
         img.setAttribute('src', this.obj.src)
-        // this.divE.innerText = this.obj.h3
         this.divE.appendChild(h3)
         this.divE.appendChild(img)
         this.divE.setAttribute('class', 'article')

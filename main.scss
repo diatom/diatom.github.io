@@ -8,8 +8,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-family: 'Bitter', serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  // font-family: 'Bitter', serif;
   // font-family: 'Merriweather', serif;;
 }
 header, footer, nav, a {
@@ -21,6 +21,7 @@ header {
   width: 100%;
   a {
   padding: 0.3rem 4rem 0.3rem 4rem;
+  font-family: 'Bitter', serif;
   }
   nav {
     height: 5rem;
@@ -84,16 +85,14 @@ latest-articles {
     padding: 0;
   }
   .article {
-    width: 12rem;
+    width: 18rem;
     h2 {
-    margin: 0.5rem 0 0 0;
-    }
-    h3 {
+      margin: 0.5rem 0 0 0;
     }
     img {
-      width: 12rem;
+      width: 18rem;
       // margin-top: 2rem;
-      // border: solid #52c0c0 0,5px;
+      // border: solid #1D7373 6px;
       // box-shadow:
       // inset 0 -3em 3em rgba(0, 200, 0, 0.3),
       // 0 0 0 2px white,
@@ -112,7 +111,16 @@ footer {
   div, nav {
     display: flex;
     flex-direction: column;
-    margin: 0 8rem 0 8rem;
+    margin: 0 4rem 0 4rem;
+  }
+  a {
+    font-size: 0.9em;
+  }
+  p {
+    font-size: 0.9em;
+    width: 20rem;
+    color: #ffffff;
+    margin: 0 1rem;
   }
 }
 // a[href^="http"] {
