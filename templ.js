@@ -19,25 +19,25 @@ class Templ {
 export const templ = new Templ()
 
 
-// class SiteLink extends HTMLAnchorElement {
-//   constructor(props) {
-//     super(props)
-//   }
-//   render() {
-//     for (const val of props) {
-//       const item = document.createElement(`a`)
-//       item.innerHTML = val
-//       this.appendChild(item)
-//     }
-//   }
-//   onClick() {
-
-//   }
-//   connectedCallback() {
-//     this.render()
-//   }
-// }
-// customElements.define('site-link', MyLink, {extends: 'a'});
+class SiteLink extends HTMLAnchorElement {
+  constructor(props) {
+    super(props)
+  }
+  render() {
+    for (const val of props) {
+      const item = document.createElement(`a`)
+      item.innerHTML = val
+      this.appendChild(item)
+    }
+  }
+  onClick() {
+    const get = document.getElementById(`button-http`)
+  }
+  connectedCallback() {
+    this.render()
+  }
+}
+customElements.define('site-link', MyLink, {extends: 'a'});
 
 
 class Header {
