@@ -4,6 +4,12 @@ export const menu = [
     'Обзоры книг',
     'Сыр'
 ]
+export const props = {
+    main: 'Главная',
+    blog: 'Блог',
+    bookreview: 'Обзоры книг',
+    cheese: 'Сыр'
+}
 
 export const contact = [
     {

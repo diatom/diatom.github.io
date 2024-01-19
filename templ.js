@@ -1,4 +1,4 @@
-import { menu, info } from './data/data.js'
+import { menu, info, props } from './data/data.js'
 
 class Templ {
   constructor(head, main, footer) {
@@ -26,6 +26,7 @@ class SiteLink extends HTMLAnchorElement {
   render() {
     for (const val of props) {
       const item = document.createElement(`a`)
+      item.setAttribute('src', '')
       item.innerHTML = val
       this.appendChild(item)
     }
