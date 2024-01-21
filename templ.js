@@ -25,10 +25,12 @@ class SiteLink extends HTMLAnchorElement {
   }
   render() {
     for (const val of props) {
+      for (let [key, value] of Object.entries(val)) {
       const item = document.createElement(`a`)
-      item.setAttribute('src', '')
-      item.innerHTML = val
+      item.setAttribute('src', '/' + `${key}`)
+      item.innerHTML = `${value}`
       this.appendChild(item)
+      }
     }
   }
   onClick() {
