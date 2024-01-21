@@ -19,7 +19,7 @@ class Templ {
 export const templ = new Templ()
 
 
-class SiteLink extends HTMLAnchorElement {
+class ALink extends HTMLAnchorElement {
   constructor(props) {
     super(props)
   }
@@ -40,7 +40,7 @@ class SiteLink extends HTMLAnchorElement {
     this.render()
   }
 }
-customElements.define('site-link', MyLink, {extends: 'a'});
+customElements.define('a-link', ALink, {extends: 'a'});
 
 
 class Header {
