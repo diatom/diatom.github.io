@@ -27,7 +27,8 @@ class ALink extends HTMLAnchorElement {
     for (const val of props) {
       for (let [key, value] of Object.entries(val)) {
       const item = document.createElement(`a`)
-      item.setAttribute('src', '/' + `${key}`)
+      item.setAttribute('src', window.location.origin + '/' + `${key}`)
+      item.setAttribute(`id`, `button-http`)
       item.innerHTML = `${value}`
       this.appendChild(item)
       }
