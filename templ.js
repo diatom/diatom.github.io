@@ -31,7 +31,7 @@ class ALink extends HTMLAnchorElement {
       item.setAttribute(`id`, `button-http`)
       item.innerHTML = `${value}`
       this.appendChild(item)
-      }
+      } 
     }
   }
   onClick() {
@@ -72,6 +72,36 @@ class Header {
 }
 export const header = new Header()
 const nav = new Header()
+
+
+// class Header {
+//   constructor(menu) {
+//     this.header = document.createElement(`header`)
+//     this.nav = document.createElement(`nav`)
+//     this.menu = menu
+//   }
+//   createNav(menu) {
+//     for (const val of menu) {
+//       const item = document.createElement(`a`)
+//       item.innerHTML = val
+//       this.nav.appendChild(item)
+//     }
+//     return this.nav
+//   }
+
+//   createHead(menu) {
+//     for (const val of menu) {
+//       const item = document.createElement(`a`)
+//       item.innerHTML = val
+//       item.setAttribute(`id`, `button-http`)
+//       this.nav.appendChild(item)
+//     }
+//     this.header.appendChild(this.nav)
+//     return this.header
+//   }
+// }
+// export const header = new Header()
+// const nav = new Header()
 
 
 class Footer {
