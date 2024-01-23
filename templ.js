@@ -1,4 +1,4 @@
-import { menu, info, props } from './data/data.js'
+import { menu, info } from './data/data.js'
 
 class Templ {
   constructor(head, main, footer) {
@@ -19,30 +19,30 @@ class Templ {
 export const templ = new Templ()
 
 
-class ALink extends HTMLAnchorElement {
-  constructor(props) {
-    super(props)
-  }
-  render() {
-    for (const val of props) {
-      for (let [key, value] of Object.entries(val)) {
-      const item = document.createElement(`a`)
-      item.setAttribute('src', window.location.origin + '/' + `${key}`)
-      item.setAttribute(`id`, `button-http`)
-      item.innerHTML = `${value}`
-      this.appendChild(item)
-      } 
-    }
-  }
-  onClick() {
-    const get = document.getElementById(`button-http`)
-  }
-  connectedCallback() {
-    this.render()
-  }
-}
-customElements.define('a-link', ALink, {extends: 'a'});
-
+// class ALink extends HTMLAnchorElement {
+//   constructor() {
+//     super()
+//   }
+//   render() {
+//     // for (const val of props) {
+//       // for (let [key, value] of Object.entries(props)) {
+//       const item = document.createElement(`a`)
+//       item.setAttribute('src', window.location.origin + '/' + `${key}`)
+//       item.setAttribute(`id`, `button-http`)
+//       item.innerHTML = `${value}`
+//       this.appendChild(item)
+//       // } 
+//     // }
+//   }
+//   // onClick() {
+//   //   const get = document.getElementById(`button-http`)
+//   // }
+//   connectedCallback() {
+//     this.render()
+//   }
+// }
+// customElements.define('a-link', ALink, {extends: 'a'});
+// const al = new ALink()
 
 class Header {
   constructor(menu) {
@@ -51,19 +51,22 @@ class Header {
     this.menu = menu
   }
   createNav(menu) {
-    for (const val of menu) {
+    for (let [key, value] of Object.entries(menu)) {
       const item = document.createElement(`a`)
-      item.innerHTML = val
+      item.setAttribute('href', window.location.origin + '/' + `${key}`)
+      item.setAttribute(`id`, `button-http`)
+      item.innerHTML = `${value}`
       this.nav.appendChild(item)
-    }
+    } 
     return this.nav
   }
 
   createHead(menu) {
-    for (const val of menu) {
+    for (let [key, value] of Object.entries(menu)) {
       const item = document.createElement(`a`)
-      item.innerHTML = val
+      item.setAttribute('href', window.location.origin + '/' + `${key}`)
       item.setAttribute(`id`, `button-http`)
+      item.innerHTML = `${value}`
       this.nav.appendChild(item)
     }
     this.header.appendChild(this.nav)

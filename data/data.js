@@ -1,14 +1,8 @@
-export const menu = [
-    'Главная',
-    'Блог',
-    'Обзоры книг',
-    'Сыр'
-]
-export const props = {
-    main: 'Главная',
-    blog: 'Блог',
-    bookreview: 'Обзоры книг',
-    cheese: 'Сыр'
+export const menu = {
+    'main': 'Главная',
+    'blog': 'Блог',
+    'bookreview': 'Обзоры книг',
+    'cheese': 'Сыр'
 }
 
 export const contact = [
