@@ -21,6 +21,8 @@ header {
 header a {
   padding: 0.3rem 6rem 0.3rem 6rem;
   font-family: "Bitter", serif;
+  font-size: 1.2rem;
+  color: white;
 }
 header nav {
   height: 4rem;
@@ -29,18 +31,6 @@ header nav {
 
 h2 {
   color: #324376;
-}
-
-a {
-  font-size: 1.2rem;
-  margin: 0;
-  padding: 0.3rem 1rem 0.3rem 1rem;
-  color: white;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline 2px solid #ffffff;
 }
 
 main {
@@ -85,10 +75,11 @@ latest-articles .articles {
   display: flex;
   margin: 0;
   padding: 0;
-  cursor: pointer;
 }
 latest-articles .article {
   width: 18rem;
+  display: block;
+  color: #324376;
 }
 latest-articles .article h2 {
   margin: 0.5rem 0 0 0;
@@ -112,6 +103,9 @@ footer div, footer nav {
 }
 footer a {
   font-size: 0.9em;
+  margin: 0;
+  padding: 0.3rem 1rem 0.3rem 1rem;
+  color: white;
 }
 footer p {
   font-size: 0.9em;
