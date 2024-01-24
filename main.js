@@ -35,13 +35,14 @@ class createArticle {
     createDivElement() {
         const img = document.createElement('img')
         const h3 = document.createElement('h3')
+        const path = window.location.origin + '/blog/' + `${this.obj.dataindex}`
         h3.innerHTML = this.obj.h3
         img.setAttribute('src', this.obj.src)
         this.divE.appendChild(h3)
         this.divE.appendChild(img)
         this.divE.setAttribute('class', 'article')
+        this.divE.setAttribute('onclick', "window.location=" + path)
         this.divE.setAttribute('id', this.obj.id)
-      // }
       return this.divE
     }
 }

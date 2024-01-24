@@ -85,6 +85,7 @@ latest-articles .articles {
   display: flex;
   margin: 0;
   padding: 0;
+  cursor: pointer;
 }
 latest-articles .article {
   width: 18rem;
