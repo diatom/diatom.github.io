@@ -31,6 +31,10 @@ header {
     font-family: 'Bitter', serif;
     font-size: 1.2rem;
     color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline 2px solid white;
   }
   nav {
     height: 4rem;
@@ -42,9 +46,6 @@ h2 {
 }
 // a {
 //   text-decoration: none;
-// }
-// a:hover {
-//   text-decoration: underline 2px solid #ffffff;
 // }
 main {
   width: 50%;
@@ -101,7 +102,14 @@ latest-articles {
     }
     img {
       width: 18rem;
+      border: 2px solid transparent;
     }
+    img:hover {
+      border: 2px solid $marian-blue;
+    }
+  }
+  a:hover {
+    text-decoration: underline 2px solid $marian-blue;
   }
 }
 
@@ -123,6 +131,10 @@ footer {
     margin: 0;
     padding: 0.3rem 1rem 0.3rem 1rem;
     color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline 1px solid white;
   }
   p {
     font-size: 0.9em;
