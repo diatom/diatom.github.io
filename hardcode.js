@@ -80,3 +80,40 @@ const elem = document.createElement("my-element");
 elem.params = { color: "red", message: "Hello, world!" };
 elem.setParams(elem.params);
 document.body.appendChild(elem);
+
+
+
+// Как в этом коде для сервера добавить переход на разделы сайта по нажатию кнопок меню?
+
+// Для добавления переходов на разделы сайта на кнопках меню, вам нужно изменить код, который обрабатывает запросы от клиента. Вам нужно добавить логику выбора соответствующего раздела на основе переданного параметра в запросе.
+
+// Допустим, у вас есть разделы “Главная”, “О нас”, “Контакты”. Вы можете добавить следующий код для обработки соответствующих запросов:
+
+async res(req) {
+  const rou = new ReqRou(req);
+
+  if (rou.url === '/') {
+    return this.homePage();
+  } else if (rou.url.startsWith('/about')) {
+    return this.aboutUsPage();
+  } else if (rou.url.startsWith('/contact')) {
+    return this.contactUsPage();
+  }
+
+  return rou.notFound();
+}
+
+async homePage() {
+  // код для возврата домашней страницы
+}
+
+async aboutUsPage() {
+  // код для возврата страницы "О нас"
+}
+
+async contactUsPage() {
+  // код для возврата контактной страницы
+}
+// Здесь мы проверяем, какой URL-адрес передан в запросе, и возвращаем соответствующую страницу.
+
+// В зависимости от вашей структуры сайта и разделов, вам, возможно, придется внести изменения в этот код.
