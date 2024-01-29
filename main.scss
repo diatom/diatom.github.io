@@ -113,6 +113,29 @@ latest-articles {
   }
 }
 
+my-blog {
+  margin: 5rem 0 0 0;
+  display: block;
+  div {
+    margin: 1.5em 0;
+  }
+  a {
+    color: $marian-blue;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  span {
+    font-size: 0.9em;
+  }
+  h3 {
+    font-size: 1.4em;
+    margin: 0;
+    padding: 0;
+  }
+}
+
 footer {
   height: 15rem;
   width: 100%;

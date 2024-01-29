@@ -99,6 +99,29 @@ latest-articles a:hover {
   text-decoration: underline 2px solid #324376;
 }
 
+my-blog {
+  margin: 5rem 0 0 0;
+  display: block;
+}
+my-blog div {
+  margin: 1.5em 0;
+}
+my-blog a {
+  color: #324376;
+  text-decoration: none;
+}
+my-blog a:hover {
+  text-decoration: underline;
+}
+my-blog span {
+  font-size: 0.9em;
+}
+my-blog h3 {
+  font-size: 1.4em;
+  margin: 0;
+  padding: 0;
+}
+
 footer {
   height: 15rem;
   width: 100%;
