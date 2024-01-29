@@ -9,9 +9,22 @@ const art = await fetBlog.text()
 
 class Blog extends HTMLElement {
   render() {
+    for (const val of list) {
       const myblog = document.createElement(`div`)
-      myblog.innerHTML = marked.parse(art)
+      const span = document.createElement('span')
+      const ahref = document.createElement('a')
+      const h3 = document.createElement('h3')
+      const path = window.location.origin + '/blog/' + `${val.dataindex}`
+      h3.innerHTML = val.h3
+      span.innerHTML = val.date
+      myblog.appendChild(span)
+      myblog.appendChild(ahref)
+      ahref.appendChild(h3)
+      ahref.setAttribute('href', path)
+      myblog.setAttribute('id', val.id)
+      myblog.setAttribute('dataindex', val.dataindex)
       this.appendChild(myblog)
+    }
   }
   connectedCallback() {
       this.render()
