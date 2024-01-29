@@ -1,31 +1,31 @@
 import { marked } from './marked-lib.js'
 
-import { menu, contact, list } from './data/data.js'
+import { menu, contact } from './data/data.js'
 import { templ, header, footer } from './templ.js'
 
-const fetBlog = await fetch (`./articles/Gosudarstvo-kak-brend.md`)
-const art = await fetBlog.text()
+const fetArticle = await fetch (`./articles/Gosudarstvo-kak-brend.md`)
+const art = await fetArticle.text()
 
 
-class Blog extends HTMLElement {
+class Article extends HTMLElement {
   render() {
-      const myblog = document.createElement(`div`)
-      myblog.innerHTML = marked.parse(art)
-      this.appendChild(myblog)
+      const myarticle = document.createElement(`div`)
+      myarticle.innerHTML = marked.parse(art)
+      this.appendChild(myarticle)
   }
   connectedCallback() {
       this.render()
   }
 }
-customElements.define('my-blog', Blog)
-const blog = new Blog()
+customElements.define('my-article', Article)
+const article = new Article()
 
 class Main {
     constructor() {
       this.main = document.createElement(`main`)
     }
     displayMain() {
-      this.main.appendChild(blog)
+      this.main.appendChild(article)
       return this.main
     }
   }

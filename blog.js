@@ -1,5 +1,3 @@
-import { marked } from './marked-lib.js'
-
 import { menu, contact, list } from './data/data.js'
 import { templ, header, footer } from './templ.js'
 
