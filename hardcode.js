@@ -89,31 +89,31 @@ document.body.appendChild(elem);
 
 // Допустим, у вас есть разделы “Главная”, “О нас”, “Контакты”. Вы можете добавить следующий код для обработки соответствующих запросов:
 
-async res(req) {
-  const rou = new ReqRou(req);
+// async res(req) {
+//   const rou = new ReqRou(req);
 
-  if (rou.url === '/') {
-    return this.homePage();
-  } else if (rou.url.startsWith('/about')) {
-    return this.aboutUsPage();
-  } else if (rou.url.startsWith('/contact')) {
-    return this.contactUsPage();
-  }
+//   if (rou.url === '/') {
+//     return this.homePage();
+//   } else if (rou.url.startsWith('/about')) {
+//     return this.aboutUsPage();
+//   } else if (rou.url.startsWith('/contact')) {
+//     return this.contactUsPage();
+//   }
 
-  return rou.notFound();
-}
+//   return rou.notFound();
+// }
 
-async homePage() {
-  // код для возврата домашней страницы
-}
+// async homePage() {
+//   // код для возврата домашней страницы
+// }
 
-async aboutUsPage() {
-  // код для возврата страницы "О нас"
-}
+// async aboutUsPage() {
+//   // код для возврата страницы "О нас"
+// }
 
-async contactUsPage() {
-  // код для возврата контактной страницы
-}
+// async contactUsPage() {
+//   // код для возврата контактной страницы
+// }
 // Здесь мы проверяем, какой URL-адрес передан в запросе, и возвращаем соответствующую страницу.
 
 // В зависимости от вашей структуры сайта и разделов, вам, возможно, придется внести изменения в этот код.
