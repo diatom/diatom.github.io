@@ -152,21 +152,21 @@ footer p {
   margin: 0 1rem;
 }
 
-cheese-list {
+book-list {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   margin: 10em 0 0 0;
 }
 
-.cheese {
+.book {
   background-color: rgba(155, 131, 131, 0.089);
   padding: 0.2em;
-  margin: 0 2% 2% 0;
-  width: 28%;
+  margin: 1em 0 1em 0;
+  width: 100%;
   border-radius: 2%;
 }
-.cheese p {
+.book p {
   margin: 0.5rem;
 }
 

@@ -5,7 +5,7 @@ import { templ, header, footer } from './templ.js'
 import { dat } from './data/data-books.js'
 
 
-// Cheese cards
+// Book cards
 class createList {
   constructor(obj) {
     this.divE = document.createElement('div')
@@ -22,13 +22,13 @@ class createList {
 }
 
 
-class CheeseList extends HTMLElement {
+class BookList extends HTMLElement {
   render() {
     for (const value of dat) {
       console.log(value)
       const myList = new createList(value)
       const divE = myList.createDivElement()
-      divE.setAttribute(`class`, `cheese`)
+      divE.setAttribute(`class`, `book`)
       divE.setAttribute(`data-index`, `${value.tags}`)
       this.appendChild(divE)
     }
@@ -37,10 +37,10 @@ class CheeseList extends HTMLElement {
     this.render()
   }
 }
-customElements.define('cheese-list', CheeseList)
-const myList = new CheeseList()
+customElements.define('book-list', BookList)
+const myList = new BookList()
 
-
+// Main
 class Main {
     constructor() {
       this.main = document.createElement(`main`)

@@ -174,7 +174,7 @@ footer {
 
 
 // Book-review
-cheese-list {
+book-list {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -182,11 +182,11 @@ cheese-list {
   // flex-direction: column;
   // justify-content: left;
 }
-.cheese {
+.book {
   background-color: rgba(155, 131, 131, 0.089);
   padding: 0.2em;
-  margin: 0 2% 2% 0;
-  width: 28%;
+  margin: 1em 0 1em 0;
+  width: 100%;
   border-radius: 2%;
   p {
     margin: 0.5rem;
@@ -195,7 +195,6 @@ cheese-list {
 
 
 // Scroll
-
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
