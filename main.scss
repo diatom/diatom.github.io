@@ -171,3 +171,47 @@ footer {
 //   background-size: 16px 16px;
 //   padding-right: 20px;
 // }
+
+
+// Book-review
+cheese-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 10em 0 0 0;
+  // flex-direction: column;
+  // justify-content: left;
+}
+.cheese {
+  background-color: rgba(155, 131, 131, 0.089);
+  padding: 0.2em;
+  margin: 0 2% 2% 0;
+  width: 28%;
+  border-radius: 2%;
+  p {
+    margin: 0.5rem;
+  }
+}
+
+
+// Scroll
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #777;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
