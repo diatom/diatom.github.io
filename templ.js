@@ -111,7 +111,9 @@ class Footer {
   constructor(contact) {
     this.footer = document.createElement(`footer`)
     this.p = document.createElement(`p`)
+    this.span = document.createElement(`span`)
     this.p.innerHTML = info[0]
+    this.span.innerHTML = info[1]
     this.div = document.createElement(`div`)
     this.contact = contact
   }
@@ -128,6 +130,7 @@ class Footer {
   this.footer.appendChild(this.p)
   this.footer.appendChild(this.div)
   this.footer.appendChild(nav.createNav(menu))
+  this.footer.appendChild(this.span)
   return this.footer
   }
 }

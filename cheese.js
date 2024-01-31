@@ -6,18 +6,6 @@ import { elems, cheese, tags } from './data/data-cheese.js'
 
 const divs = document.getElementsByClassName('cheese')
 
-// Render info
-// class Info {
-//   constructor() {
-//     this.div = document.createElement(`div`)
-//   }
-//   displayInfo() {
-//     this.div.innerHTML = elems
-//     return this.div
-//   }
-// }
-// const info = new Info()
-
 // Render tags
 export class MyCheck extends HTMLInputElement {
   render(name) {
@@ -90,7 +78,6 @@ class createList {
   }
 }
 
-
 class CheeseList extends HTMLElement {
   render() {
     for (const value of cheese) {
@@ -109,9 +96,6 @@ class CheeseList extends HTMLElement {
 customElements.define('cheese-list', CheeseList)
 const myList = new CheeseList()
 
-
-
-
 // Main
 class Main {
   constructor() {
@@ -125,10 +109,10 @@ class Main {
 }
 const main = new Main()
 
-
 templ.displayHead(header.createHead(menu))
 templ.displayMain(main.displayMain())
 templ.displayFooter(footer.createFooter(contact))
+
 
 // Search
 const searchInput = document.getElementById("searchInput")

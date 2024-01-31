@@ -137,33 +137,38 @@ my-blog {
 }
 
 footer {
+  flex-wrap: wrap;
   height: 15rem;
   width: 100%;
   justify-content: center;
   align-items: center;
-  // background: #006363;
   background: black;
   margin-top: 10rem;
+  color: white;
+  font-size: 0.9em;
   div, nav {
     display: flex;
     flex-direction: column;
     margin: 0 4rem 0 4rem;
   }
   a {
-    font-size: 0.9em;
     margin: 0;
     padding: 0.3rem 1rem 0.3rem 1rem;
-    color: white;
     text-decoration: none;
+    color: white;
   }
   a:hover {
     text-decoration: underline 1px solid white;
   }
   p {
-    font-size: 0.9em;
     width: 20rem;
-    color: #ffffff;
     margin: 0 1rem;
+    display: flex;
+  }
+  span { 
+    width: 100%;
+    justify-content: center;
+    display: flex;
   }
 }
 // a[href^="http"] {

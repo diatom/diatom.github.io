@@ -1,11 +1,13 @@
-export const elems = `<div>Here is the largest cheese database on the entire Internet.</div>
-<search>
-  <label for="searchInput">Find a Cheese ❤️</label>
-  <input type="text" id="searchInput"/>
-  <button id="searchButton" type="submit">Search 🧀</button>
-  </search>
-<div>The search will be correct if you enter the word literally without errors.</div>
-<form is="my-tags"></form>`
+export const elems = `
+  <div>Here is the largest cheese database on the entire Internet.</div>
+    <search>
+      <label for="searchInput">Find a Cheese ❤️</label>
+      <input type="text" id="searchInput"/>
+      <button id="searchButton" type="submit">Search 🧀</button>
+    </search>
+  <div>The search will be correct if you enter the word literally without errors.</div>
+  <form is="my-tags"></form>
+`
 
 export let cheese = [
     {

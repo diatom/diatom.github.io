@@ -123,12 +123,15 @@ my-blog h3 {
 }
 
 footer {
+  flex-wrap: wrap;
   height: 15rem;
   width: 100%;
   justify-content: center;
   align-items: center;
   background: black;
   margin-top: 10rem;
+  color: white;
+  font-size: 0.9em;
 }
 footer div, footer nav {
   display: flex;
@@ -136,20 +139,23 @@ footer div, footer nav {
   margin: 0 4rem 0 4rem;
 }
 footer a {
-  font-size: 0.9em;
   margin: 0;
   padding: 0.3rem 1rem 0.3rem 1rem;
-  color: white;
   text-decoration: none;
+  color: white;
 }
 footer a:hover {
   text-decoration: underline 1px solid white;
 }
 footer p {
-  font-size: 0.9em;
   width: 20rem;
-  color: #ffffff;
   margin: 0 1rem;
+  display: flex;
+}
+footer span {
+  width: 100%;
+  justify-content: center;
+  display: flex;
 }
 
 book-list {
