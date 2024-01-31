@@ -1,7 +1,7 @@
 import { menu, info } from './data/data.js'
 
 class Templ {
-  constructor(head, main, footer) {
+  constructor(head, info, main, footer) {
     this.head = head
     this.main = main
     this.footer = footer

@@ -2,11 +2,23 @@ import { marked } from './marked-lib.js'
 
 import { menu, contact } from './data/data.js'
 import { templ, header, footer } from './templ.js'
-import { cheese, tags } from './data/data-cheese.js'
-
+import { elems, cheese, tags } from './data/data-cheese.js'
 
 const divs = document.getElementsByClassName('cheese')
 
+// Render info
+// class Info {
+//   constructor() {
+//     this.div = document.createElement(`div`)
+//   }
+//   displayInfo() {
+//     this.div.innerHTML = elems
+//     return this.div
+//   }
+// }
+// const info = new Info()
+
+// Render tags
 export class MyCheck extends HTMLInputElement {
   render(name) {
     this.name = 'tags'
@@ -98,6 +110,26 @@ customElements.define('cheese-list', CheeseList)
 const myList = new CheeseList()
 
 
+
+
+// Main
+class Main {
+  constructor() {
+    this.main = document.createElement(`main`)
+    this.main.innerHTML = elems
+  }
+  displayMain() {
+    this.main.appendChild(myList)
+    return this.main
+  }
+}
+const main = new Main()
+
+
+templ.displayHead(header.createHead(menu))
+templ.displayMain(main.displayMain())
+templ.displayFooter(footer.createFooter(contact))
+
 // Search
 const searchInput = document.getElementById("searchInput")
 const searchButton = document.getElementById("searchButton")
@@ -124,20 +156,3 @@ document.addEventListener('keydown', function(event) {
       event.preventDefault()
   }
 })
-
-// Main
-class Main {
-    constructor() {
-      this.main = document.createElement(`main`)
-    }
-    displayMain() {
-      this.main.appendChild(myList)
-      return this.main
-    }
-  }
-const main = new Main()
-
-
-templ.displayHead(header.createHead(menu))
-templ.displayMain(main.displayMain())
-templ.displayFooter(footer.createFooter(contact))
