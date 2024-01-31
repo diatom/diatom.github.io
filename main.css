@@ -50,7 +50,7 @@ about-me {
   display: flex;
   flex-direction: row;
   height: 20rem;
-  padding: 0 2rem;
+  padding: 0;
   margin: 5rem 0 5rem 0;
   align-items: center;
 }
@@ -63,8 +63,7 @@ about-me p {
   order: 1;
 }
 about-me img {
-  width: 150px;
-  border-radius: 10%;
+  width: 200px;
   margin: 1rem 0 0 0;
 }
 
@@ -124,14 +123,15 @@ my-blog h3 {
 
 footer {
   flex-wrap: wrap;
-  height: 15rem;
+  height: 20rem;
   width: 100%;
   justify-content: center;
   align-items: center;
-  background: black;
+  background: #000000;
   margin-top: 10rem;
   color: white;
   font-size: 0.9em;
+  padding: 1.5rem 0 0 0;
 }
 footer div, footer nav {
   display: flex;

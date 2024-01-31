@@ -7,13 +7,13 @@ export const menu = {
 
 export const contact = [
     {
-        'email': `mailto: bogucharskiy.s@yandex.ru`
+        'Эл. почта': `mailto: bogucharskiy.s@yandex.ru`
     },
     {
-        '@Severinz': `https://telegram.me/Severinz`
+        'Telegram': `https://telegram.me/Severinz`
     },
     {
-        'diatom355': `https://discord.com/users/214732781945618442`
+        'Discord': `https://discord.com/users/214732781945618442`
     },
     {
         'HeadHunter': `https://hh.ru/resume/796dbae3ff0577aafe0039ed1f535a4d737134`
@@ -24,10 +24,9 @@ export const contact = [
 ]
 
 export const info = [
-    `Личный веб-сайт Северина Богучарского. Сделал сайт СЕВЕРИН Б. 
-    © Любое использование либо копирование материалов или подборки материалов сайта, 
-    элементов дизайна и оформления допускается только со ссылкой на источник: www.domainname.ru и указанием авторства`,
-    `<a href="https://github.com/Diatom/ ">© 2024. Сайт сделал Severin B.</a>`
+    `Личный веб-сайт Северина Богучарского. Любое использование либо копирование материалов или подборки материалов сайта, 
+    элементов дизайна и оформления допускается только c ссылкой на источник https://diatom.github.io/ и указанием авторства`,
+    `<a href="https://github.com/Diatom/my-site-8">© 2024. Сайт сделал Severin B.</a>`
 ]
 
 export const list = [

@@ -59,9 +59,8 @@ main {
 about-me {
   display: flex;
   flex-direction: row;
-  // background-color: rgba(33, 48, 48, 0.411);
   height: 20rem;
-  padding: 0 2rem;
+  padding: 0;
   margin: 5rem 0 5rem 0;
   align-items: center;
   div {
@@ -73,8 +72,8 @@ about-me {
     order: 1;
   }
   img {
-    width: 150px;
-    border-radius: 10%;
+    width: 200px;
+    // border-radius: 10%;
     margin: 1rem 0 0 0;
   }
 }
@@ -138,14 +137,15 @@ my-blog {
 
 footer {
   flex-wrap: wrap;
-  height: 15rem;
+  height: 20rem;
   width: 100%;
   justify-content: center;
   align-items: center;
-  background: black;
+  background: #000000;
   margin-top: 10rem;
   color: white;
   font-size: 0.9em;
+  padding: 1.5rem 0 0 0;
   div, nav {
     display: flex;
     flex-direction: column;
