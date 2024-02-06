@@ -112,8 +112,10 @@ class Footer {
     this.footer = document.createElement(`footer`)
     this.p = document.createElement(`p`)
     this.span = document.createElement(`span`)
+    // this.logo = document.createElement(`p`)
     this.p.innerHTML = info[0]
     this.span.innerHTML = info[1]
+    // this.logo.innerHTML = info[2]
     this.div = document.createElement(`div`)
     this.contact = contact
   }
@@ -127,6 +129,7 @@ class Footer {
         this.div.appendChild(item)
       }
     }
+  // this.footer.appendChild(this.logo)
   this.footer.appendChild(this.p)
   this.footer.appendChild(this.div)
   this.footer.appendChild(nav.createNav(menu))

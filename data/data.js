@@ -26,7 +26,8 @@ export const contact = [
 export const info = [
     `Личный веб-сайт Северина Богучарского. Любое использование либо копирование материалов или подборки материалов сайта, 
     элементов дизайна и оформления допускается только c ссылкой на источник https://diatom.github.io/ и указанием авторства`,
-    `<a href="https://github.com/Diatom/my-site-8">© 2024. Сайт сделал Severin B.</a>`
+    `<a href="https://github.com/Diatom/my-site-8">© 2024. Сайт сделал Severin B.</a>`,
+    `SEVERIN`
 ]
 
 export const list = [
