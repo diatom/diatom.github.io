@@ -106,12 +106,19 @@ const nav = new Header()
 // export const header = new Header()
 // const nav = new Header()
 
+// function click() {
+//   window.showDirectoryPicker()
+//   // console.log(document.documentElement.outerHTML)
+// }
 
 class Footer {
   constructor(contact) {
     this.footer = document.createElement(`footer`)
     this.p = document.createElement(`p`)
     this.span = document.createElement(`span`)
+    // this.but = document.createElement(`button`)
+    // this.but.textContent = 'Lol'
+    // this.but.onclick = click
     // this.logo = document.createElement(`p`)
     this.p.innerHTML = info[0]
     this.span.innerHTML = info[1]
@@ -131,6 +138,7 @@ class Footer {
     }
   // this.footer.appendChild(this.logo)
   this.footer.appendChild(this.p)
+  // this.footer.appendChild(this.but)
   this.footer.appendChild(this.div)
   this.footer.appendChild(nav.createNav(menu))
   this.footer.appendChild(this.span)
