@@ -146,3 +146,5 @@ class Footer {
   }
 }
 export const footer = new Footer()
+
+let html = document.documentElement.outerHTML;
