@@ -1,9 +1,6 @@
 import { menu, contact, list } from './data/data.js'
 import { templ, header, footer } from './templ.js'
 
-const fetBlog = await fetch (`./articles/Gosudarstvo-kak-brend.md`)
-const art = await fetBlog.text()
-
 
 class Blog extends HTMLElement {
   render() {

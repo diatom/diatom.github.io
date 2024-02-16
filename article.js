@@ -3,7 +3,9 @@ import { marked } from './marked-lib.js'
 import { menu, contact } from './data/data.js'
 import { templ, header, footer } from './templ.js'
 
-const fetArticle = await fetch (`./articles/Gosudarstvo-kak-brend.md`)
+// const fetArticle = await fetch (`./blog/Gosudarstvo-kak-brend.md`)
+const path = window.location.pathname + `.md`
+const fetArticle = await fetch (path)
 const art = await fetArticle.text()
 
 
