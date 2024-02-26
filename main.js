@@ -17,7 +17,8 @@ class About extends HTMLElement {
     render() {
         const myAbout = document.createElement(`div`)
         myAbout.innerHTML = marked.parse(aboutS)
-        this.appendChild(myAbout, this.innerHTML = marked.parse(photoS))
+        // this.appendChild(myAbout, this.innerHTML = marked.parse(photoS))
+        this.appendChild(myAbout)
     }
     connectedCallback() {
         this.render()
