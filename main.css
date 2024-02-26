@@ -72,6 +72,8 @@ about-me div {
 about-me div h2 {
   color: white;
   font-size: 2em;
+  margin: 0;
+  padding: 0;
 }
 
 latest-articles {
