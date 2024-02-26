@@ -63,13 +63,15 @@ about-me {
   height: 95vh;
 }
 about-me div {
+  color: white;
   order: 2;
   width: 40em;
   margin: 0 1rem 0 2rem;
+  font-size: 1.6em;
 }
 about-me div h2 {
   color: white;
-  font-size: 1.6em;
+  font-size: 2em;
 }
 
 latest-articles {
@@ -104,13 +106,14 @@ latest-articles a:hover {
   text-decoration: underline 2px solid #324376;
 }
 
-my-skills {
+my-skills, my-article {
   width: 50%;
 }
 
 my-blog {
   margin: 5rem 0 0 0;
   display: block;
+  width: 50%;
 }
 my-blog div {
   margin: 1.5em 0;
@@ -171,7 +174,7 @@ footer span {
 book-list {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: 50%;
   margin: 10em 0 0 0;
 }
 
