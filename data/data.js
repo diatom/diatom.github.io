@@ -35,42 +35,24 @@ export const list = [
         'id': '0',
         'dataindex': 'gosudarstvo-kak-brend',
         'h3': 'Государство как бренд',
-        'src': './blog/art-images/gosudarstvo-kak-brend.png',
-        'date': 'Дата публикации: 14.03.2024'
+        'src': './blog/art-images/gosudarstvo-kak-brend-by-pavel-neznanov.jpg',
+        'alt': 'By Pavel Neznanov',
+        'date': 'Дата публикации: 14 марта 2024'
     },
     {
         'id': '1',
         'dataindex': 'grazhdane-est-gosudarstvo',
         'h3': 'Граждане есть государство',
-        'src': './blog/art-images/grazhdane-est-gosudarstvo.png',
-        'date': 'Дата публикации: 14.03.2024'
+        'src': './blog/art-images/grazhdane-est-gosudarstvo-by-pavel-neznanov.jpg',
+        'alt': 'By Pavel Neznanov',
+        'date': 'Дата публикации: 14 марта 2024'
     },
     {
         'id': '2', 
         'dataindex': 'konkurenciya-istoriya',
         'h3': 'Конкуренция, история',
-        'src': './blog/art-images/konkurenciya-istoriya.png',
-        'date': 'Дата публикации: 14.03.2024'
-    },
-        {
-        'id': '3',
-        'dataindex': 'gosudarstvo-kak-brend',
-        'h3': 'Государство как бренд',
-        'src': './blog/art-images/gosudarstvo-kak-brend.png',
-        'date': 'Дата публикации: 14.03.2024'
-    },
-    {
-        'id': '4',
-        'dataindex': 'grazhdane-est-gosudarstvo',
-        'h3': 'Граждане есть государство',
-        'src': './blog/art-images/grazhdane-est-gosudarstvo.png',
-        'date': 'Дата публикации: 14.03.2024'
-    },
-    {
-        'id': '5', 
-        'dataindex': 'konkurenciya-istoriya',
-        'h3': 'Конкуренция, история',
-        'src': './blog/art-images/konkurenciya-istoriya.png',
-        'date': 'Дата публикации: 14.03.2024'
+        'src': './blog/art-images/konkurenciya-istoriya-by-suzanne-d-williams.jpg',
+        'alt': 'By Suzanne D. Williams',
+        'date': 'Дата публикации: 14 марта 2024'
     },
 ]
