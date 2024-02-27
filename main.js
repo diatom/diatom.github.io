@@ -36,11 +36,14 @@ class createArticle {
     createDivElement() {
         const img = document.createElement('img')
         const h3 = document.createElement('h3')
+        const p = document.createElement('p')
         const path = window.location.origin + '/blog/' + `${this.obj.dataindex}`
         h3.innerHTML = this.obj.h3
+        p.innerHTML = this.obj.p
         img.setAttribute('src', this.obj.src)
-        this.ahref.appendChild(h3)
         this.ahref.appendChild(img)
+        this.ahref.appendChild(h3)
+        this.ahref.appendChild(p)
         // this.ahref.setAttribute('style', 'background-image: url(' + this.obj.src + ')')
         this.ahref.setAttribute('class', 'article')
         this.ahref.setAttribute('href', path)

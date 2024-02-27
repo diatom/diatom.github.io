@@ -9,14 +9,17 @@ class Blog extends HTMLElement {
       const span = document.createElement('span')
       const ahref = document.createElement('a')
       const h3 = document.createElement('h3')
+      const p = document.createElement('p')
       const img = document.createElement('img')
       const path = window.location.origin + '/blog/' + `${val.dataindex}`
       h3.innerHTML = val.h3
       span.innerHTML = val.date
+      p.innerHTML = val.p
       img.setAttribute('src', val.src)
       img.setAttribute('alt', val.alt)
       myblog.appendChild(span)
       myblog.appendChild(ahref)
+      myblog.appendChild(p)
       ahref.appendChild(h3)
       myblog.appendChild(img)
       ahref.setAttribute('href', path)

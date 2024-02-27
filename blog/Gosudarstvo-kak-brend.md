@@ -1,6 +1,6 @@
 Государство как бренд
 =
-Проблематика: кризис ассоциации личности с государством.
+Проблематика: есть ли у личности идентичность с государством?
 -
 ![Nizhny Novgorod, Russia, by Pavel Neznanov](./art-images/gosudarstvo-kak-brend-by-pavel-neznanov.jpg)
 

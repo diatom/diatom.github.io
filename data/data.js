@@ -37,7 +37,8 @@ export const list = [
         'h3': 'Государство как бренд',
         'src': './blog/art-images/gosudarstvo-kak-brend-by-pavel-neznanov.jpg',
         'alt': 'By Pavel Neznanov',
-        'date': 'Дата публикации: 14 марта 2024'
+        'date': 'Дата публикации: 14 марта 2024',
+        'p': 'Есть ли у личности идентичность с государством?'
     },
     {
         'id': '1',
@@ -45,7 +46,8 @@ export const list = [
         'h3': 'Граждане есть государство',
         'src': './blog/art-images/grazhdane-est-gosudarstvo-by-pavel-neznanov.jpg',
         'alt': 'By Pavel Neznanov',
-        'date': 'Дата публикации: 14 марта 2024'
+        'date': 'Дата публикации: 14 марта 2024',
+        'p': 'Дистанция между управленцами и рядовыми гражданами государства'
     },
     {
         'id': '2', 
@@ -53,6 +55,7 @@ export const list = [
         'h3': 'Конкуренция, история',
         'src': './blog/art-images/konkurenciya-istoriya-by-suzanne-d-williams.jpg',
         'alt': 'By Suzanne D. Williams',
-        'date': 'Дата публикации: 14 марта 2024'
+        'date': 'Дата публикации: 14 марта 2024',
+        'p': 'Диалог не воспринимается конечным способом решения проблем'
     },
 ]
