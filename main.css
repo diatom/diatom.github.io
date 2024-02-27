@@ -11,6 +11,7 @@ body {
 
 header, footer, nav, a {
   display: flex;
+  text-decoration: none;
 }
 
 header {
@@ -23,7 +24,6 @@ header a {
   font-family: "Bitter", serif;
   font-size: 1.2rem;
   color: white;
-  text-decoration: none;
 }
 header a:hover {
   text-decoration: underline 2px solid white;
@@ -84,29 +84,35 @@ latest-articles {
   width: 50%;
 }
 latest-articles .articles {
-  display: 100%;
   justify-content: space-between;
   display: flex;
-  margin: 0;
   padding: 0;
 }
+latest-articles .article:last-child {
+  border-right: none;
+}
 latest-articles .article {
-  width: 18rem;
+  width: 33, 333333333%;
   display: block;
   color: #324376;
 }
-latest-articles .article h2 {
-  margin: 0.5rem 0 0 0;
+latest-articles .article h3 {
+  position: absolute;
+  margin: 8em 0 0 1em;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 latest-articles .article img {
-  width: 18rem;
-  border: 2px solid transparent;
+  width: 100%;
+  transition: transform 0.1s;
 }
 latest-articles .article img:hover {
-  border: 2px solid #324376;
+  transform: scale(0.95);
+  z-index: -9999;
 }
 latest-articles a:hover {
-  text-decoration: underline 2px solid #324376;
+  color: #be264c;
+  z-index: 9999;
 }
 
 my-skills, my-article {
@@ -122,12 +128,15 @@ my-blog {
   display: block;
   width: 50%;
 }
+my-blog div:first-child {
+  border-top: none;
+}
 my-blog div {
   margin: 1.5em 0;
+  border-top: 1px solid rgb(158, 154, 154);
 }
 my-blog a {
   color: #324376;
-  text-decoration: none;
 }
 my-blog a:hover {
   text-decoration: underline;
@@ -164,7 +173,6 @@ footer div, footer nav {
 footer a {
   margin: 0;
   padding: 0.3rem 1rem 0.3rem 1rem;
-  text-decoration: none;
   color: white;
 }
 footer a:hover {

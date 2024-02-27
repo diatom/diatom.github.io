@@ -41,10 +41,11 @@ class createArticle {
         img.setAttribute('src', this.obj.src)
         this.ahref.appendChild(h3)
         this.ahref.appendChild(img)
+        // this.ahref.setAttribute('style', 'background-image: url(' + this.obj.src + ')')
         this.ahref.setAttribute('class', 'article')
         this.ahref.setAttribute('href', path)
         this.ahref.setAttribute('id', this.obj.id)
-      return this.ahref
+        return this.ahref
     }
 }
 
