@@ -132,9 +132,11 @@ my-blog div {
 }
 my-blog a {
   color: #324376;
+  flex-direction: column;
 }
 my-blog a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  color: #be264c;
 }
 my-blog span {
   font-size: 0.9em;

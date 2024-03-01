@@ -169,9 +169,12 @@ my-blog {
   }
   a {
     color: $marian-blue;
+    flex-direction: column;
+
   }
   a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: $rose-red;
   }
   span {
     font-size: 0.9em;
