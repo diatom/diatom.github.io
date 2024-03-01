@@ -150,6 +150,10 @@ my-article {
   img {
     width: 100%;
   }
+  a {
+    display: inline;
+    text-decoration: underline;
+  }
 }
 
 my-blog {

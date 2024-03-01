@@ -115,6 +115,10 @@ my-skills, my-article {
 my-article img {
   width: 100%;
 }
+my-article a {
+  display: inline;
+  text-decoration: underline;
+}
 
 my-blog {
   margin: 5rem 0 0 0;
