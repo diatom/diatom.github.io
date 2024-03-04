@@ -62,6 +62,7 @@ about-me {
   background-size: cover;
   background-position: center;
   height: 95vh;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
 about-me div {
   color: white;
@@ -113,14 +114,19 @@ my-skills, my-article {
 }
 
 my-skills {
-  margin: 10em 0 0 0;
+  margin: 5em 0 0 0;
+  padding: 10em 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
 }
 my-skills div {
   padding: 0 2em;
-  width: 50%;
+  width: 48%;
+  height: 600px;
 }
 my-skills h2 {
   display: flex;
@@ -179,7 +185,6 @@ footer {
   justify-content: center;
   align-items: center;
   background: #000000;
-  margin-top: 10rem;
   color: white;
   font-size: 0.9em;
   padding: 1.5rem 0 0 0;
