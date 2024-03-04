@@ -112,6 +112,23 @@ my-skills, my-article {
   width: 50%;
 }
 
+my-skills {
+  margin: 10em 0 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+my-skills div {
+  padding: 0 2em;
+  width: 50%;
+}
+my-skills h2 {
+  display: flex;
+}
+my-skills li {
+  margin: 0.5em 0;
+}
+
 my-article img {
   width: 100%;
 }

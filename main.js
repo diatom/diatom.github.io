@@ -5,11 +5,13 @@ import { menu, contact, list } from './data/data.js'
 import { templ, header, footer } from './templ.js'
 
 const fetAbout = await fetch (`./main/about.md`)
-const fetPhoto = await fetch (`./main/myphoto.md`)
-const fetSkills = await fetch (`./main/skills.md`)
+// const fetPhoto = await fetch (`./main/myphoto.md`)
+const fetHard = await fetch (`./main/hard-skills.md`)
+const fetSoft = await fetch (`./main/soft-skills.md`)
 const aboutS = await fetAbout.text()
-const photoS = await fetPhoto.text()
-const skillsS = await fetSkills.text()
+// const photoS = await fetPhoto.text()
+const skillsS = await fetHard.text()
+const skillsH = await fetSoft.text()
 console.log(`Oh, hello =)`)
 
 
@@ -99,9 +101,12 @@ const latestArticles = new LatestArticles()
 
 class Skills extends HTMLElement {
     render() {
-        const mySkills = document.createElement(`div`)
-        mySkills.innerHTML = marked.parse(skillsS)
-        this.appendChild(mySkills)
+        const myH = document.createElement(`div`)
+        const myS = document.createElement(`div`)
+        myS.innerHTML = marked.parse(skillsS)
+        myH.innerHTML = marked.parse(skillsH)
+        this.appendChild(myS)
+        this.appendChild(myH)
     }
     connectedCallback() {
         this.render()
