@@ -8,10 +8,12 @@ const fetAbout = await fetch (`./main/about.md`)
 // const fetPhoto = await fetch (`./main/myphoto.md`)
 const fetHard = await fetch (`./main/hard-skills.md`)
 const fetSoft = await fetch (`./main/soft-skills.md`)
+const fetAll = await fetch (`./main/about-all.md`)
 const aboutS = await fetAbout.text()
 // const photoS = await fetPhoto.text()
-const skillsS = await fetHard.text()
-const skillsH = await fetSoft.text()
+const skillsS = await fetSoft.text()
+const skillsH = await fetHard.text()
+const all = await fetAll.text()
 console.log(`Oh, hello =)`)
 
 
@@ -101,12 +103,15 @@ const latestArticles = new LatestArticles()
 
 class Skills extends HTMLElement {
     render() {
-        const myH = document.createElement(`div`)
-        const myS = document.createElement(`div`)
-        myS.innerHTML = marked.parse(skillsS)
-        myH.innerHTML = marked.parse(skillsH)
-        this.appendChild(myS)
-        this.appendChild(myH)
+        // const myS = document.createElement(`div`)
+        // const myH = document.createElement(`div`)
+        const myA = document.createElement(`div`)
+        // myH.innerHTML = marked.parse(skillsH)
+        // myS.innerHTML = marked.parse(skillsS)
+        myA.innerHTML = marked.parse(all)
+        // this.appendChild(myH)
+        // this.appendChild(myS)
+        this.appendChild(myA)
     }
     connectedCallback() {
         this.render()
