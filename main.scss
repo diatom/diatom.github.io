@@ -102,7 +102,11 @@ latest-articles {
   flex-direction: column;
   padding: 0 0 2rem 0;
   width: 50%;
-  
+
+  h2 {
+    text-align: center;
+    margin: 2em 0;
+  }
   .articles {
     justify-content: space-between;
     // flex-direction: column;
@@ -116,9 +120,6 @@ latest-articles {
     color: $marian-blue;
     flex-direction: column;
     // transition: transform 0.1s;
-    h2 {
-      text-align: center;
-    }
     h3 {
       // position: absolute;
       margin: 1em 0 0 0;
@@ -144,13 +145,6 @@ latest-articles {
   a:hover {
     color: $rose-red;
   }
-}
-latest-articles:first-child {
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  display: flex;
 }
 
 my-skills, my-article {
@@ -214,7 +208,7 @@ my-article {
 }
 
 my-blog {
-  margin: 5rem 0 0 0;
+  margin: 5em 0 10em 0;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;

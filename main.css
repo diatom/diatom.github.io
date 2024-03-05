@@ -85,6 +85,10 @@ latest-articles {
   padding: 0 0 2rem 0;
   width: 50%;
 }
+latest-articles h2 {
+  text-align: center;
+  margin: 2em 0;
+}
 latest-articles .articles {
   justify-content: space-between;
   display: flex;
@@ -95,9 +99,6 @@ latest-articles .article {
   display: flex;
   color: #324376;
   flex-direction: column;
-}
-latest-articles .article h2 {
-  text-align: center;
 }
 latest-articles .article h3 {
   margin: 1em 0 0 0;
@@ -110,14 +111,6 @@ latest-articles a {
 }
 latest-articles a:hover {
   color: #be264c;
-}
-
-latest-articles:first-child {
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  display: flex;
 }
 
 my-skills, my-article {
@@ -172,7 +165,7 @@ my-article a {
 }
 
 my-blog {
-  margin: 5rem 0 0 0;
+  margin: 5em 0 10em 0;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
