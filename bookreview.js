@@ -2,7 +2,7 @@ import { marked } from './marked-lib.js'
 
 import { menu, contact } from './data/data.js'
 import { templ, header, footer } from './templ.js'
-import { dat } from './data/data-books.js'
+import { dat } from './book-review/data-books.js'
 
 
 // Book cards
@@ -21,7 +21,6 @@ class createList {
   }
 }
 
-
 class BookList extends HTMLElement {
   render() {
     for (const value of dat) {
@@ -39,6 +38,7 @@ class BookList extends HTMLElement {
 }
 customElements.define('book-list', BookList)
 const myList = new BookList()
+
 
 // Main
 class Main {
