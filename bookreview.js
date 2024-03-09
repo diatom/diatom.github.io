@@ -53,14 +53,26 @@ class BookList extends HTMLElement {
     for (const val of dat) {
       const div = document.createElement('div')
       const p = document.createElement('p')
+      const genre = document.createElement('p')
+      const author = document.createElement('p')
+      const date = document.createElement('p')
+      const rating = document.createElement('p')
       const span = document.createElement('span')
       const h3 = document.createElement('h3')
-      span.innerHTML = val.Id
+      span.innerHTML = 'Id: ' + val.Id
       h3.innerHTML = val.name
+      author.innerHTML = 'Автор: ' + val.author
+      genre.innerHTML = 'Жанр: ' + val.genre
+      date.innerHTML = 'Дата: ' + val.date
       p.innerHTML = val.description
+      rating.innerHTML = 'Рейтинг: ' + val.rating
       div.appendChild(span)
       div.appendChild(h3)
+      div.appendChild(author)
+      div.appendChild(genre)
+      div.appendChild(date)
       div.appendChild(p)
+      div.appendChild(rating)
       div.setAttribute(`class`, `book`)
       div.setAttribute(`data-index`, `${val.tags}`)
       this.appendChild(div)
