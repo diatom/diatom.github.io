@@ -1,7 +1,7 @@
 export const elems = `
   <p>Здесь краткие оценки почти всех книг, которые я прочитал.</p>
     <search>
-      <label for="searchInput">Найти книгу ❤️</label>
+      <label for="searchInput">Найти книгу:</label>
       <input type="text" id="searchInput"/>
       <button id="searchButton" type="submit">Поиск 📕</button>
     </search>

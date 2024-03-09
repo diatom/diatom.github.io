@@ -271,6 +271,33 @@ book-list .book h3 {
   margin: 0.5em 0;
 }
 
+cheese-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 10em 0 0 0;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+cheese-list .cheese {
+  background-color: rgba(155, 131, 131, 0.089);
+  border-radius: 2%;
+  margin: 1em;
+  padding: 0.6em;
+  width: 20em;
+  font-size: 0.9em;
+}
+cheese-list .cheese p {
+  margin: 0.5em 0;
+}
+cheese-list .cheese span {
+  font-size: 0.8em;
+  color: #be264c;
+}
+cheese-list .cheese h3 {
+  margin: 0.5em 0;
+}
+
 #searchButton {
   cursor: pointer;
 }

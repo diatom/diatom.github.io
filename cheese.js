@@ -101,9 +101,11 @@ const myList = new CheeseList()
 class Main {
   constructor() {
     this.main = document.createElement(`main`)
-    this.main.innerHTML = elems
+    this.info = document.createElement(`div`)
+    this.info.innerHTML = elems
   }
   displayMain() {
+    this.main.appendChild(this.info)
     this.main.appendChild(myList)
     return this.main
   }
