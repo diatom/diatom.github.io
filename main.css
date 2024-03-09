@@ -254,12 +254,20 @@ book-list {
 }
 book-list .book {
   background-color: rgba(155, 131, 131, 0.089);
-  padding: 0.2em;
+  border-radius: 2%;
   margin: 1em;
+  padding: 0.6em;
   width: 20em;
 }
 book-list .book p {
-  margin: 0.5rem;
+  margin: 0.5em 0;
+}
+book-list .book span {
+  font-size: 0.8em;
+  color: #be264c;
+}
+book-list .book h3 {
+  margin: 0.5em 0;
 }
 
 /* width */

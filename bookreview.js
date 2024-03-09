@@ -58,6 +58,7 @@ class BookList extends HTMLElement {
       const date = document.createElement('p')
       const rating = document.createElement('p')
       const span = document.createElement('span')
+      const tags = document.createElement('span')
       const h3 = document.createElement('h3')
       span.innerHTML = 'Id: ' + val.Id
       h3.innerHTML = val.name
@@ -65,7 +66,8 @@ class BookList extends HTMLElement {
       genre.innerHTML = 'Жанр: ' + val.genre
       date.innerHTML = 'Дата: ' + val.date
       p.innerHTML = val.description
-      rating.innerHTML = 'Рейтинг: ' + val.rating
+      rating.innerHTML = 'Мой рейтинг: ' + val.rating
+      tags.innerHTML = 'Теги: ' + val.tags
       div.appendChild(span)
       div.appendChild(h3)
       div.appendChild(author)
@@ -73,8 +75,10 @@ class BookList extends HTMLElement {
       div.appendChild(date)
       div.appendChild(p)
       div.appendChild(rating)
+      div.appendChild(tags)
       div.setAttribute(`class`, `book`)
       div.setAttribute(`data-index`, `${val.tags}`)
+      div.setAttribute(`id`, `${val.Id}`)
       this.appendChild(div)
     }
   }
