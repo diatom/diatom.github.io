@@ -258,6 +258,10 @@ footer {
 
 
 // Book-review
+.info {
+  justify-content: flex-start;
+}
+
 book-list {
   display: flex;
   flex-wrap: wrap;

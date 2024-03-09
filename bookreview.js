@@ -112,6 +112,7 @@ class Main {
     constructor() {
       this.main = document.createElement(`main`)
       this.info = document.createElement(`div`)
+      this.info.setAttribute(`class`, `info`)
       this.info.innerHTML = elems
     }
     displayMain() {
