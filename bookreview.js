@@ -2,52 +2,69 @@ import { marked } from './marked-lib.js'
 
 import { menu, contact } from './data/data.js'
 import { templ, header, footer } from './templ.js'
-import { dat } from './book-review/data-books.js'
+import { dat, elems, tags } from './book-review/data-books.js'
 
 
-// Book cards
-// class createList {
-//   constructor(obj) {
-//     this.div = document.createElement('div')
-//     this.obj = obj
-//   }
-//   createDivElement() {
-//     for (let [key, value] of Object.entries(this.obj)) {
-//       const p = document.createElement('p')
-//       const span = document.createElement('span')
-//       const h3 = document.createElement('h3')
-//       p.innerText = `${key}: ${value}`
-//       this.div.appendChild(p)
-//     }
-//     return this.div
-//   }
-// }
-// class createList {
-//   constructor(obj) {
-//     this.div = document.createElement('div')
-//     this.obj = obj
-//   }
-//   createDivElement() {
-//     for (let val of this.obj) {
-//       const p = document.createElement('p')
-//       const span = document.createElement('span')
-//       const h3 = document.createElement('h3')
-//       span.innerText = val.Id
-//       h3.innerText = val.name
-//       p.innerText = val.Автор
-//       // p.innerText = val.Жанр
-//       // p.innerText = val.Дата
-//       // p.innerText = val.Описание
-//       // p.innerText = val.Рейтинг
-//       // p.innerText = val.Теги
-//       this.div.appendChild(span)
-//       this.div.appendChild(h3)
-//       this.div.appendChild(p)
-//     }
-//     return this.div
-//   }
-// }
 
+// Render tags
+const divs = document.getElementsByClassName('book')
+
+export class MyCheck extends HTMLInputElement {
+  render(name) {
+    this.name = 'tags'
+    const label = document.createElement('label')
+    this.type = 'checkbox'
+    label.setAttribute('class', 'button-filter')
+    this.value = name.trim()
+    label.append(this, this.value)
+    this.onchange = this.onChange
+    return label
+  }
+  onChange(event) {
+    console.log(this.value)
+
+    for (const elem of divs) {
+      const data = elem.getAttribute('data-index')
+      if (data.includes(this.value)) {
+        elem.hidden = false
+      } else {
+        elem.hidden = true
+      }
+    }
+  }
+}
+customElements.define('my-check', MyCheck, {extends: 'input'})
+
+
+// Render form
+export class MyTags extends HTMLFormElement {
+  render() {
+    for (const name of tags) {
+      this.appendChild(new MyCheck().render(name))
+    }
+  }
+  onChange() {
+    const data = new FormData(this) 
+    for (const elem of divs) {
+      if (data.getAll('tags').length < 1) {
+        elem.hidden = false
+        console.log("FormData is empty")
+      } else {
+        console.log("FormData contains data")
+      }
+    }
+    console.log(data.getAll('tags'))
+  }
+  connectedCallback() {
+    this.onchange = this.onChange
+    this.setAttribute('class', 'my-tags')
+    this.render()
+  }
+}
+customElements.define('my-tags', MyTags, {extends: 'form'})
+
+
+// Render books
 class BookList extends HTMLElement {
   render() {
     for (const val of dat) {
@@ -90,31 +107,15 @@ customElements.define('book-list', BookList)
 const myList = new BookList()
 
 
-// class BookList extends HTMLElement {
-//   render() {
-//     for (const val of dat) {
-//       // console.log(value)
-//       // const myList = new createList(value)
-//       const div = myList.createDivElement()
-//       div.setAttribute(`class`, `book`)
-//       div.setAttribute(`data-index`, `${val.tags}`)
-//       this.appendChild(div)
-//     }
-//   }
-//   connectedCallback() {
-//     this.render()
-//   }
-// }
-// customElements.define('book-list', BookList)
-// const myList = new BookList()
-
-
-// Main
+// Render main
 class Main {
     constructor() {
       this.main = document.createElement(`main`)
+      this.info = document.createElement(`div`)
+      this.info.innerHTML = elems
     }
     displayMain() {
+      this.main.appendChild(this.info)
       this.main.appendChild(myList)
       return this.main
     }
@@ -125,3 +126,31 @@ const main = new Main()
 templ.displayHead(header.createHead(menu))
 templ.displayMain(main.displayMain())
 templ.displayFooter(footer.createFooter(contact))
+
+
+// Render search
+const searchInput = document.getElementById("searchInput")
+const searchButton = document.getElementById("searchButton")
+
+function searchData(input) {
+  const divs = document.getElementsByClassName('book')
+  for (const elem of divs) {
+    let result = elem.innerHTML.toLowerCase().includes(input)
+    if (result) {
+      elem.hidden = false
+    } else {
+      elem.hidden = true
+    } 
+  }
+}
+searchButton.addEventListener('click', () => {
+  const userInput = searchInput.value.toLowerCase()
+  searchData(userInput)
+})
+
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 13) {
+      document.getElementById('searchButton').click()
+      event.preventDefault()
+  }
+})

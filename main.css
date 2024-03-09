@@ -258,6 +258,7 @@ book-list .book {
   margin: 1em;
   padding: 0.6em;
   width: 20em;
+  font-size: 0.9em;
 }
 book-list .book p {
   margin: 0.5em 0;
@@ -268,6 +269,14 @@ book-list .book span {
 }
 book-list .book h3 {
   margin: 0.5em 0;
+}
+
+#searchButton {
+  cursor: pointer;
+}
+
+form label {
+  cursor: pointer;
 }
 
 /* width */

@@ -4,9 +4,10 @@ import { menu, contact } from './data/data.js'
 import { templ, header, footer } from './templ.js'
 import { elems, cheese, tags } from './data/data-cheese.js'
 
-const divs = document.getElementsByClassName('cheese')
 
 // Render tags
+const divs = document.getElementsByClassName('cheese')
+
 export class MyCheck extends HTMLInputElement {
   render(name) {
     this.name = 'tags'
