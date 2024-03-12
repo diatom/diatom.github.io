@@ -320,6 +320,40 @@ cheese-list {
   }
 }
 
+// Search
+search {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  label {
+    width: 10em;
+    font-size: 1.1em;
+  }
+  div {
+    width: 20em;
+    display: flex;
+    height: 15px;
+    background-color: $flax;
+    border-radius: 10px;
+    padding: 1em;
+  }
+  input[type="text"], button {
+    border: none;
+    background: none;
+    outline: none;
+    line-height: 1;
+  }
+  input {
+    width: 100%;
+  }
+  input[type="text"]::placeholder {
+    color: #c0b6b6;
+    font-size: 1.2em;
+  }
+}
 
 #searchButton {
   cursor: pointer;
@@ -330,6 +364,8 @@ form{
     cursor: pointer;
   }
 }
+
+
 
 
 // Scroll

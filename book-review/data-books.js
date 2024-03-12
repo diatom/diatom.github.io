@@ -1,11 +1,11 @@
 export const elems = `
-  <p>Здесь краткие оценки почти всех книг, которые я прочитал.</p>
     <search>
-      <label for="searchInput">Найти книгу:</label>
-      <input type="text" id="searchInput"/>
-      <button id="searchButton" type="submit">Поиск 📕</button>
+      <label for="searchInput">Краткие оценки книг, которые я прочитал</label>
+      <div>
+        <input type="text" id="searchInput" placeholder="Книга, автор, жанр..."/>
+        <button id="searchButton" type="submit">📕</button>
+      </div>  
     </search>
-  <p>Поиск будет корректным, если вы введёте ключевое слово без ошибок.</p>
   <form is="my-tags"></form>
 `
 

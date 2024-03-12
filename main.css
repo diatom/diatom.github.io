@@ -302,6 +302,39 @@ cheese-list .cheese h3 {
   margin: 0.5em 0;
 }
 
+search {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+search label {
+  width: 10em;
+  font-size: 1.1em;
+}
+search div {
+  width: 20em;
+  display: flex;
+  height: 15px;
+  background-color: #f5dd90;
+  border-radius: 10px;
+  padding: 1em;
+}
+search input[type=text], search button {
+  border: none;
+  background: none;
+  outline: none;
+  line-height: 1;
+}
+search input {
+  width: 100%;
+}
+search input[type=text]::placeholder {
+  color: #c0b6b6;
+  font-size: 1.2em;
+}
+
 #searchButton {
   cursor: pointer;
 }
