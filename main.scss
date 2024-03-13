@@ -258,10 +258,6 @@ footer {
 
 
 // Book-review
-.info {
-  justify-content: flex-start;
-}
-
 book-list {
   display: flex;
   flex-wrap: wrap;
@@ -321,24 +317,33 @@ cheese-list {
 }
 
 // Search
+.info {
+  display: flex;
+  flex-direction: column;
+  margin: 5em 0 0 0;
+}
 search {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  flex-direction: column;
+  height: 100px;
+  gap: 10px;
 
   label {
-    width: 10em;
+    // width: 13em;
     font-size: 1.1em;
+    font-weight: bold;
+    color: #666060;
+    margin: 0 0 0 0.5em;
   }
   div {
-    width: 20em;
+    width: 30em;
     display: flex;
-    height: 15px;
-    background-color: $flax;
-    border-radius: 10px;
-    padding: 1em;
+    height: 35px;
+    background-color: #f0e9e9;
+    border-radius: 20px;
+    padding: 0.5em;
   }
   input[type="text"], button {
     border: none;
@@ -350,21 +355,13 @@ search {
     width: 100%;
   }
   input[type="text"]::placeholder {
-    color: #c0b6b6;
+    color: #666060;
     font-size: 1.2em;
   }
-}
-
-#searchButton {
-  cursor: pointer;
-}
-
-form{
-  label {
+  button {
     cursor: pointer;
   }
 }
-
 
 
 

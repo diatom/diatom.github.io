@@ -1,9 +1,13 @@
 export const elems = `
     <search>
-      <label for="searchInput">Краткие оценки книг, которые я прочитал</label>
+      <label for="searchInput">Краткие оценки прочитанных мною книг</label>
       <div>
         <input type="text" id="searchInput" placeholder="Книга, автор, жанр..."/>
-        <button id="searchButton" type="submit">📕</button>
+        <button id="searchButton" type="submit">🔍</button>
+      </div>
+      
+      
+        </button>
       </div>  
     </search>
   <form is="my-tags"></form>

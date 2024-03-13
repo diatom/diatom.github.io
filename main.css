@@ -244,10 +244,6 @@ footer span {
   display: flex;
 }
 
-.info {
-  justify-content: flex-start;
-}
-
 book-list {
   display: flex;
   flex-wrap: wrap;
@@ -302,24 +298,33 @@ cheese-list .cheese h3 {
   margin: 0.5em 0;
 }
 
+.info {
+  display: flex;
+  flex-direction: column;
+  margin: 5em 0 0 0;
+}
+
 search {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  flex-direction: column;
+  height: 100px;
+  gap: 10px;
 }
 search label {
-  width: 10em;
   font-size: 1.1em;
+  font-weight: bold;
+  color: #666060;
+  margin: 0 0 0 0.5em;
 }
 search div {
-  width: 20em;
+  width: 30em;
   display: flex;
-  height: 15px;
-  background-color: #f5dd90;
-  border-radius: 10px;
-  padding: 1em;
+  height: 35px;
+  background-color: #f0e9e9;
+  border-radius: 20px;
+  padding: 0.5em;
 }
 search input[type=text], search button {
   border: none;
@@ -331,15 +336,10 @@ search input {
   width: 100%;
 }
 search input[type=text]::placeholder {
-  color: #c0b6b6;
+  color: #666060;
   font-size: 1.2em;
 }
-
-#searchButton {
-  cursor: pointer;
-}
-
-form label {
+search button {
   cursor: pointer;
 }
 
