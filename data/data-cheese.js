@@ -1,17 +1,17 @@
 export const elems = `
-  <p>Here is the largest cheese database on the entire Internet.</p>
     <search>
-      <label for="searchInput">Find a Cheese ❤️</label>
-      <input type="text" id="searchInput"/>
-      <button id="searchButton" type="submit">Search 🧀</button>
+      <label for="searchInput">Я люблю и умею делать сыр. Составил небольшой каталог</label>
+      <div>
+        <input type="text" id="searchInput" placeholder="Найти сыр..."/>
+        <button id="searchButton" type="submit">🔍</button>
+      </div>
     </search>
-  <p>The search will be correct if you enter the word literally without errors.</p>
   <form is="my-tags"></form>
 `
 
 export let cheese = [
     {
-      id: 1,
+      Id: 1,
       name: `Cheddar`,
       age: `3-24 months`,
       milk: `Cow`,
@@ -23,7 +23,7 @@ export let cheese = [
       tags: `semihard, hard, spicy, cow, mature, England`,
     },
     {
-      id: 2,
+      Id: 2,
       name: `Parmesan`,
       age: `12-36 months`,
       milk: `Cow`,
@@ -35,7 +35,7 @@ export let cheese = [
       tags: `hard, spicy, nutty, cow, mature, Italy`,
     },
     {
-      id: 3,
+      Id: 3,
       name: `Camembert`,
       age: `3-8 weeks`,
       milk: `Cow`,
@@ -47,7 +47,7 @@ export let cheese = [
       tags: `soft, creamy, cow, young, France`,
     },
     {
-      id: 4,
+      Id: 4,
       name: `Gruyère`,
       age: `5-12 months`,
       milk: `Cow`,
@@ -59,7 +59,7 @@ export let cheese = [
       tags: `semihard, hard, savory, sweet, cow, mature, Swiss`,
     },
     {
-      id: 5,
+      Id: 5,
       name: `Gouda`,
       age: `1-24 months`,
       milk: `Cow`,

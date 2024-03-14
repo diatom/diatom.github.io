@@ -353,7 +353,7 @@ search {
     line-height: 1;
   }
   input {
-    width: 100%;
+    width: 100%; 
   }
   input[type="text"]::placeholder {
     color: #666060;
@@ -368,9 +368,33 @@ form {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5em;
+  margin: 1em 0 0 0;
+  padding: 0 1em;
 
   label {
     cursor: pointer;
+    // border: 0.5px solid #6b6767;
+    border-radius: 3px;
+    padding: 5px 10px;
+    background-color: #f0e9e9;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+  }
+  label:hover {
+    color: $rose-red;
+  }
+  // input[type=checkbox] {
+  //   display: none;
+  // }
+  input[type=checkbox] + label {
+    background-color: #ddd;
+    padding: 10px;
+    display: block;
+  }
+  
+  input[type=checkbox]:checked + label {
+    background-color: green;
   }
 }
 

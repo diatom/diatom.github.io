@@ -3,6 +3,8 @@ export const menu = {
     blog: 'Блог',
     bookreview: 'Обзоры книг',
     cheese: 'Сыр',
+    // shop: 'Магазин',
+    // nega: 'Нега™',
 }
 
 export const contact = [
