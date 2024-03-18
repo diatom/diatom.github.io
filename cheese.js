@@ -64,30 +64,60 @@ customElements.define('my-tags', MyTags, {extends: 'form'})
 
 
 // Cheese cards
-class createList {
-  constructor(obj) {
-    this.divE = document.createElement('div')
-    this.obj = obj
-  }
-  createDivElement() {
-    for (let [key, value] of Object.entries(this.obj)) {
-      const pE = document.createElement('p')
-      pE.innerText = `${key}: ${value}`
-      this.divE.appendChild(pE)
-    }
-    return this.divE
-  }
-}
+// class createList {
+//   constructor(obj) {
+//     this.divE = document.createElement('div')
+//     this.obj = obj
+//   }
+//   createDivElement() {
+//     for (let [key, value] of Object.entries(this.obj)) {
+//       const pE = document.createElement('p')
+//       pE.innerText = `${key}: ${value}`
+//       this.divE.appendChild(pE)
+//     }
+//     return this.divE
+//   }
+// }
+
 
 class CheeseList extends HTMLElement {
   render() {
-    for (const value of cheese) {
-      console.log(value)
-      const myList = new createList(value)
-      const divE = myList.createDivElement()
-      divE.setAttribute(`class`, `cheese`)
-      divE.setAttribute(`data-index`, `${value.tags}`)
-      this.appendChild(divE)
+    for (const val of cheese) {
+      const div = document.createElement('div')
+      const p = document.createElement('p')
+      const milk = document.createElement('p')
+      const age = document.createElement('p')
+      const since = document.createElement('p')
+      const type = document.createElement('p')
+      const mold = document.createElement('p')
+      const taste = document.createElement('p')
+      const span = document.createElement('span')
+      const tags = document.createElement('span')
+      const h3 = document.createElement('h3')
+      span.innerHTML = 'Id: ' + val.Id
+      h3.innerHTML = val.name
+      age.innerHTML = 'Срок созревания: ' + val.age
+      milk.innerHTML = 'Молоко: ' + val.milk
+      since.innerHTML = 'Первое упоминание: ' + val.since
+      type.innerHTML = 'Тип: ' + val.type
+      taste.innerHTML = 'Вкус: ' + val.taste
+      mold.innerHTML = 'Плесень: ' + val.mold
+      p.innerHTML = 'Описание: ' + val.description
+      tags.innerHTML = 'Теги: ' + val.tags
+      div.appendChild(span)
+      div.appendChild(h3)
+      div.appendChild(age)
+      div.appendChild(milk)
+      div.appendChild(since)
+      div.appendChild(type)
+      div.appendChild(taste)
+      div.appendChild(mold)
+      div.appendChild(p)
+      div.appendChild(tags)
+      div.setAttribute(`class`, `cheese`)
+      div.setAttribute(`data-index`, `${val.tags}`)
+      div.setAttribute(`id`, `${val.Id}`)
+      this.appendChild(div)
     }
   }
   connectedCallback() {
@@ -96,6 +126,28 @@ class CheeseList extends HTMLElement {
 }
 customElements.define('cheese-list', CheeseList)
 const myList = new CheeseList()
+
+
+
+// class CheeseList extends HTMLElement {
+//   render() {
+//     for (const value of cheese) {
+//       console.log(value)
+//       const myList = new createList(value)
+//       const divE = myList.createDivElement()
+//       divE.setAttribute(`class`, `cheese`)
+//       divE.setAttribute(`data-index`, `${value.tags}`)
+//       this.appendChild(divE)
+//     }
+//   }
+//   connectedCallback() {
+//     this.render()
+//   }
+// }
+// customElements.define('cheese-list', CheeseList)
+// const myList = new CheeseList()
+
+
 
 // Main
 class Main {
