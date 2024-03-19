@@ -441,12 +441,15 @@ form {
     gap: 20px;
     padding: 2em 0;
     margin: 10em 0 0 0;
-    
+
     p {
       width: 80%;
     }
     div, nav {
       margin: 0 0;
+    }
+    a {
+      justify-content: center;
     }
   }
   latest-articles {

@@ -413,6 +413,9 @@ form input[type=checkbox]:checked + label {
   footer div, footer nav {
     margin: 0 0;
   }
+  footer a {
+    justify-content: center;
+  }
   latest-articles .article {
     width: 90%;
   }
