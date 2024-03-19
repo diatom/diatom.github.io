@@ -3,7 +3,6 @@ $true-blue: #586ba4ff;
 $marian-blue: #324376ff;
 $flax: #f5dd90ff;
 
-
 body {
   padding: 0 0;
   margin: 0;
@@ -88,7 +87,7 @@ latest-articles {
   display: flex;
   flex-direction: column;
   padding: 0 0 2rem 0;
-  width: 50%;
+  width: 65%;
 
   h2 {
     text-align: center;
@@ -321,7 +320,7 @@ cheese-list {
   display: flex;
   flex-direction: column;
   margin: 5em 0 0 0;
-  width: 30%;
+  width: 40%;
 }
 search {
   margin: 0;
@@ -398,7 +397,87 @@ form {
   }
 }
 
+@media screen and (max-width: 1500px) {
+  latest-articles {
+    width: 90%;
+  }
+}
 
+
+@media screen and (max-width: 1250px) {
+  latest-articles, my-skills, my-article, my-blog, book-list, cheese-list {
+    width: 90%;
+  }
+  .info {
+    width: 80%;
+  }
+  latest-articles {
+    .articles {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .article {
+      width: 70%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  header {
+    // justify-content: center;
+    a {
+      padding: 0.3rem 1rem 0.3rem 1rem;
+    }
+  }
+}
+@media screen and (max-width: 860px) {
+  footer {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 20px;
+    padding: 2em 0;
+    margin: 10em 0 0 0;
+    
+    p {
+      width: 80%;
+    }
+    div, nav {
+      margin: 0 0;
+    }
+  }
+  latest-articles {
+    .article {
+      width: 90%;
+    }
+  }
+  about-me {
+    div {
+      margin: 0 0 0 1em;
+    }
+    h2 {
+      font-size: 0.9em;
+    }
+  }
+  my-skills {
+    li {
+      font-size: 0.8em;
+    }
+  }
+  my-blog {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    div {
+      width: 80%;
+    }
+  }
+}
 
 // Scroll
 /* width */

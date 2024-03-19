@@ -83,7 +83,7 @@ latest-articles {
   display: flex;
   flex-direction: column;
   padding: 0 0 2rem 0;
-  width: 50%;
+  width: 65%;
 }
 latest-articles h2 {
   text-align: center;
@@ -302,7 +302,7 @@ cheese-list .cheese h3 {
   display: flex;
   flex-direction: column;
   margin: 5em 0 0 0;
-  width: 30%;
+  width: 40%;
 }
 
 search {
@@ -369,6 +369,72 @@ form input[type=checkbox]:checked + label {
   background-color: green;
 }
 
+@media screen and (max-width: 1500px) {
+  latest-articles {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 1250px) {
+  latest-articles, my-skills, my-article, my-blog, book-list, cheese-list {
+    width: 90%;
+  }
+  .info {
+    width: 80%;
+  }
+  latest-articles .articles {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  latest-articles .article {
+    width: 70%;
+  }
+  latest-articles .article img {
+    width: 100%;
+  }
+  header a {
+    padding: 0.3rem 1rem 0.3rem 1rem;
+  }
+}
+@media screen and (max-width: 860px) {
+  footer {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 20px;
+    padding: 2em 0;
+    margin: 10em 0 0 0;
+  }
+  footer p {
+    width: 80%;
+  }
+  footer div, footer nav {
+    margin: 0 0;
+  }
+  latest-articles .article {
+    width: 90%;
+  }
+  about-me div {
+    margin: 0 0 0 1em;
+  }
+  about-me h2 {
+    font-size: 0.9em;
+  }
+  my-skills li {
+    font-size: 0.8em;
+  }
+  my-blog {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  my-blog div {
+    width: 80%;
+  }
+}
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
