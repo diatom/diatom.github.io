@@ -426,7 +426,6 @@ form {
     }
   }
   header {
-    // justify-content: center;
     a {
       padding: 0.3rem 1rem 0.3rem 1rem;
     }
@@ -463,12 +462,12 @@ form {
       margin: 0 0 0 1em;
     }
     h2 {
-      font-size: 0.9em;
+      font-size: 0.8em;
     }
   }
   my-skills {
     li {
-      font-size: 0.8em;
+      font-size: 0.7em;
     }
   }
   my-blog {
@@ -479,6 +478,11 @@ form {
 
     div {
       width: 80%;
+    }
+  }
+  header {
+    a {
+      font-size: 1em;
     }
   }
 }

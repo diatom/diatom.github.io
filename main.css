@@ -424,10 +424,10 @@ form input[type=checkbox]:checked + label {
     margin: 0 0 0 1em;
   }
   about-me h2 {
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
   my-skills li {
-    font-size: 0.8em;
+    font-size: 0.7em;
   }
   my-blog {
     flex-wrap: nowrap;
@@ -437,6 +437,9 @@ form input[type=checkbox]:checked + label {
   }
   my-blog div {
     width: 80%;
+  }
+  header a {
+    font-size: 1em;
   }
 }
 /* width */
