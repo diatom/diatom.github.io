@@ -468,8 +468,12 @@ form {
   }
   my-skills {
     li {
-      font-size: 0.7em;
+      // font-size: 0.7em;
+      height: 3rem;
     }
+  }
+  cheese-list, book-list {
+    margin: 5em 0 0 0;
   }
   my-blog {
     flex-wrap: nowrap;
@@ -484,6 +488,11 @@ form {
   header {
     a {
       font-size: 1em;
+    }
+  }
+  form {
+    label {
+      padding: 2px 4px;
     }
   }
 }

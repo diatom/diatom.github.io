@@ -434,7 +434,10 @@ form input[type=checkbox]:checked + label {
   }
 
   my-skills li {
-    font-size: 0.7em;
+    height: 3rem;
+  }
+  cheese-list, book-list {
+    margin: 5em 0 0 0;
   }
 
   my-blog {
@@ -449,6 +452,9 @@ form input[type=checkbox]:checked + label {
 
   header a {
     font-size: 1em;
+  }
+  form label {
+    padding: 2px 4px;
   }
 }
 /* width */
