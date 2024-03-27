@@ -2,7 +2,7 @@ import { marked } from './marked-lib.js'
 
 import { menu, contact } from './data/data.js'
 import { templ, header, footer } from './templ.js'
-import { dat, elems, tags } from './book-review/data-books.js'
+import { dat, elems, tags } from './data/data-books.js'
 
 
 
