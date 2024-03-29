@@ -356,8 +356,9 @@ form {
 form label {
   cursor: pointer;
   border-radius: 3px;
-  padding: 5px 10px;
+  padding: 2px;
   background-color: #f0e9e9;
+  font-size: 0.9em;
 }
 form label:hover {
   color: #be264c;
@@ -380,11 +381,9 @@ form input[type=checkbox]:checked + label {
   latest-articles, my-skills, my-article, my-blog, book-list, cheese-list {
     width: 90%;
   }
-
   .info {
     width: 80%;
   }
-
   latest-articles .articles {
     flex-direction: column;
     justify-content: center;
@@ -396,7 +395,6 @@ form input[type=checkbox]:checked + label {
   latest-articles .article img {
     width: 100%;
   }
-
   header a {
     padding: 0.3rem 1rem 0.3rem 1rem;
   }
@@ -421,26 +419,21 @@ form input[type=checkbox]:checked + label {
   footer a {
     justify-content: center;
   }
-
   latest-articles .article {
     width: 90%;
   }
-
   about-me div {
     margin: 0 0 0 1em;
   }
   about-me h2 {
     font-size: 0.8em;
   }
-
   my-skills li {
     height: 3rem;
   }
-
   cheese-list, book-list {
     margin: 5em 0 0 0;
   }
-
   my-blog {
     flex-wrap: nowrap;
     flex-direction: column;
@@ -450,11 +443,9 @@ form input[type=checkbox]:checked + label {
   my-blog div {
     width: 80%;
   }
-
   header a {
     font-size: 1em;
   }
-
   form label {
     padding: 2px 4px;
   }
