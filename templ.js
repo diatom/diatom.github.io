@@ -53,7 +53,7 @@ class Header {
   createNav(menu) {
     for (let [key, value] of Object.entries(menu)) {
       const item = document.createElement(`a`)
-      item.setAttribute('href', window.location.origin + '/' + `${key}`)
+      item.setAttribute('href', 'https://diatom.github.io/' + '/' + `${key}`)
       item.setAttribute(`id`, `button-http`)
       item.innerHTML = `${value}`
       this.nav.appendChild(item)
@@ -64,7 +64,7 @@ class Header {
   createHead(menu) {
     for (let [key, value] of Object.entries(menu)) {
       const item = document.createElement(`a`)
-      item.setAttribute('href', window.location.origin + '/' + `${key}`)
+      item.setAttribute('href', 'https://diatom.github.io/' + '/' + `${key}`)
       item.setAttribute(`id`, `button-http`)
       item.innerHTML = `${value}`
       this.nav.appendChild(item)
