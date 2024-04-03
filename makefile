@@ -8,6 +8,10 @@ watch:
 
 build: styles
 
+ci:
+	cp 404.html index.html
+	rm readme.md
+
 styles_w:
 	$(SASS) --watch
 
