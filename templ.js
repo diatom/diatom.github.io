@@ -51,37 +51,26 @@ class Header {
     this.menu = menu
   }
   createNav(menu) {
-for (let [key, value] of Object.entries(menu)) {
-  const item = document.createElement(`a`)
-  item.setAttribute('href', window.location.origin + "/#" + `${key}`)
-  item.setAttribute(`id`, `button-http`)
-  item.innerHTML = `${value}`
-  this.nav.appendChild(item)
-}
+    for (let [key, value] of Object.entries(menu)) {
+      const item = document.createElement(`a`)
+      item.setAttribute('href', window.location.origin + `/` + `${key}`)
+      item.setAttribute(`id`, `button-http`)
+      item.innerHTML = `${value}`
+      this.nav.appendChild(item)
+    }
     return this.nav
   }
-  createHead(menu) {
-for (let [key, value] of Object.entries(menu)) {
-  const item = document.createElement(`a`)
-  item.setAttribute('href', window.location.origin + "/#" + `${key}`)
-  item.setAttribute(`id`, `button-http`)
-  item.innerHTML = `${value}`
-  this.nav.appendChild(item)
-}
+    createHead(menu) {
+    for (let [key, value] of Object.entries(menu)) {
+      const item = document.createElement(`a`)
+      item.setAttribute('href', window.location.origin + `/` + `${key}`)
+      item.setAttribute(`id`, `button-http`)
+      item.innerHTML = `${value}`
+      this.nav.appendChild(item)
+    }
     this.header.appendChild(this.nav)
     return this.header
-  }
-    // createHead(menu) {
-    // for (let [key, value] of Object.entries(menu)) {
-    //   const item = document.createElement(`a`)
-    //   item.setAttribute('href', window.location.origin + `/` + `${key}`)
-    //   item.setAttribute(`id`, `button-http`)
-    //   item.innerHTML = `${value}`
-    //   this.nav.appendChild(item)
-    // }
-    // this.header.appendChild(this.nav)
-    // return this.header
-  }
+    }
 }
 export const header = new Header()
 const nav = new Header()
