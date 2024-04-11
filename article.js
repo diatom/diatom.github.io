@@ -1,4 +1,5 @@
 import { marked } from './marked-lib.js'
+// import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js'
 
 import { menu, contact } from './data/data.js'
 import { templ, header, footer } from './templ.js'
