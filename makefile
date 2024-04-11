@@ -11,7 +11,6 @@ build: styles
 ci:
 	cp 404.html index.html
 	rm readme.md
-	rm node_modules
 
 styles_w:
 	$(SASS) --watch
