@@ -3,7 +3,7 @@ import { marked } from './marked-lib.js'
 import { menu, contact } from './data/data.js'
 import { templ, header, footer } from './templ.js'
 
-const path = window.location.pathname.replace(/\/$/, '') + '.md'
+const path = window.location.pathname + `.md`
 const fetArticle = await fetch (path)
 const art = await fetArticle.text()
 
