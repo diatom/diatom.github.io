@@ -34,9 +34,9 @@
 				// 		import('/main.js')
 				// 	}
 				// }
-			// if (window.location.pathname.startsWith('/blog/')) {
-			// 	import('/article.js')
-			// } else {
+			if (window.location.pathname.startsWith('/publications/')) {
+				import('/article.js')
+			} else {
 				switch (window.location.pathname) {
   					case '/': {
     					import('/index.js')
@@ -50,7 +50,7 @@
 						import(window.location.pathname + '.js')
 					}
 				}
-			// }
+			}
 		</script>
 	</head>
 	<body></body>
