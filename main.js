@@ -4,15 +4,9 @@ import { marked } from './marked-lib.js'
 import { menu, contact, list } from './data/data.js'
 import { templ, header, footer } from './templ.js'
 
-const fetAbout = await fetch (`./main/about.md`)
-// const fetPhoto = await fetch (`./main/myphoto.md`)
-const fetHard = await fetch (`./main/hard-skills.md`)
-const fetSoft = await fetch (`./main/soft-skills.md`)
-const fetAll = await fetch (`./main/about-all.md`)
+const fetAbout = await fetch (`./data/about.md`)
+const fetAll = await fetch (`./data/about-all.md`)
 const aboutS = await fetAbout.text()
-// const photoS = await fetPhoto.text()
-const skillsS = await fetSoft.text()
-const skillsH = await fetHard.text()
 const all = await fetAll.text()
 console.log(`Oh, hello =)`)
 
