@@ -2,7 +2,7 @@
 
 Государство как бренд
 =
-Проблематика: есть ли у личности идентичность с государством?
+Есть ли у личности идентичность с государством?
 -
 ![Nizhny Novgorod, Russia, by Pavel Neznanov](/post/art-images/gosudarstvo-kak-brend-by-pavel-neznanov.jpg)
 

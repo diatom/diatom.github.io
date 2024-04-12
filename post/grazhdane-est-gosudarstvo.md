@@ -2,7 +2,7 @@
 
 Граждане есть государство
 =
-Проблематика: дистанция между управленцами и рядовыми гражданами государства.
+Дистанция между управленцами и рядовыми гражданами государства
 -
 ![Nizhny Novgorod, Russia, by Pavel Neznanov](/post/art-images/grazhdane-est-gosudarstvo-by-pavel-neznanov.jpg)
 
