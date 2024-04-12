@@ -30,7 +30,7 @@ export const info = [
 export const list = [
     {
         'id': '0',
-        'dataindex': 'gosudarstvo-kak-brend',
+        'dataindex': '/gosudarstvo-kak-brend',
         'h3': 'Государство как бренд',
         'src': './blog/art-images/gosudarstvo-kak-brend-by-pavel-neznanov.jpg',
         'alt': 'By Pavel Neznanov',
@@ -39,7 +39,7 @@ export const list = [
     },
     {
         'id': '1',
-        'dataindex': 'grazhdane-est-gosudarstvo',
+        'dataindex': '/grazhdane-est-gosudarstvo',
         'h3': 'Граждане есть государство',
         'src': './blog/art-images/grazhdane-est-gosudarstvo-by-pavel-neznanov.jpg',
         'alt': 'By Pavel Neznanov',
@@ -48,7 +48,7 @@ export const list = [
     },
     {
         'id': '2', 
-        'dataindex': 'konkurenciya-istoriya',
+        'dataindex': '/konkurenciya-istoriya',
         'h3': 'Конкуренция, история',
         'src': './blog/art-images/konkurenciya-istoriya-by-suzanne-d-williams.jpg',
         'alt': 'By Suzanne D. Williams',
