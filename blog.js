@@ -11,7 +11,7 @@ class Blog extends HTMLElement {
       const h3 = document.createElement('h3')
       const p = document.createElement('p')
       const img = document.createElement('img')
-      const path = window.location.origin + '/blog' + `${val.dataindex}`
+      const path = window.location.origin + '/publications/' + `${val.dataindex}`
       h3.innerHTML = val.h3
       span.innerHTML = val.date
       p.innerHTML = val.p

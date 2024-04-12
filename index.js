@@ -41,7 +41,7 @@ class createArticle {
         const img = document.createElement('img')
         const h3 = document.createElement('h3')
         const p = document.createElement('p')
-        const path = window.location.origin + '/blog' + `${this.obj.dataindex}`
+        const path = window.location.origin + '/publications/' + `${this.obj.dataindex}`
         h3.innerHTML = this.obj.h3
         p.innerHTML = this.obj.p
         img.setAttribute('src', this.obj.src)
