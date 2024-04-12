@@ -4,8 +4,12 @@ import { marked } from './marked-lib.js'
 import { menu, contact } from './data/data.js'
 import { templ, header, footer } from './templ.js'
 
-const path = window.location.pathname + `.md`
-const fetArticle = await fetch (path)
+const path = window.location.pathname.split('/')
+path[1] = 'post'
+const a = path.join('/') + '.md'
+
+// const path = window.location.pathname + `.md`
+const fetArticle = await fetch (a)
 const art = await fetArticle.text()
 
 
