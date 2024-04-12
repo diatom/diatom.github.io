@@ -12,34 +12,12 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 		<script type="module">
-				// let path = window.location.pathname.startsWith('/blog/')
-				// switch (window.location.pathname) {
-  				// 	case window.location.pathname.startsWith('/blog/'): {
-    			// 		import('/article.js')
-   				// 		break;
-				// 	}
-  				// 	case '/cheese': {
-    			// 		import('/cheese.js')
-   				// 		break;
-				// 	}
-  				// 	case '/bookreview': {
-    			// 		import('/bookreview.js')
-   				// 		break;
-				// 	}
-  				// 	case '/blog': {
-    			// 		import('/blog.js')
-   				// 		break;
-				// 	}
-  				// 	default: {
-				// 		import('/main.js')
-				// 	}
-				// }
 			if (window.location.pathname.startsWith('/publications/')) {
 				import('/article.js')
 			} else {
 				switch (window.location.pathname) {
   					case '/': {
-    					import('/index.js')
+    					import('/main.js')
    						break;
 					}
   					case '/blog': {

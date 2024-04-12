@@ -1,5 +1,5 @@
 export const menu = {
-    index: 'Главная',
+    main: 'Главная',
     blog: 'Блог',
     bookreview: 'Обзоры книг',
     cheese: 'Сыр',
