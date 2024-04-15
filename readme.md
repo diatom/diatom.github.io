@@ -1,6 +1,1 @@
-The project for myself web-site.
-
-To start localserver.
-1. Install Deno, Golang, Sass, Make.
-2. cd to localpath.
-3. In Terminal use "make".
+The project of my own website. In development, I used classic JavaScript, using the `marked` library.
