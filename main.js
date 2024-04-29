@@ -1,4 +1,25 @@
 import { marked } from './marked-lib.js'
+// import * as p from 'https://cdn.jsdelivr.net/npm/@mitranim/js@0.1.53/prax.mjs'
+// import * as dg from 'https://cdn.jsdelivr.net/npm/@mitranim/js@0.1.53/dom_glob_shim.mjs'
+
+// const ren = p.Ren.from(dg.glob)
+// const {E} = ren
+// const A = p.PropBui.main
+
+// console.log(p.renderDocument(
+//     E.html.props(A.lang(`en`)).chi(
+//       E.head.chi(
+//         E.link.props(A.rel(`stylesheet`).href(`/styles/main.css`)),
+//         E.title.chi(`page title`),
+//       ),
+//       E.body.chi(
+//         E.main.props(A.cls(`main`)).chi(
+//           `hello world!`,
+//         ),
+//       ),
+//     ),
+//   ))
+
 // import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js'
 
 import { menu, contact, list } from './data/data.js'
@@ -15,7 +36,6 @@ class About extends HTMLElement {
     render() {
         const myAbout = document.createElement(`div`)
         myAbout.innerHTML = marked.parse(aboutS)
-        // this.appendChild(myAbout, this.innerHTML = marked.parse(photoS))
         this.appendChild(myAbout)
     }
     connectedCallback() {
@@ -42,34 +62,12 @@ class createArticle {
         this.ahref.appendChild(img)
         this.ahref.appendChild(h3)
         this.ahref.appendChild(p)
-        // this.ahref.setAttribute('style', 'background-image: url(' + this.obj.src + ')')
         this.ahref.setAttribute('class', 'article')
         this.ahref.setAttribute('href', path)
         this.ahref.setAttribute('id', this.obj.id)
         return this.ahref
     }
 }
-
-// class createArticle {
-//     constructor(obj) {
-//       this.divE = document.createElement('div')
-//       this.obj = obj
-//     }
-//     createDivElement() {
-//         const img = document.createElement('img')
-//         const h3 = document.createElement('h3')
-//         const path = window.location.origin + '/blog/' + `${this.obj.dataindex}`
-//         h3.innerHTML = this.obj.h3
-//         img.setAttribute('src', this.obj.src)
-//         this.divE.appendChild(h3)
-//         this.divE.appendChild(img)
-//         this.divE.setAttribute('class', 'article')
-//         this.divE.setAttribute('onclick', "window.location=" + path)
-//         this.divE.setAttribute('id', this.obj.id)
-//       return this.divE
-//     }
-// }
-
 
 class LatestArticles extends HTMLElement {
     prerender() {
@@ -97,14 +95,8 @@ const latestArticles = new LatestArticles()
 
 class Skills extends HTMLElement {
     render() {
-        // const myS = document.createElement(`div`)
-        // const myH = document.createElement(`div`)
         const myA = document.createElement(`div`)
-        // myH.innerHTML = marked.parse(skillsH)
-        // myS.innerHTML = marked.parse(skillsS)
         myA.innerHTML = marked.parse(all)
-        // this.appendChild(myH)
-        // this.appendChild(myS)
         this.appendChild(myA)
     }
     connectedCallback() {
