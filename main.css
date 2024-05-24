@@ -124,11 +124,11 @@ my-skills {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  text-align: left;
 }
 my-skills div {
   padding: 0;
-  width: 30em;
+  width: 45em;
   display: flex;
   align-items: center;
   justify-content: center;
