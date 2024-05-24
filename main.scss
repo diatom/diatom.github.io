@@ -135,12 +135,12 @@ my-skills {
     padding: 0;
     width: 45em;
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
   }
   h2 {
     display: flex;
+    justify-content: center;
   }
   ul {
     margin: 0;
@@ -151,8 +151,8 @@ my-skills {
     padding: 0.5rem 2rem;
     list-style-type: none;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: left;
     border-radius: 10px 100px / 120px;
     height: 2rem;
     background: rgb(245,221,144);
