@@ -7,18 +7,18 @@ import { marked } from './marked-lib.js'
 // const A = p.PropBui.main
 
 // console.log(p.renderDocument(
-//     E.html.props(A.lang(`en`)).chi(
-//       E.head.chi(
-//         E.link.props(A.rel(`stylesheet`).href(`/styles/main.css`)),
-//         E.title.chi(`page title`),
-//       ),
-//       E.body.chi(
-//         E.main.props(A.cls(`main`)).chi(
-//           `hello world!`,
-//         ),
+//   E.html.props(A.lang(`en`)).chi(
+//     E.head.chi(
+//       E.link.props(A.rel(`stylesheet`).href(`/styles/main.css`)),
+//       E.title.chi(`page title`),
+//     ),
+//     E.body.chi(
+//       E.main.props(A.cls(`main`)).chi(
+//         `hello world!`,
 //       ),
 //     ),
-//   ))
+//   ),
+// ))
 
 // import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js'
 
