@@ -1,6 +1,6 @@
 export const elems = `
     <search>
-      <label for="searchInput">Я люблю и умею делать сыр. Составил небольшой каталог</label>
+      <label for="searchInput">Я люблю сыр, умею делать сыр. Поэтому и составил небольшой каталог сыра</label>
       <div>
         <input type="text" id="searchInput" placeholder="найти сыр..."/>
         <button id="searchButton" type="submit">🔍</button>
