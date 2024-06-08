@@ -3,6 +3,7 @@ export const menu = {
     blog: 'Блог',
     bookreview: 'Обзоры книг',
     cheese: 'Сыр',
+    ibri: 'Ibri®',
 }
 
 export const contact = [

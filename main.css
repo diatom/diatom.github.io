@@ -79,6 +79,33 @@ about-me div h2 {
   padding: 0;
 }
 
+about-ibri {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0 0 5rem 0;
+  justify-content: flex-start;
+  background-image: url("./image/ibri.png");
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  height: 95vh;
+}
+about-ibri div {
+  color: white;
+  width: 250px;
+  height: 150px;
+  background-size: 100px 100px;
+  background-size: cover;
+  margin: 1rem;
+}
+about-ibri div h2 {
+  color: white;
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+}
+
 latest-articles {
   display: flex;
   flex-direction: column;
@@ -153,6 +180,45 @@ my-skills li {
   background: rgb(245, 221, 144);
 }
 my-skills li a:hover {
+  color: #be264c;
+}
+
+my-ibri {
+  margin: 10em 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+my-ibri div {
+  padding: 0;
+  width: 45em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+my-ibri h2 {
+  display: flex;
+  justify-content: center;
+}
+my-ibri ul {
+  margin: 0;
+  padding: 0;
+}
+my-ibri li {
+  margin: 0.5em 0;
+  padding: 0.5rem 2rem;
+  list-style-type: none;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  border-radius: 10px 100px/120px;
+  height: 2rem;
+  background: rgb(245, 221, 144);
+}
+my-ibri li a:hover {
   color: #be264c;
 }
 

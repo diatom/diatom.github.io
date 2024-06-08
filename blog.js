@@ -50,3 +50,8 @@ const main = new Main()
 templ.displayHead(header.createHead(menu))
 templ.displayMain(main.displayMain())
 templ.displayFooter(footer.createFooter(contact))
+
+const ibri = document.querySelectorAll('[id="ibri"]')
+for (let val of ibri) {
+  val.setAttribute('target', '_blank')
+}

@@ -19,30 +19,6 @@ class Templ {
 export const templ = new Templ()
 
 
-// class ALink extends HTMLAnchorElement {
-//   constructor() {
-//     super()
-//   }
-//   render() {
-//     // for (const val of props) {
-//       // for (let [key, value] of Object.entries(props)) {
-//       const item = document.createElement(`a`)
-//       item.setAttribute('src', window.location.origin + '/' + `${key}`)
-//       item.setAttribute(`id`, `button-http`)
-//       item.innerHTML = `${value}`
-//       this.appendChild(item)
-//       // } 
-//     // }
-//   }
-//   // onClick() {
-//   //   const get = document.getElementById(`button-http`)
-//   // }
-//   connectedCallback() {
-//     this.render()
-//   }
-// }
-// customElements.define('a-link', ALink, {extends: 'a'});
-// const al = new ALink()
 
 class Header {
   constructor(menu) {
@@ -54,7 +30,7 @@ class Header {
     for (let [key, value] of Object.entries(menu)) {
       const item = document.createElement(`a`)
       item.setAttribute('href', `/` + `${key}`)
-      item.setAttribute(`id`, `button-http`)
+      item.setAttribute(`id`, `${key}`)
       item.innerHTML = `${value}`
       this.nav.appendChild(item)
     }
@@ -64,7 +40,7 @@ class Header {
     for (let [key, value] of Object.entries(menu)) {
       const item = document.createElement(`a`)
       item.setAttribute('href', `/` + `${key}`)
-      item.setAttribute(`id`, `button-http`)
+      item.setAttribute(`id`, `${key}`)
       item.innerHTML = `${value}`
       this.nav.appendChild(item)
     }
@@ -76,52 +52,14 @@ export const header = new Header()
 const nav = new Header()
 
 
-// class Header {
-//   constructor(menu) {
-//     this.header = document.createElement(`header`)
-//     this.nav = document.createElement(`nav`)
-//     this.menu = menu
-//   }
-//   createNav(menu) {
-//     for (const val of menu) {
-//       const item = document.createElement(`a`)
-//       item.innerHTML = val
-//       this.nav.appendChild(item)
-//     }
-//     return this.nav
-//   }
-
-//   createHead(menu) {
-//     for (const val of menu) {
-//       const item = document.createElement(`a`)
-//       item.innerHTML = val
-//       item.setAttribute(`id`, `button-http`)
-//       this.nav.appendChild(item)
-//     }
-//     this.header.appendChild(this.nav)
-//     return this.header
-//   }
-// }
-// export const header = new Header()
-// const nav = new Header()
-
-// function click() {
-//   window.showDirectoryPicker()
-//   // console.log(document.documentElement.outerHTML)
-// }
 
 class Footer {
   constructor(contact) {
     this.footer = document.createElement(`footer`)
     this.p = document.createElement(`p`)
     this.span = document.createElement(`span`)
-    // this.but = document.createElement(`button`)
-    // this.but.textContent = 'Lol'
-    // this.but.onclick = click
-    // this.logo = document.createElement(`p`)
     this.p.innerHTML = info[0]
     this.span.innerHTML = info[1]
-    // this.logo.innerHTML = info[2]
     this.div = document.createElement(`div`)
     this.contact = contact
   }
@@ -135,9 +73,7 @@ class Footer {
         this.div.appendChild(item)
       }
     }
-  // this.footer.appendChild(this.logo)
   this.footer.appendChild(this.p)
-  // this.footer.appendChild(this.but)
   this.footer.appendChild(this.div)
   this.footer.appendChild(nav.createNav(menu))
   this.footer.appendChild(this.span)
