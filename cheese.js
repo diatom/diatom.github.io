@@ -194,3 +194,8 @@ document.addEventListener('keydown', function(event) {
       event.preventDefault()
   }
 })
+
+const ibri = document.querySelectorAll('[id="ibri"]')
+for (let val of ibri) {
+  val.setAttribute('target', '_blank')
+}
