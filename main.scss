@@ -371,7 +371,6 @@ form {
 // }
 
 @media screen and (max-width: 1250px) {
-  // latest-articles, 
   art, blog, books {
     width: 90%;
   }
@@ -381,19 +380,6 @@ form {
   principe {
     width: 70%;
   }
-  // latest-articles {
-  //   .articles {
-  //     flex-direction: column;
-  //     justify-content: center;
-  //     align-items: center;
-  //   }
-  //   .article {
-  //     width: 70%;
-  //     img {
-  //       width: 100%;
-  //     }
-  //   }
-  // }
   header {
     a {
       padding: 0.3rem 1rem 0.3rem 1rem;
@@ -430,11 +416,6 @@ form {
       justify-content: center;
     }
   }
-  // latest-articles {
-  //   .article {
-  //     width: 90%;
-  //   }
-  // }
   principe {
     width: 80%;
     h2 {

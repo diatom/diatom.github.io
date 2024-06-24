@@ -51,8 +51,8 @@ export const list = [
         'dataindex': 'konkurenciya-istoriya',
         'path': './post/konkurenciya-istoriya.md',
         'h3': 'Конкуренция, история',
-        'src': './images/art-images/konkurenciya-istoriya-by-suzanne-d-williams.jpg',
-        'alt': 'By Suzanne D. Williams',
+        'src': './images/art-images/konkurenciya-istoriya-by-Nikita-Ermilov.jpg',
+        'alt': 'By Nikita Ermilov',
         'date': 'Дата публикации: 14 марта 2024',
         'p': 'Диалог не воспринимается конечным способом решения проблем'
     },

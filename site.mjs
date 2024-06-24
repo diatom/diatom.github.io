@@ -290,6 +290,8 @@ function Layout(...chi) {
         E.meta.props({charset: `utf-8`}),
         E.meta.props({name: `viewport`, content: `width=device-width, initial-scale=1`}),
         E.title.chi(`Северин Богучарский`),
+        E.meta.props({name: `description`, content: `Личный сайт Северина Богучарского. Публикации, блог, обзоры книг, сырный каталог.`}),
+        E.meta.props({name: `keywords`, content: `личный сайт, блог, путешествия, советы, фотографии, книги, социальные темы`}),
         E.link.props({rel: `icon`, type: `image/x-icon`, href: `/images/severin.ico`}),
         E.link.props({rel: `stylesheet`, href: `/main.css`}),
         E.link.props({rel: `preconnect`, href: `https://fonts.googleapis.com`}),
