@@ -1,3 +1,8 @@
+html {
+  background-color: #242424;
+  color: white;
+}
+
 body {
   padding: 0 0;
   margin: 0;
@@ -15,7 +20,7 @@ header, footer, nav, a {
 }
 
 header {
-  background-color: #be264c;
+  background-color: #be264cff;
   justify-content: left;
   width: 100%;
 }
@@ -35,8 +40,8 @@ header nav {
 }
 
 h2 {
-  color: #324376;
-  font-size: 1.8em;
+  color: white;
+  font-size: 1.4em;
 }
 
 main {
@@ -51,230 +56,6 @@ main div {
   padding: 1em 0 1em 0;
 }
 
-about-me {
-  display: flex;
-  flex-direction: row;
-  padding: 0;
-  margin: 0 0 5rem 0;
-  align-items: center;
-  justify-content: flex-start;
-  background-image: url("./image/severin3.jpg");
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  height: 95vh;
-}
-about-me div {
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  order: 2;
-  width: 40em;
-  margin: 0 1rem 0 10rem;
-  font-size: 1.6em;
-}
-about-me div h2 {
-  color: white;
-  font-size: 2em;
-  margin: 0;
-  padding: 0;
-}
-
-about-ibri {
-  display: flex;
-  flex-direction: row;
-  padding: 0;
-  margin: 0 0 5rem 0;
-  justify-content: flex-start;
-  background-image: url("./image/ibri.png");
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-}
-about-ibri div {
-  color: white;
-  width: 250px;
-  height: 150px;
-  background-size: 100px 100px;
-  background-size: cover;
-  margin: 1rem;
-}
-about-ibri div h2 {
-  color: white;
-  font-size: 2em;
-  margin: 0;
-  padding: 0;
-}
-
-latest-articles {
-  display: flex;
-  flex-direction: column;
-  padding: 0 0 2rem 0;
-  width: 65%;
-}
-latest-articles h2 {
-  text-align: center;
-  justify-content: center;
-  margin: 2em 0;
-}
-latest-articles .articles {
-  justify-content: space-between;
-  display: flex;
-  padding: 0;
-}
-latest-articles .article {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-}
-latest-articles .article h3 {
-  margin: 1em 0 0 0;
-}
-latest-articles .article img {
-  width: 20em;
-}
-latest-articles a {
-  color: #000000;
-}
-latest-articles a:hover {
-  color: #be264c;
-}
-
-my-skills, my-article {
-  width: 50%;
-}
-
-my-skills {
-  margin: 10em 0 0 0;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  text-align: left;
-}
-my-skills div {
-  padding: 0;
-  width: 45em;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-my-skills h2 {
-  display: flex;
-  justify-content: center;
-}
-my-skills ul {
-  margin: 0;
-  padding: 0;
-}
-my-skills li {
-  margin: 0.5em 0;
-  padding: 0.5rem 2rem;
-  list-style-type: none;
-  display: flex;
-  align-items: left;
-  justify-content: left;
-  border-radius: 10px 100px/120px;
-  height: 2rem;
-  background: rgb(245, 221, 144);
-}
-my-skills li a:hover {
-  color: #be264c;
-}
-
-my-ibri {
-  margin: 10em 0 0 0;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  text-align: left;
-}
-my-ibri div {
-  padding: 0;
-  width: 45em;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-my-ibri h2 {
-  display: flex;
-  justify-content: center;
-}
-my-ibri ul {
-  margin: 0;
-  padding: 0;
-}
-my-ibri li {
-  margin: 0.5em 0;
-  padding: 0.5rem 2rem;
-  list-style-type: none;
-  display: flex;
-  align-items: left;
-  justify-content: left;
-  border-radius: 10px 100px/120px;
-  height: 2rem;
-  background: rgb(245, 221, 144);
-}
-my-ibri li a:hover {
-  color: #be264c;
-}
-
-my-article {
-  margin: 5em 0;
-}
-my-article span {
-  font-size: 0.9em;
-  color: grey;
-}
-my-article span:last-child {
-  margin-top: 12em;
-}
-my-article img {
-  width: 100%;
-}
-my-article a {
-  display: inline;
-  text-decoration: underline;
-}
-
-my-blog {
-  margin: 5em 0;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 60%;
-  justify-content: space-between;
-}
-my-blog div {
-  margin: 1em 0;
-  display: flex;
-  width: 48%;
-  flex-direction: column;
-}
-my-blog a {
-  color: #324376;
-  flex-direction: column;
-}
-my-blog a:hover {
-  text-decoration: none;
-  color: #be264c;
-}
-my-blog span {
-  font-size: 0.9em;
-  color: grey;
-}
-my-blog h3 {
-  font-size: 1.4em;
-  margin: 0;
-  padding: 0;
-}
-my-blog img {
-  width: 100%;
-}
-
 footer {
   flex-wrap: wrap;
   height: 20rem;
@@ -287,10 +68,14 @@ footer {
   padding: 1.5rem 0 0 0;
   margin: 15em 0 0 0;
 }
+footer img {
+  width: 10em;
+  margin: 0 2em;
+}
 footer div, footer nav {
   display: flex;
   flex-direction: column;
-  margin: 0 4rem 0 4rem;
+  margin: 0 2rem 0 2rem;
 }
 footer a {
   margin: 0;
@@ -311,42 +96,132 @@ footer span {
   display: flex;
 }
 
-book-list {
+aboutme {
   display: flex;
-  flex-wrap: wrap;
-  width: 80%;
-  margin: 5em 0 0 0;
   flex-direction: row;
+  padding: 0;
+  margin: 0 0 5rem 0;
+  align-items: center;
   justify-content: flex-start;
+  background-image: url("./images/severin.jpg");
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  height: 95vh;
 }
-book-list .book {
-  background-color: rgba(155, 131, 131, 0.089);
-  border-radius: 2%;
-  margin: 1em;
-  padding: 0.6em;
-  width: 20em;
-  font-size: 0.9em;
-}
-book-list .book p {
-  margin: 0.5em 0;
-}
-book-list .book span {
-  font-size: 0.8em;
-  color: #be264c;
-}
-book-list .book h3 {
-  margin: 0.5em 0;
+aboutme h1 {
+  color: white;
+  font-size: 3em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0 1rem 0 10rem;
+  width: 40em;
+  padding: 0;
+  font-family: "Bitter", serif;
 }
 
-cheese-list {
+aboutibri {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0 0 5rem 0;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: url("./images/ibri.png");
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+principe {
+  margin: 4em 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 40%;
+  align-items: center;
+}
+principe h2 {
+  font-size: 1.8em;
+}
+
+.error {
+  color: white;
+  display: flex;
+  width: 30em;
+  margin: 2em 0 0 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error:hover {
+  text-decoration: underline 1px solid white;
+}
+
+blog {
+  margin: 5em 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 60%;
+  justify-content: space-between;
+}
+blog div {
+  margin: 1em 0;
+  display: flex;
+  width: 48%;
+  flex-direction: column;
+}
+blog a {
+  color: white;
+  flex-direction: column;
+}
+blog a:hover {
+  text-decoration: none;
+  color: #be264cff;
+}
+blog span {
+  font-size: 0.9em;
+  color: grey;
+}
+blog h3 {
+  font-size: 1.4em;
+  margin: 0;
+  padding: 0;
+}
+blog img {
+  width: 100%;
+}
+
+art {
+  margin: 5em 0;
+  width: 50%;
+}
+art span {
+  font-size: 0.9em;
+  color: grey;
+}
+art span:last-child {
+  margin-top: 12em;
+}
+art img {
+  width: 100%;
+}
+art a {
+  display: inline;
+  text-decoration: underline;
+  color: white;
+}
+
+books {
   display: flex;
   flex-wrap: wrap;
   width: 80%;
-  margin: 5em 0 0 0;
+  margin: 5em 0 10em 0;
   flex-direction: row;
   justify-content: flex-start;
 }
-cheese-list .cheese {
+books .book {
   background-color: rgba(155, 131, 131, 0.089);
   border-radius: 2%;
   margin: 1em;
@@ -354,14 +229,14 @@ cheese-list .cheese {
   width: 20em;
   font-size: 0.9em;
 }
-cheese-list .cheese p {
+books .book p {
   margin: 0.5em 0;
 }
-cheese-list .cheese span {
+books .book span {
   font-size: 0.8em;
-  color: #be264c;
+  color: #be264cff;
 }
-cheese-list .cheese h3 {
+books .book h3 {
   margin: 0.5em 0;
 }
 
@@ -383,15 +258,16 @@ search {
 search label {
   font-size: 1.1em;
   font-weight: bold;
-  color: #324376;
+  color: white;
   margin: 0 0 0 0.5em;
 }
 search div {
-  width: 100%;
+  width: 90%;
   display: flex;
   height: 35px;
-  background-color: #f0e9e9;
+  background-color: #242424;
   border-radius: 10px;
+  border: 0.2px solid #555454;
   padding: 0.5em;
 }
 search input[type=text], search button {
@@ -399,12 +275,14 @@ search input[type=text], search button {
   background: none;
   outline: none;
   line-height: 1;
+  caret-color: white;
+  color: white;
 }
 search input {
   width: 100%;
 }
 search input[type=text]::placeholder {
-  color: #666060;
+  color: #555454;
   font-size: 1.2em;
 }
 search button {
@@ -426,7 +304,7 @@ form label {
   font-size: 0.9em;
 }
 form label:hover {
-  color: #be264c;
+  color: #be264cff;
 }
 form input[type=checkbox] + label {
   background-color: #ddd;
@@ -437,84 +315,6 @@ form input[type=checkbox]:checked + label {
   background-color: green;
 }
 
-@media screen and (max-width: 1500px) {
-  latest-articles {
-    width: 90%;
-  }
-}
-@media screen and (max-width: 1250px) {
-  latest-articles, my-skills, my-article, my-blog, book-list, cheese-list {
-    width: 90%;
-  }
-  .info {
-    width: 80%;
-  }
-  latest-articles .articles {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  latest-articles .article {
-    width: 70%;
-  }
-  latest-articles .article img {
-    width: 100%;
-  }
-  header a {
-    padding: 0.3rem 1rem 0.3rem 1rem;
-  }
-}
-@media screen and (max-width: 860px) {
-  footer {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    gap: 20px;
-    padding: 2em 0;
-    margin: 10em 0 0 0;
-  }
-  footer p {
-    width: 80%;
-  }
-  footer div, footer nav {
-    margin: 0 0;
-  }
-  footer a {
-    justify-content: center;
-  }
-  latest-articles .article {
-    width: 90%;
-  }
-  about-me div {
-    margin: 0 0 0 1em;
-  }
-  about-me h2 {
-    font-size: 0.8em;
-  }
-  my-skills li {
-    height: 3rem;
-  }
-  cheese-list, book-list {
-    margin: 5em 0 0 0;
-  }
-  my-blog {
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  my-blog div {
-    width: 80%;
-  }
-  header a {
-    font-size: 1em;
-  }
-  form label {
-    padding: 2px 4px;
-  }
-}
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -533,4 +333,80 @@ form input[type=checkbox]:checked + label {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #777;
+}
+
+@media screen and (max-width: 1250px) {
+  art, blog, books {
+    width: 90%;
+  }
+
+  .info {
+    width: 80%;
+  }
+
+  header a {
+    padding: 0.3rem 1rem 0.3rem 1rem;
+  }
+}
+@media screen and (max-width: 860px) {
+  aboutme h1 {
+    margin: 0 1rem 0 2rem;
+    font-size: 1.8em;
+  }
+
+  footer {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 20px;
+    padding: 2em 0;
+    margin: 10em 0 0 0;
+  }
+  footer img {
+    margin: 2em 2em;
+  }
+  footer p {
+    width: 80%;
+  }
+  footer div, footer nav {
+    margin: 0 0;
+  }
+  footer a {
+    justify-content: center;
+  }
+
+  principe {
+    width: 80%;
+  }
+  principe h2 {
+    font-size: 1.8em;
+  }
+  principe p {
+    width: 100%;
+  }
+
+  books {
+    margin: 5em 0 0 0;
+  }
+
+  blog {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  blog div {
+    width: 80%;
+  }
+
+  header a {
+    font-size: 1em;
+    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+  }
+
+  form label {
+    padding: 2px 4px;
+  }
 }
