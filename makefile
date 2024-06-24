@@ -1,16 +1,19 @@
 MAKEFLAGS := --silent --always-make
 PAR := $(MAKE) -j 128
-SASS := sass --no-source-map main.scss:main.css
-DENO := deno run -A --unstable --no-check
+TAR := target
+STATIC := static
+SASS := sass --no-source-map main.scss:$(TAR)/main.css
+DENO := deno run -A --no-check
 
-watch:
-	$(PAR) styles_w srv_w
+$(info $(OS))
 
-build: styles
+watch: clean
+	$(PAR) styles_w srv_w live
 
-ci:
-	cp 404.html index.html
-	rm readme.md
+build: clean all
+
+all:
+	$(PAR) styles html cp
 
 styles_w:
 	$(SASS) --watch
@@ -18,8 +21,37 @@ styles_w:
 styles:
 	$(SASS)
 
+live:
+	$(DENO) live.mjs
+
 srv_w:
-	$(DENO) --watch srv.mjs
+	$(DENO) --watch srv.mjs --dev
+
+html:
+	$(DENO) html.mjs
+
+cp:
+ifeq ($(OS), L)
+	if not exist "$(TAR)" mkdir "$(TAR)"
+	copy /y "$(STATIC)"\* "$(TAR)" >nul
+else
+	mkdir -p "$(TAR)"
+	cp -r "$(STATIC)"/* "$(TAR)"
+endif
+# ifeq ($(OS), L)
+# 	if not exist "$(TAR)" mkdir "$(TAR)"
+# 	copy "$(STATIC)"\* "$(TAR)" >nul
+# else
+# 	mkdir -p "$(TAR)"
+# 	cp "$(STATIC)"/* "$(TAR)"
+# endif
+
+clean:
+ifeq ($(OS), L)
+	if exist "$(TAR)" rmdir /s /q "$(TAR)"
+else
+	rm -rf "$(TAR)"
+endif
 
 deps:
 ifeq ($(OS), Windows_NT)

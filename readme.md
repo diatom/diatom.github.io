@@ -1,1 +1,6 @@
-The project of my own website. In development, I used classic JavaScript, using the `marked` library.
+My personal web-site
+
+Using:
+
+* [js](https://github.com/mitranim/js/) library by mitranim
+* [marked](https://github.com/markedjs/marked) library
