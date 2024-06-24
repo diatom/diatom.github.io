@@ -342,6 +342,9 @@ form input[type=checkbox]:checked + label {
   .info {
     width: 80%;
   }
+  principe {
+    width: 70%;
+  }
   header a {
     padding: 0.3rem 1rem 0.3rem 1rem;
   }
