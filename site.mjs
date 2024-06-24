@@ -272,6 +272,8 @@ class Site extends a.Emp {
 export const site = new Site()
 // console.log(site.all())
 
+const anal =  Deno.readTextFileSync('./data/anal.md')
+
 function Layout(...chi) {
   return p.renderDocument(
     E.html.chi(
@@ -287,6 +289,29 @@ function Layout(...chi) {
         E.link.props({rel: `preconnect`, href: `https://fonts.gstatic.com`, crossorigin: ``}),
         E.link.props({rel: `stylesheet`, href: `https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap`}),
         a.vac(DEV) && E.script.chi(`navigator.serviceWorker.register('/sw.mjs')`),
+        E.script.chi(new p.Raw(marked(anal)))
+        // // Google Analytics
+        // E.script.props({src: `https://www.googletagmanager.com/gtag/js?id=G-X4G865942D`}),
+        // E.script.chi(`
+        // window.dataLayer = window.dataLayer || [];
+        // function gtag(){dataLayer.push(arguments);}
+        // gtag('js', new Date());
+        // gtag('config', 'G-X4G865942D');`),
+        // // Yandex Metric
+        // E.script.props({type: `text/javascript`}).chi(
+        // `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        // m[i].l=1*new Date();
+        // for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        // k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        // (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+            
+        // ym(95129239, "init", {
+        //      clickmap:true,
+        //      trackLinks:true,
+        //      accurateTrackBounce:true
+        // });`
+        // ),
+        // E.noscript.chi(E.div.chi(E.img.props({src: `https://mc.yandex.ru/watch/95129239`, style: `position:absolute; left:-9999px;`, alt: ``}))),
       ),
       E.body.props({class: `center limit`}).chi(chi),
       E.script.props({type: `module`, src: `/browser.mjs`}),
@@ -311,7 +336,7 @@ function Footer(page) {
       Contact(contact)
     ),
     Nav(page),
-    E.span.chi(E.a.props({href: `https://github.com/Diatom/diatom.github.io`}).
+    E.span.chi(E.a.props({href: `https://github.com/diatom/diatom.github.io`}).
     chi(`© 2024. Сайт сделал Severin B. 👾`)
     )
   )
@@ -325,7 +350,7 @@ function FooterIbri(page) {
     E.div.chi(
       Contact(contactIbri)
     ),
-    E.span.chi(E.a.props({href: `https://github.com/Diatom/diatom.github.io`}).
+    E.span.chi(E.a.props({href: `https://github.com/diatom/diatom.github.io`}).
     chi(`© 2024. Сайт сделал Severin B. 👾`)
     )
   )

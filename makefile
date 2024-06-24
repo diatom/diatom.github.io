@@ -38,13 +38,6 @@ else
 	mkdir -p "$(TAR)"
 	cp -r "$(STATIC)"/* "$(TAR)"
 endif
-# ifeq ($(OS), L)
-# 	if not exist "$(TAR)" mkdir "$(TAR)"
-# 	copy "$(STATIC)"\* "$(TAR)" >nul
-# else
-# 	mkdir -p "$(TAR)"
-# 	cp "$(STATIC)"/* "$(TAR)"
-# endif
 
 clean:
 ifeq ($(OS), L)
