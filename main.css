@@ -288,6 +288,10 @@ search input[type=text]::placeholder {
 search button {
   cursor: pointer;
 }
+search button svg {
+  width: 20px;
+  height: 20px;
+}
 
 form {
   display: flex;
