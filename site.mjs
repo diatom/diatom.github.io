@@ -336,7 +336,7 @@ function Footer(page) {
   return E.footer.chi(
     E.p.chi(`Любое использование либо копирование материалов или подборки материалов сайта, 
       допускается только cо ссылкой на источник 
-      https://diatom.github.io/ и указанием авторства`),
+      sirseverin.ru и указанием авторства`),
     E.div.chi(
       Contact(contact)
     ),
