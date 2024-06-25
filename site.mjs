@@ -5,6 +5,7 @@ import * as p from 'https://cdn.jsdelivr.net/npm/@mitranim/js@0.1.25/prax.mjs'
 import * as dg from 'https://cdn.jsdelivr.net/npm/@mitranim/js@0.1.25/dom_glob_shim.mjs'
 // import {paths as pt} from 'https://cdn.jsdelivr.net/npm/@mitranim/js@0.1.25/io_deno.mjs'
 import * as pt from 'https://cdn.jsdelivr.net/npm/@mitranim/js@0.1.25/path.mjs'
+
 import * as l from './live.mjs'
 
 import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js'
@@ -68,7 +69,9 @@ class Page404 extends Page {
   res() {return a.resBui().html(this.body()).code(404).res()}
 
   body() {
-    return Layout(
+    const tit = `Ошбика: 404`
+    const desc = 'Ошбика 404'
+    return Layout(tit, desc,
       E.header.chi(Nav(this)),
       E.main.chi(
         E.h1.chi(this.title()),
@@ -90,8 +93,9 @@ class PageIndex extends Page {
 
   body() {
   const principe =  Deno.readTextFileSync('./data/principe.md')
-
-    return Layout(
+  const tit = `Северин Богучарский`
+  const desc = 'Личный сайт Северина Богучарского. Публикации, блог, обзоры книг, сырный каталог.'
+    return Layout(tit, desc,
       E.header.chi(Nav(this)),
       E.main.chi(
         E.aboutme.chi(E.h1.chi(`Северин Богучарский`)),
@@ -108,7 +112,9 @@ class PageBlog extends Page {
   title() {return `Блог`}
 
   body() {
-    return Layout(
+    const tit = `Блог`
+    const desc = 'Личный блог. Рассуждния на социальные темы.'
+    return Layout(tit, desc,
       E.header.chi(Nav(this)),
       E.main.chi(
         E.blog.chi(
@@ -142,7 +148,9 @@ class PageArticle extends Page {
   
     body() {
     const art1 = Deno.readTextFileSync(this.arti.path)
-    return Layout(
+    const tit = this.arti.h3
+    const desc = this.arti.p
+    return Layout(tit, desc,
       E.header.chi(Nav(this)),
       E.main.chi(
         E.art.chi(new p.Raw(marked(art1)))
@@ -166,7 +174,9 @@ class PageBookreview extends Page {
   title() {return `Обзоры книг`}
 
   body() {
-    return Layout(
+    const tit = `Обзоры книг`
+    const desc = 'Обзоры прочитанных книг, с личным рейтингом.'
+    return Layout(tit, desc,
       E.header.chi(Nav(this)),
       E.main.chi(
         E.div.props({class: `info`}).chi(
@@ -210,7 +220,9 @@ class PageCheese extends Page {
   title() {return `Сыр`}
 
   body() {
-    return Layout(
+    const tit = `Сырный каталог`
+    const desc = 'Сырный каталог из существующих сыров.'
+    return Layout(tit, desc,
       E.header.chi(Nav(this)),
       E.main.chi(
         E.div.props({class: `info`}).chi(
@@ -258,7 +270,9 @@ class PageIbri extends Page {
 
   body() {
   const ibri = Deno.readTextFileSync('./data/ibri.md')
-    return Layout(
+  const tit = `Ибри`
+  const desc = 'Газированный напиток Ибри от Северина Богучарского.'
+  return Layout(tit, desc,
       E.main.chi(
         E.aboutibri,
         E.principe.chi(new p.Raw(marked(ibri)))
@@ -283,16 +297,18 @@ export const site = new Site()
 
 const anal =  Deno.readTextFileSync('./data/anal.md')
 
-function Layout(...chi) {
+function Layout(tit, desc, ...chi) {
   return p.renderDocument(
     E.html.chi(
       E.head.chi(
         E.meta.props({charset: `utf-8`}),
         E.meta.props({name: `viewport`, content: `width=device-width, initial-scale=1`}),
-        E.title.chi(`Северин Богучарский`),
-        E.meta.props({name: `description`, content: `Личный сайт Северина Богучарского. Публикации, блог, обзоры книг, сырный каталог.`}),
+        E.title.chi(tit),
+        E.meta.props({name: `description`, content: desc}),
+        // E.title.chi(`Северин Богучарский`),
+        // E.meta.props({name: `description`, content: `Личный сайт Северина Богучарского. Публикации, блог, обзоры книг, сырный каталог.`}),
         E.meta.props({name: `keywords`, content: `личный сайт, блог, путешествия, советы, фотографии, книги, социальные темы`}),
-        E.link.props({rel: `icon`, type: `image/x-icon`, href: `/images/severin.ico`}),
+        E.link.props({rel: `icon`, type: `image/x-icon`, href: `/images/severin23.ico`}),
         E.link.props({rel: `stylesheet`, href: `/main.css`}),
         E.link.props({rel: `preconnect`, href: `https://fonts.googleapis.com`}),
         E.link.props({rel: `preconnect`, href: `https://fonts.gstatic.com`, crossorigin: ``}),
@@ -301,28 +317,6 @@ function Layout(...chi) {
         E.link.props({rel: `stylesheet`, href: `https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap`}),
         a.vac(DEV) && E.script.chi(`navigator.serviceWorker.register('/sw.mjs')`),
         E.script.chi(new p.Raw(marked(anal)))
-        // // Google Analytics
-        // E.script.props({src: `https://www.googletagmanager.com/gtag/js?id=G-X4G865942D`}),
-        // E.script.chi(`
-        // window.dataLayer = window.dataLayer || [];
-        // function gtag(){dataLayer.push(arguments);}
-        // gtag('js', new Date());
-        // gtag('config', 'G-X4G865942D');`),
-        // // Yandex Metric
-        // E.script.props({type: `text/javascript`}).chi(
-        // `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        // m[i].l=1*new Date();
-        // for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        // k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-        // (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-            
-        // ym(95129239, "init", {
-        //      clickmap:true,
-        //      trackLinks:true,
-        //      accurateTrackBounce:true
-        // });`
-        // ),
-        // E.noscript.chi(E.div.chi(E.img.props({src: `https://mc.yandex.ru/watch/95129239`, style: `position:absolute; left:-9999px;`, alt: ``}))),
       ),
       E.body.props({class: `center limit`}).chi(chi),
       E.script.props({type: `module`, src: `/browser.mjs`}),
@@ -369,7 +363,15 @@ function FooterIbri(page) {
 
 function PageLink(page) {
   a.reqInst(page, Page)
-  return E.a.props({href: page.urlPath()}).chi(page.title())
+  const pro = {
+    href: page.urlPath(),
+    id: page.title(),
+  }
+  if (page.title() === "Ibri®") {
+    pro.target = "_blank"
+    pro.rel = "noopener noreferrer"
+  }
+  return E.a.props(pro).chi(page.title())
 }
 
 function Contact(cont) {
