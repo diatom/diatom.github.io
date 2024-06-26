@@ -22,3 +22,6 @@
         accurateTrackBounce:true
    });
 </script><noscript><div><img src="https://mc.yandex.ru/watch/95129239" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+<!-- Yandex Webmaster -->
+<meta name="yandex-verification" content="be451453e0548094" />
