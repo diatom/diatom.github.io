@@ -118,7 +118,9 @@ aboutme {
   width: 90%;
   background-size: cover;
   background-position: center;
-  height: 95vh;
+  height: 90vh;
+  border-radius: 0 0 5px 5px;
+
   h1 {
     color: white;
     font-size: 3em;
@@ -205,6 +207,7 @@ blog {
   }
   img {
     width: 100%;
+    border-radius: 5px;
   }
 }
 
@@ -221,6 +224,7 @@ art {
   }
   img {
     width: 100%;
+    border-radius: 10px;
   }
   a {
     display: inline;
@@ -389,6 +393,7 @@ form {
 @media screen and (max-width: 860px) {
   aboutme {
     width: 100%;
+  height: 95vh;
     h1 {
       margin: 0 1rem 0 2rem;
       font-size: 1.8em;
