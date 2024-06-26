@@ -107,7 +107,8 @@ aboutme {
   width: 90%;
   background-size: cover;
   background-position: center;
-  height: 95vh;
+  height: 90vh;
+  border-radius: 0 0 5px 5px;
 }
 aboutme h1 {
   color: white;
@@ -191,6 +192,7 @@ blog h3 {
 }
 blog img {
   width: 100%;
+  border-radius: 5px;
 }
 
 art {
@@ -206,6 +208,7 @@ art span:last-child {
 }
 art img {
   width: 100%;
+  border-radius: 10px;
 }
 art a {
   display: inline;
@@ -359,6 +362,7 @@ form input[type=checkbox]:checked + label {
 @media screen and (max-width: 860px) {
   aboutme {
     width: 100%;
+    height: 95vh;
   }
   aboutme h1 {
     margin: 0 1rem 0 2rem;
