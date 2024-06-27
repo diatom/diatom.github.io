@@ -227,7 +227,7 @@ class PageCheese extends Page {
       E.main.chi(
         E.div.props({class: `info`}).chi(
           E.search.chi(
-            E.label.props({for: `searchInput`}).chi(`Люблю сыр, делаю сыр, веду подсчёт сыра :)`),
+            E.label.props({for: `searchInput`}).chi(`Люблю сыр и делаю сыр. Список тех видов 🧀, на производстве которых я профессионально специализируюсь`),
             E.div.chi(
               E.input.props({type: `text`, id: `searchInput`, placeholder: `Найти сыр...`}),
               E.button.props({id: `searchButton`, type: `submit`}).chi(
