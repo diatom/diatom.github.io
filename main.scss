@@ -241,6 +241,7 @@ books {
   margin: 5em 0 10em 0;
   flex-direction: row;
   justify-content: flex-start;
+  justify-content: center;
   
   .book {
     background-color: rgba(155, 131, 131, 0.089);
@@ -263,28 +264,42 @@ books {
 }
 
 // Search
-.info {
+.info-books, .info-cheese {
   display: flex;
   flex-direction: column;
   margin: 5em 0 0 0;
-  width: 40%;
+  padding: 1em;
+  width: 60%;
+  height: 20em;
+  background-image: url('./images/books.jpg');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center top;
+  border-radius: 5px;
+  align-items: left;
+  justify-content: flex-start;
+}
+.info-cheese {
+  background-image: url('./images/cheese.jpg');
 }
 search {
   margin: 0;
   padding: 0;
   display: flex;
+  // align-items: center;
+  // justify-content: center;
   flex-direction: column;
   height: 100px;
   gap: 10px;
 
   label {
     font-size: 1.1em;
-    font-weight: bold;
     color: white;
     margin: 0 0 0 0.5em;
+    width: 80%;
   }
   div {
-    width: 90%;
+    width: 40%;
     display: flex;
     height: 35px;
     background-color: hsl(0, 0%, 14%);
@@ -378,8 +393,8 @@ form {
   art, blog, books {
     width: 90%;
   }
-  .info {
-    width: 80%;
+  .info-books, .info-cheese {
+    width: 90%;
   }
   principe {
     width: 70%;
@@ -399,7 +414,15 @@ form {
       font-size: 1.8em;
     }
   }
-  
+  .info-books, .info-cheese {
+    width: 80%;
+    height: 10em;
+    search {
+      div {
+        width: 80%;
+      }
+    }
+  }
   footer {
     flex-direction: column;
     flex-wrap: nowrap;
@@ -414,6 +437,7 @@ form {
     }
     p {
       width: 80%;
+      text-align: center;
     }
     div, nav {
       margin: 0 0;

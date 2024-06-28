@@ -179,9 +179,9 @@ class PageBookreview extends Page {
     return Layout(tit, desc,
       E.header.chi(Nav(this)),
       E.main.chi(
-        E.div.props({class: `info`}).chi(
+        E.div.props({class: `info-books`}).chi(
           E.search.chi(
-            E.label.props({for: `searchInput`}).chi(`Краткие оценки прочитанных мною книг`),
+            E.label.props({for: `searchInput`}).chi(`Краткие оценки прочитанных мною книг`),
             E.div.chi(
               E.input.props({type: `text`, id: `searchInput`, placeholder: `Книга, автор, жанр...`}),
               E.button.props({id: `searchButton`, type: `submit`}).chi(
@@ -225,9 +225,9 @@ class PageCheese extends Page {
     return Layout(tit, desc,
       E.header.chi(Nav(this)),
       E.main.chi(
-        E.div.props({class: `info`}).chi(
+        E.div.props({class: `info-cheese`}).chi(
           E.search.chi(
-            E.label.props({for: `searchInput`}).chi(`Люблю сыр и делаю сыр. Список тех видов 🧀, на производстве которых я профессионально специализируюсь`),
+            E.label.props({for: `searchInput`}).chi(`Специализируюсь на определённых видах сыра`),
             E.div.chi(
               E.input.props({type: `text`, id: `searchInput`, placeholder: `Найти сыр...`}),
               E.button.props({id: `searchButton`, type: `submit`}).chi(

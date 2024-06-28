@@ -34,7 +34,7 @@ export const list = [
         'src': './images/art-images/gosudarstvo-kak-brend-by-pavel-neznanov.jpg',
         'alt': 'By Pavel Neznanov',
         'date': 'Дата публикации: 14 марта 2024',
-        'p': 'Есть ли у личности идентичность с государством?'
+        'p': 'Есть ли у личности идентичность с государством?'
     },
     {
         'id': '1',
@@ -44,7 +44,7 @@ export const list = [
         'src': './images/art-images/grazhdane-est-gosudarstvo-by-pavel-neznanov.jpg',
         'alt': 'By Pavel Neznanov',
         'date': 'Дата публикации: 14 марта 2024',
-        'p': 'Дистанция между управленцами и рядовыми гражданами государства'
+        'p': 'Дистанция между управленцами и рядовыми гражданами государства'
     },
     {
         'id': '2', 
