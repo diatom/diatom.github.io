@@ -62,8 +62,17 @@ const {E} = p.Ren.native()
 const searchInput = document.getElementById("searchInput")
 const searchButton = document.getElementById("searchButton")
 
-function searchData(input) {
-  const divs = document.getElementsByClassName('book')
+function searchDataBook(input) {
+  const divb = document.getElementsByClassName('book')
+  const divs = document.getElementsByClassName('cheese')
+  for (const elem of divb) {
+    let result = elem.innerHTML.toLowerCase().includes(input)
+    if (result) {
+      elem.hidden = false
+    } else {
+      elem.hidden = true
+    } 
+  }
   for (const elem of divs) {
     let result = elem.innerHTML.toLowerCase().includes(input)
     if (result) {
@@ -75,8 +84,9 @@ function searchData(input) {
 }
 searchButton.addEventListener('click', () => {
   const userInput = searchInput.value.toLowerCase()
-  searchData(userInput)
+  searchDataBook(userInput)
 })
+
 
 // Enter click
 document.addEventListener('keydown', function(event) {
