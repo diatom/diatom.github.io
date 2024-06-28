@@ -225,9 +225,9 @@ class PageCheese extends Page {
     return Layout(tit, desc,
       E.header.chi(Nav(this)),
       E.main.chi(
-        E.div.props({class: `info-cheese`}).chi(
+        E.div.props({class: `info-cheeses`}).chi(
           E.search.chi(
-            E.label.props({for: `searchInput`}).chi(`Специализируюсь на определённых видах сыра`),
+            E.label.props({for: `searchInput`}).chi(`Специализируюсь на производстве определённых видов сыра`),
             E.div.chi(
               E.input.props({type: `text`, id: `searchInput`, placeholder: `Найти сыр...`}),
               E.button.props({id: `searchButton`, type: `submit`}).chi(
@@ -242,20 +242,23 @@ class PageCheese extends Page {
         ),
         E.books.chi(
           cheese.map((val) => {
-            return E.div.props({class: `book`, dataindex: val.tags, id: val.Id}).chi(
-              E.span.chi(val.Id),
-              E.h3.chi(val.name),
-              E.p.chi(`Срок созревания: ` + val.age),
-              E.p.chi(`Молоко: ` + val.milk),
-              E.p.chi(`Первое упоминание: ` + val.since),
-              E.p.chi(`Тип: ` + val.type),
-              E.p.chi(`Вкус: ` + val.taste),
-              E.p.chi(`Плесень: ` + val.mold),
-              E.p.chi(`Описание: ` + val.description),
-              E.span.chi(`Теги: ` + val.tags),
+            return E.div.props({class: `cheese`, dataindex: val.tags, id: val.Id}).chi(
+              E.div.chi(
+                E.span.chi(val.Id),
+                E.h3.chi(val.name),
+                E.p.chi(`Срок созревания: ` + val.age),
+                E.p.chi(`Молоко: ` + val.milk),
+                E.p.chi(`Первое упоминание: ` + val.since),
+                E.p.chi(`Тип: ` + val.type),
+                E.p.chi(`Вкус: ` + val.taste),
+                E.p.chi(`Плесень: ` + val.mold),
+                E.p.chi(`Описание: ` + val.description),
+                E.span.chi(`Теги: ` + val.tags),
+              ),
+              E.img.props({src: val.img, alt: val.name})
             )
           }
-        )
+          )
         )
       ),
       Footer(this)
