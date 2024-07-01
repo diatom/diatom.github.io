@@ -70,8 +70,9 @@ class Page404 extends Page {
 
   body() {
     const tit = `Ошбика: 404`
-    const desc = 'Ошбика 404'
-    return Layout(tit, desc,
+    const desc = `Ошбика 404`
+    const img = `https://sirseverin.ru/images/severin404.jpg`
+    return Layout(tit, desc, img,
       E.header.chi(Nav(this)),
       E.main.chi(
         E.h1.chi(this.title()),
@@ -94,8 +95,9 @@ class PageIndex extends Page {
   body() {
   const principe =  Deno.readTextFileSync('./data/principe.md')
   const tit = `Северин Богучарский`
-  const desc = 'Личный сайт Северина Богучарского. Публикации, блог, обзоры книг, сырный каталог.'
-    return Layout(tit, desc,
+  const desc = `Личный сайт Северина Богучарского. Публикации, блог, обзоры книг, сырный каталог.`
+  const img = `https://sirseverin.ru/images/severin.jpg`
+    return Layout(tit, desc, img,
       E.header.chi(Nav(this)),
       E.main.chi(
         E.aboutme.chi(E.img.props({src: `/images/severin.jpg`, alt: `Severin Bogucharskiy`}), E.h1.chi(`Северин Богучарский`)),
@@ -113,8 +115,9 @@ class PageBlog extends Page {
 
   body() {
     const tit = `Блог`
-    const desc = 'Личный блог. Рассуждения на социальные темы.'
-    return Layout(tit, desc,
+    const desc = `Личный блог. Рассуждения на разные темы. Мир. Путешествия`
+    const img = `https://sirseverin.ru/images/severin.jpg`
+    return Layout(tit, desc, img,
       E.header.chi(Nav(this)),
       E.main.chi(
         NavBlog(this),
@@ -150,7 +153,8 @@ class PageSubBlog extends Page {
   body() {
     const tit = this.sub.name
     const desc = this.sub.desc
-    return Layout(tit, desc,
+    const img = `https://sirseverin.ru/images/severin.jpg`
+    return Layout(tit, desc, img,
       E.header.chi(Nav(this)),
       E.main.chi(
         NavBlog(this),
@@ -197,7 +201,8 @@ class PageArticle extends Page {
     const art1 = Deno.readTextFileSync(this.arti.path)
     const tit = this.arti.h3
     const desc = this.arti.p
-    return Layout(tit, desc,
+    const img = `https://sirseverin.ru/` + this.arti.src
+    return Layout(tit, desc, img,
       E.header.chi(Nav(this)),
       E.main.chi(
         NavBlog(this),
@@ -225,7 +230,7 @@ function Articles(site) {
 //   body() {
 //     const tit = `Блог`
 //     const desc = 'Личный блог. Рассуждния на социальные темы.'
-//     return Layout(tit, desc,
+//     return Layout(tit, desc, img,
 //       E.header.chi(Nav(this)),
 //       E.main.chi(
 //         E.blog.chi(
@@ -261,7 +266,7 @@ function Articles(site) {
 //     const art1 = Deno.readTextFileSync(this.arti.path)
 //     const tit = this.arti.h3
 //     const desc = this.arti.p
-//     return Layout(tit, desc,
+//     return Layout(tit, desc, img,
 //       E.header.chi(Nav(this)),
 //       E.main.chi(
 //         E.art.chi(new p.Raw(marked(art1)))
@@ -286,8 +291,9 @@ class PageBookreview extends Page {
 
   body() {
     const tit = `Обзоры книг`
-    const desc = 'Обзоры прочитанных книг, с личным рейтингом.'
-    return Layout(tit, desc,
+    const desc = `Обзоры прочитанных книг, с личным рейтингом.`
+    const img = `https://sirseverin.ru/images/books.jpg`
+    return Layout(tit, desc, img,
       E.header.chi(Nav(this)),
       E.main.chi(
         E.div.props({class: `info-books`}).chi(
@@ -331,9 +337,10 @@ class PageCheese extends Page {
   title() {return `Сыр`}
 
   body() {
-    const tit = `Сырный каталог`
-    const desc = 'Сырный каталог из существующих сыров.'
-    return Layout(tit, desc,
+    const tit = `Сыр`
+    const desc = `Список сыра, который возможно внедрить на производство.`
+    const img = `https://sirseverin.ru/images/cheese.jpg`
+    return Layout(tit, desc, img,
       E.header.chi(Nav(this)),
       E.main.chi(
         E.div.props({class: `info-cheeses`}).chi(
@@ -385,8 +392,9 @@ class PageIbri extends Page {
   body() {
   const ibri = Deno.readTextFileSync('./data/ibri.md')
   const tit = `Ибри`
-  const desc = 'Газированный напиток Ибри от Северина Богучарского.'
-  return Layout(tit, desc,
+  const desc = `Газированный напиток Ибри от Северина Богучарского.`
+  const img = `https://sirseverin.ru/images/ibri.jpg`
+  return Layout(tit, desc, img,
       E.main.chi(
         E.aboutibri,
         E.principe.chi(new p.Raw(marked(ibri)))
@@ -412,7 +420,7 @@ export const site = new Site()
 
 const anal =  Deno.readTextFileSync('./data/anal.md')
 
-function Layout(tit, desc, ...chi) {
+function Layout(tit, desc, img, ...chi) {
   return p.renderDocument(
     E.html.chi(
       E.head.chi(
@@ -426,7 +434,7 @@ function Layout(tit, desc, ...chi) {
         E.meta.props({property: `og:type`, content: `website`}),
         E.meta.props({property: `og:site_name`, content: `sirseverin.ru`}),
         E.meta.props({property: `og:url`, content: `https://sirseverin.ru/`}),
-        E.meta.props({property: `og:image`, content: `https://sirseverin.ru/images/severin.jpg`}),
+        E.meta.props({property: `og:image`, content: img}),
         E.meta.props({property: `og:image:height`, content: `600`}),
         E.meta.props({property: `og:image:width`, content: `300`}),
         E.meta.props({property: `og:image:type`, content: `image/jpeg`}),
