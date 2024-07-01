@@ -66,6 +66,24 @@ main {
   div {
     padding: 1em 0 1em 0;
   }
+
+  nav {
+    height: 5vh;
+    min-height: 40px;
+    align-items: center;
+    // justify-content: center;
+    width: 100%;
+
+    a, p {
+      padding: 0.3rem 1rem 0.3rem 2rem;
+      font-family: 'Bitter', serif;
+      font-size: 1.2rem;
+      color: white;
+    }
+    a:hover {
+      text-decoration: underline 2px solid white;
+    }
+  }
 }
 footer {
   flex-wrap: wrap;
@@ -193,6 +211,11 @@ blog {
   width: 60%;
   justify-content: space-between;
 
+  h2 {
+    width: 100%;
+    font-size: 1.8em;
+    color: grey;
+  }
   div {
     margin: 1em 0;
     display: flex;
@@ -510,6 +533,14 @@ form {
     a {
       font-size: 1em;
       padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+    }
+  }
+  main {
+    nav {
+      a, p {
+        font-size: 1em;
+        padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+      }
     }
   }
   form {

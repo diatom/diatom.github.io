@@ -10,7 +10,7 @@ import * as l from './live.mjs'
 
 import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js'
 
-import { contact, list, contactIbri } from './data/data.js'
+import { contact, list, contactIbri, bloglist } from './data/data.js'
 import { books } from './data/data-books.js'
 import { cheese } from './data/data-cheese.js'
 
@@ -117,8 +117,49 @@ class PageBlog extends Page {
     return Layout(tit, desc,
       E.header.chi(Nav(this)),
       E.main.chi(
+        NavBlog(this),
         E.blog.chi(
-          list.map((val) => {
+          E.h2.chi(`Последние публикации:`),
+          list.slice(-3).map((val) => {
+            return E.div.props({id: val.id, dataindex: val.dataindex}).chi(
+              E.span.chi(val.date),
+              E.a.props({href: '/blog/' + val.dataindex}).chi(
+                E.h3.chi(val.h3),
+                E.p.chi(val.p),
+                E.img.props({alt: val.alt, src: val.src})
+              )
+            )
+          }
+          )
+        )
+      ),
+      Footer(this)
+    )
+  }
+}
+
+class PageSubBlog extends Page {
+  constructor(site, sub) {
+    super(site)
+    this.sub = sub
+  }  
+
+  urlPath() {return `/blog/` + this.sub.dataindex}
+  title() {return this.sub.name}
+
+  body() {
+    const tit = this.sub.name
+    const desc = this.sub.desc
+    return Layout(tit, desc,
+      E.header.chi(Nav(this)),
+      E.main.chi(
+        NavBlog(this),
+        E.blog.chi(
+          list.filter(val => val.dataindex.startsWith(this.sub.dataindex.slice(0, 3)))
+          // list.filter(val => 
+          //   bloglist.some(blogval => val.dataindex.startsWith(blogval.dataindex.slice(0, 3)))
+          // )
+          .map((val) => {
               return E.div.props({id: val.id, dataindex: val.dataindex}).chi(
                 E.span.chi(val.date),
                 E.a.props({href: '/blog/' + val.dataindex}).chi(
@@ -134,6 +175,14 @@ class PageBlog extends Page {
       Footer(this)
     )
   }
+}
+
+function SubBlogs(site) {
+  const results = []
+  for (const val of bloglist) {
+    results.push(new PageSubBlog(site, val))
+  }
+  return results
 }
 
 // Article //
@@ -153,6 +202,7 @@ class PageArticle extends Page {
     return Layout(tit, desc,
       E.header.chi(Nav(this)),
       E.main.chi(
+        NavBlog(this),
         E.art.chi(new p.Raw(marked(art1)))
       ),
       Footer(this)
@@ -167,6 +217,69 @@ function Articles(site) {
     }
     return results
 }
+
+
+// // Blog //
+// class PageBlog extends Page {
+//   urlPath() {return `/blog`}
+//   title() {return `Блог`}
+
+//   body() {
+//     const tit = `Блог`
+//     const desc = 'Личный блог. Рассуждния на социальные темы.'
+//     return Layout(tit, desc,
+//       E.header.chi(Nav(this)),
+//       E.main.chi(
+//         E.blog.chi(
+//           list.map((val) => {
+//               return E.div.props({id: val.id, dataindex: val.dataindex}).chi(
+//                 E.span.chi(val.date),
+//                 E.a.props({href: '/blog/' + val.dataindex}).chi(
+//                   E.h3.chi(val.h3),
+//                   E.p.chi(val.p),
+//                   E.img.props({alt: val.alt, src: val.src})
+//                 )
+//               )
+//             }
+//           )
+//         )
+//       ),
+//       Footer(this)
+//     )
+//   }
+// }
+
+// // Article //
+// class PageArticle extends Page {
+//   constructor(site, arti) {
+//     super(site)
+//     this.arti = arti
+//   }  
+  
+//     urlPath() {return `/blog/` + this.arti.dataindex}
+//     title() {return this.arti.dataindex}
+  
+//     body() {
+//     const art1 = Deno.readTextFileSync(this.arti.path)
+//     const tit = this.arti.h3
+//     const desc = this.arti.p
+//     return Layout(tit, desc,
+//       E.header.chi(Nav(this)),
+//       E.main.chi(
+//         E.art.chi(new p.Raw(marked(art1)))
+//       ),
+//       Footer(this)
+//     )
+//   }
+// }
+
+// function Articles(site) {
+//     const results = []
+//     for (const val of list) {
+//       results.push(new PageArticle(site, val))
+//     }
+//     return results
+// }
 
 // Bookreview //
 class PageBookreview extends Page {
@@ -290,10 +403,11 @@ class Site extends a.Emp {
     super()
     this.notFound = new Page404(this)
     this.nav = [new PageIndex(this), new PageBlog(this), new PageBookreview(this), new PageCheese(this), new PageIbri(this)]
-    this.other = Articles(this)
+    this.blogs = SubBlogs(this)
+    this.articles = Articles(this)
     // console.log(`This`, this)
   }
-  all() {return [this.notFound, ...this.nav, ...this.other]}  
+  all() {return [this.notFound, ...this.nav, ...this.blogs, ...this.articles]}  
 }
 export const site = new Site()
 // console.log(site.all())
@@ -331,6 +445,13 @@ function Layout(tit, desc, ...chi) {
 function Nav(page) {
   return E.nav.props({class: `gap-hor`}).chi(
     a.map(page.site.nav, PageLink),
+  )
+}
+
+function NavBlog(page) {
+  return E.nav.props({class: `gap-hor`}).chi(
+    E.p.chi(`Категории блога:`),
+    a.map(page.site.blogs, PageLink),
   )
 }
 
