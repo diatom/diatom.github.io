@@ -55,6 +55,21 @@ main {
 main div {
   padding: 1em 0 1em 0;
 }
+main nav {
+  height: 5vh;
+  min-height: 40px;
+  align-items: center;
+  width: 100%;
+}
+main nav a, main nav p {
+  padding: 0.3rem 1rem 0.3rem 2rem;
+  font-family: "Bitter", serif;
+  font-size: 1.2rem;
+  color: white;
+}
+main nav a:hover {
+  text-decoration: underline 2px solid white;
+}
 
 footer {
   flex-wrap: wrap;
@@ -174,6 +189,11 @@ blog {
   flex-direction: row;
   width: 60%;
   justify-content: space-between;
+}
+blog h2 {
+  width: 100%;
+  font-size: 1.8em;
+  color: grey;
 }
 blog div {
   margin: 1em 0;
@@ -474,6 +494,11 @@ form input[type=checkbox]:checked + label {
   }
 
   header a {
+    font-size: 1em;
+    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+  }
+
+  main nav a, main nav p {
     font-size: 1em;
     padding: 0.3rem 0.5rem 0.3rem 0.5rem;
   }
