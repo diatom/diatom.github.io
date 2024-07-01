@@ -164,6 +164,7 @@ principe {
 }
 principe h2 {
   font-size: 1.8em;
+  width: 100%;
 }
 
 .error {

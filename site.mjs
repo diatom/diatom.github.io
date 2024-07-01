@@ -113,7 +113,7 @@ class PageBlog extends Page {
 
   body() {
     const tit = `Блог`
-    const desc = 'Личный блог. Рассуждния на социальные темы.'
+    const desc = 'Личный блог. Рассуждения на социальные темы.'
     return Layout(tit, desc,
       E.header.chi(Nav(this)),
       E.main.chi(
@@ -156,9 +156,6 @@ class PageSubBlog extends Page {
         NavBlog(this),
         E.blog.chi(
           list.filter(val => val.dataindex.startsWith(this.sub.dataindex.slice(0, 3)))
-          // list.filter(val => 
-          //   bloglist.some(blogval => val.dataindex.startsWith(blogval.dataindex.slice(0, 3)))
-          // )
           .map((val) => {
               return E.div.props({id: val.id, dataindex: val.dataindex}).chi(
                 E.span.chi(val.date),
@@ -423,7 +420,13 @@ function Layout(tit, desc, ...chi) {
         E.title.chi(tit),
         E.meta.props({name: `description`, content: desc}),
         E.meta.props({name: `keywords`, content: `личный сайт, блог, путешествия, советы, фотографии, книги, социальные темы`}),
+        E.meta.props({property: `og:title`, content: tit}),
+        E.meta.props({property: `og:description`, content: desc}),
+        E.meta.props({property: `og:site_name`, content: `sirseverin.ru`}),
         E.meta.props({property: `og:image`, content: `/images/severin.jpg`}),
+        E.meta.props({property: `og:image:height`, content: `600`}),
+        E.meta.props({property: `og:image:width`, content: `300`}),
+        E.meta.props({property: `og:image:type`, content: `image/jpeg`}),
         E.link.props({rel: `icon`, type: `image/x-icon`, href: `/images/severin.ico`}),
         E.link.props({rel: `stylesheet`, href: `/main.css`}),
         E.link.props({rel: `preconnect`, href: `https://fonts.googleapis.com`}),
