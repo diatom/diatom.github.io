@@ -155,6 +155,7 @@ class PageSubBlog extends Page {
       E.main.chi(
         NavBlog(this),
         E.blog.chi(
+          E.h2.chi(this.sub.name),
           list.filter(val => val.dataindex.startsWith(this.sub.dataindex.slice(0, 3)))
           .map((val) => {
               return E.div.props({id: val.id, dataindex: val.dataindex}).chi(
