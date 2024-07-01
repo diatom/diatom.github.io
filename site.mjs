@@ -425,7 +425,7 @@ function Layout(tit, desc, ...chi) {
         E.meta.props({property: `og:description`, content: desc}),
         E.meta.props({property: `og:type`, content: `website`}),
         E.meta.props({property: `og:site_name`, content: `sirseverin.ru`}),
-        E.meta.props({property: `og:url`, content: `https://sirseverin.ru`}),
+        E.meta.props({property: `og:url`, content: `https://sirseverin.ru/`}),
         E.meta.props({property: `og:image`, content: `https://sirseverin.ru/images/severin.jpg`}),
         E.meta.props({property: `og:image:height`, content: `600`}),
         E.meta.props({property: `og:image:width`, content: `300`}),
