@@ -111,22 +111,32 @@ aboutme {
   display: flex;
   flex-direction: row;
   padding: 0;
-  margin: 0 0 5rem 0;
+  margin: 2.5em 0 5em 0;
   align-items: center;
   justify-content: flex-start;
-  background-image: url('./images/severin.jpg');
-  width: 90%;
-  background-size: cover;
-  background-position: center;
-  height: 90vh;
-  border-radius: 0 0 5px 5px;
+  // background-image: url('./images/severin.jpg');
+  // background-size: cover;
+  // background-position: center;
+  width: 120em;
+  max-width: 90%;
+  height: 50em;
+  max-height: 90%;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px 5px 5px 5px;
+  }
 
   h1 {
+    position: absolute;
     color: white;
     font-size: 3em;
     text-shadow: 2px 2px 4px rgba(0,0,0,.5);
     margin: 0 1rem 0 10rem;
-    width: 40em;
+    // width: 40em;
     padding: 0;
     font-family: 'Bitter', serif;
   }
@@ -227,6 +237,7 @@ art {
   }
   img {
     width: 100%;
+    max-width: 80em;
     border-radius: 10px;
   }
   a {
@@ -295,6 +306,7 @@ books {
   margin: 5em 0 0 0;
   padding: 1em;
   width: 60%;
+  max-width: 70em;
   height: 20em;
   background-image: url('./images/books.jpg');
   background-size: 100% auto;
@@ -431,8 +443,9 @@ form {
 }
 @media screen and (max-width: 860px) {
   aboutme {
-    width: 100%;
-  height: 95vh;
+    width: 90%;
+    height: 85vh;
+    margin: 5vh 0 5vh 0;
     h1 {
       margin: 0 1rem 0 2rem;
       font-size: 1.8em;
@@ -441,6 +454,7 @@ form {
   .info-books, .info-cheeses {
     width: 80%;
     height: 10em;
+    background-image: none;
     search {
       div {
         width: 80%;

@@ -98,7 +98,7 @@ class PageIndex extends Page {
     return Layout(tit, desc,
       E.header.chi(Nav(this)),
       E.main.chi(
-        E.aboutme.chi(E.h1.chi(`Северин Богучарский`)),
+        E.aboutme.chi(E.img.props({src: `/images/severin.jpg`, alt: `Severin Bogucharskiy`}), E.h1.chi(`Северин Богучарский`)),
         E.principe.chi(new p.Raw(marked(principe)))
       ),
       Footer(this)
@@ -308,10 +308,9 @@ function Layout(tit, desc, ...chi) {
         E.meta.props({name: `viewport`, content: `width=device-width, initial-scale=1`}),
         E.title.chi(tit),
         E.meta.props({name: `description`, content: desc}),
-        // E.title.chi(`Северин Богучарский`),
-        // E.meta.props({name: `description`, content: `Личный сайт Северина Богучарского. Публикации, блог, обзоры книг, сырный каталог.`}),
         E.meta.props({name: `keywords`, content: `личный сайт, блог, путешествия, советы, фотографии, книги, социальные темы`}),
-        E.link.props({rel: `icon`, type: `image/x-icon`, href: `/images/severin23.ico`}),
+        E.meta.props({property: `og:image`, content: `/images/severin.jpg`}),
+        E.link.props({rel: `icon`, type: `image/x-icon`, href: `/images/severin.ico`}),
         E.link.props({rel: `stylesheet`, href: `/main.css`}),
         E.link.props({rel: `preconnect`, href: `https://fonts.googleapis.com`}),
         E.link.props({rel: `preconnect`, href: `https://fonts.gstatic.com`, crossorigin: ``}),
@@ -339,7 +338,7 @@ function Footer(page) {
   return E.footer.chi(
     E.p.chi(`Любое использование либо копирование материалов или подборки материалов сайта, 
       допускается только cо ссылкой на источник 
-      sirseverin.ru и указанием авторства`),
+      www.sirseverin.ru и указанием авторства`),
     E.div.chi(
       Contact(contact)
     ),
