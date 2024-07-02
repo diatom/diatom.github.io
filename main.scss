@@ -87,7 +87,7 @@ header {
     height: 5vh;
     min-height: 40px;
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: center;
     width: 100%;
   } 
@@ -217,7 +217,7 @@ aboutibri {
   background-position: center;
   height: 100vh;
   p {
-    margin: 2em;
+    margin: 1em;
     color: black;
   }
 }

@@ -465,7 +465,7 @@ function Layout(tit, desc, img, ...chi) {
 function Nav(page) {
   return E.nav.props({class: `gap-hor`}).chi(
     a.map(page.site.nav, PageLink),
-      E.button.props({id: `themeSwitcher`, class: `switch`}).chi(`☀`)
+      // E.button.props({id: `themeSwitcher`, class: `switch`}).chi(`☀`)
   )
 }
 
