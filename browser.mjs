@@ -87,29 +87,29 @@ popup.addEventListener(`click`, (e) => {
 })
 
 // Theme switcher
-document.addEventListener('DOMContentLoaded', () => {
-  const body = document.body
-  const themeSwitcher = document.getElementById('themeSwitcher')
-  const currentTheme = localStorage.getItem('theme')
+// document.addEventListener('DOMContentLoaded', () => {
+//   const body = document.body
+//   const themeSwitcher = document.getElementById('themeSwitcher')
+//   const currentTheme = localStorage.getItem('theme')
 
-  if (currentTheme) {
-      body.classList.add(currentTheme)
-      themeSwitcher.textContent = currentTheme === 'dark-theme' ? '☀' : '☽'
-  } else {
-      body.classList.add('light-theme')
-      themeSwitcher.textContent = '☽'
-  }
+//   if (currentTheme) {
+//       body.classList.add(currentTheme)
+//       themeSwitcher.textContent = currentTheme === 'dark-theme' ? '☀' : '☽'
+//   } else {
+//       body.classList.add('light-theme')
+//       themeSwitcher.textContent = '☽'
+//   }
 
-  themeSwitcher.addEventListener('click', () => {
-      body.classList.toggle('dark-theme')
-      body.classList.toggle('light-theme')
+//   themeSwitcher.addEventListener('click', () => {
+//       body.classList.toggle('dark-theme')
+//       body.classList.toggle('light-theme')
 
-      const newTheme = body.classList.contains('dark-theme') ? 'dark-theme' : 'light-theme'
-      localStorage.setItem('theme', newTheme)
+//       const newTheme = body.classList.contains('dark-theme') ? 'dark-theme' : 'light-theme'
+//       localStorage.setItem('theme', newTheme)
       
-      themeSwitcher.textContent = newTheme === 'dark-theme' ? '☀' : '☽'
-  })
-})
+//       themeSwitcher.textContent = newTheme === 'dark-theme' ? '☀' : '☽'
+//   })
+// })
 
 
 
