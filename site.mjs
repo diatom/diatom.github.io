@@ -93,9 +93,9 @@ class PageIndex extends Page {
   title() {return `Главная`}
 
   body() {
-  const principe =  Deno.readTextFileSync('./data/principe.md')
+  const principe =  Deno.readTextFileSync(`./data/principe.md`)
   const tit = `Северин Богучарский`
-  const desc = `Личный сайт Северина Богучарского. Публикации, блог, обзоры книг, сырный каталог.`
+  const desc = `Северин Богучарский — личный сайт. Публикации, блог, обзоры книг, сырный каталог.`
   const img = `https://sirseverin.ru/images/severin.jpg`
     return Layout(tit, desc, img,
       E.header.chi(Nav(this)),
@@ -122,11 +122,11 @@ class PageBlog extends Page {
       E.main.chi(
         NavBlog(this),
         E.blog.chi(
-          E.h2.chi(`Последние публикации:`),
+          E.h2.chi(`Последние публикации`),
           list.slice(-3).map((val) => {
             return E.div.props({id: val.id, dataindex: val.dataindex}).chi(
               E.span.chi(val.date),
-              E.a.props({href: '/blog/' + val.dataindex}).chi(
+              E.a.props({href: `/blog/` + val.dataindex}).chi(
                 E.h3.chi(val.h3),
                 E.p.chi(val.p),
                 E.img.props({alt: val.alt, src: val.src})
@@ -147,7 +147,7 @@ class PageSubBlog extends Page {
     this.sub = sub
   }  
 
-  urlPath() {return `/blog/` + this.sub.dataindex}
+  urlPath() {return `/blog/` + this.sub.tags}
   title() {return this.sub.name}
 
   body() {
@@ -160,7 +160,7 @@ class PageSubBlog extends Page {
         NavBlog(this),
         E.blog.chi(
           E.h2.chi(this.sub.name),
-          list.filter(val => val.dataindex.startsWith(this.sub.dataindex.slice(0, 3)))
+          list.filter(val => val.tags.startsWith(this.sub.tags.slice(0, 3)))
           .map((val) => {
               return E.div.props({id: val.id, dataindex: val.dataindex}).chi(
                 E.span.chi(val.date),
@@ -206,7 +206,7 @@ class PageArticle extends Page {
       E.header.chi(Nav(this)),
       E.main.chi(
         NavBlog(this),
-        E.art.chi(new p.Raw(marked(art1)))
+        E.article.chi(new p.Raw(marked(art1)))
       ),
       Footer(this)
     )
@@ -229,7 +229,7 @@ function Articles(site) {
 
 //   body() {
 //     const tit = `Блог`
-//     const desc = 'Личный блог. Рассуждния на социальные темы.'
+//     const desc = `Личный блог. Рассуждния на социальные темы.`
 //     return Layout(tit, desc, img,
 //       E.header.chi(Nav(this)),
 //       E.main.chi(
@@ -237,7 +237,7 @@ function Articles(site) {
 //           list.map((val) => {
 //               return E.div.props({id: val.id, dataindex: val.dataindex}).chi(
 //                 E.span.chi(val.date),
-//                 E.a.props({href: '/blog/' + val.dataindex}).chi(
+//                 E.a.props({href: `/blog/` + val.dataindex}).chi(
 //                   E.h3.chi(val.h3),
 //                   E.p.chi(val.p),
 //                   E.img.props({alt: val.alt, src: val.src})
@@ -390,13 +390,13 @@ class PageIbri extends Page {
   title() {return `Ibri®`}
 
   body() {
-  const ibri = Deno.readTextFileSync('./data/ibri.md')
+  const ibri = Deno.readTextFileSync(`./data/ibri.md`)
   const tit = `Ибри`
   const desc = `Газированный напиток Ибри от Северина Богучарского.`
   const img = `https://sirseverin.ru/images/ibri.jpg`
   return Layout(tit, desc, img,
       E.main.chi(
-        E.aboutibri,
+        E.aboutibri.chi(E.p.chi(`Отдельный портал к проекту Ibri® сейчас в разработке. Релиз назначен на осень 2024 г.`)),
         E.principe.chi(new p.Raw(marked(ibri)))
       ),
       FooterIbri(this)
@@ -418,7 +418,7 @@ class Site extends a.Emp {
 export const site = new Site()
 // console.log(site.all())
 
-const anal =  Deno.readTextFileSync('./data/anal.md')
+const anal =  Deno.readTextFileSync(`./data/anal.md`)
 
 function Layout(tit, desc, img, ...chi) {
   return p.renderDocument(
@@ -448,7 +448,13 @@ function Layout(tit, desc, img, ...chi) {
         a.vac(DEV) && E.script.chi(`navigator.serviceWorker.register('/sw.mjs')`),
         E.script.chi(new p.Raw(marked(anal)))
       ),
-      E.body.props({class: `center limit`}).chi(chi),
+      E.body.props({class: `dark-theme`}).chi(chi, 
+        E.div.props({class: `popup`, id: `popup`}).chi(
+          E.span.props({class: `close`, id: `closeBtn`}).chi(`☓`),
+          E.div.props({class: `popup-content`}).chi(
+          E.img.props({id: `popupImage`, src: ` `, alt: `Popup Image`})
+        ))
+      ),
       E.script.props({type: `module`, src: `/browser.mjs`}),
       E.script.props({type: `module`, src: `/site.mjs`}),
       a.vac(DEV) && E.script.props({type: `module`, src: l.LIVE_CLIENT}),
@@ -459,11 +465,12 @@ function Layout(tit, desc, img, ...chi) {
 function Nav(page) {
   return E.nav.props({class: `gap-hor`}).chi(
     a.map(page.site.nav, PageLink),
+      E.button.props({id: `themeSwitcher`, class: `switch`}).chi(`☀`)
   )
 }
 
 function NavBlog(page) {
-  return E.nav.props({class: `gap-hor`}).chi(
+  return E.nav.props({class: `nav-blog`}).chi(
     E.p.chi(`Категории блога:`),
     a.map(page.site.blogs, PageLink),
   )
