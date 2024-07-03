@@ -10,7 +10,7 @@ import * as l from './live.mjs'
 
 import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js'
 
-import { contact, list, contactIbri, bloglist, arttags } from './data/data.js'
+import * as data from './data/data.js';
 import { books } from './data/data-books.js'
 import { cheese } from './data/data-cheese.js'
 
@@ -73,7 +73,7 @@ class Page404 extends Page {
     const desc = `Ошбика 404`
     const img = `https://sirseverin.ru/images/severin404.jpg`
     return Layout(tit, desc, img,
-      E.header.chi(Nav(this)),
+      Nav(this),
       E.main.chi(
         E.h1.chi(this.title()),
         E.a.props({href: `/`, class: `error`}).chi(`Вернуться на главную`,
@@ -98,7 +98,7 @@ class PageIndex extends Page {
   const desc = `Северин Богучарский — личный сайт. Публикации, блог, обзоры книг, сырный каталог.`
   const img = `https://sirseverin.ru/images/severin.jpg`
     return Layout(tit, desc, img,
-      E.header.chi(Nav(this)),
+      Nav(this),
       E.main.chi(
         E.aboutme.chi(E.img.props({src: `/images/severin.jpg`, alt: `Severin Bogucharskiy`}), E.h1.chi(`Северин Богучарский`)),
         E.principe.chi(new p.Raw(marked(principe)))
@@ -118,14 +118,14 @@ class PageBlog extends Page {
     const desc = `Личный блог. Рассуждения на разные темы. Мир. Путешествия`
     const img = `https://sirseverin.ru/images/severin.jpg`
     return Layout(tit, desc, img,
-      E.header.chi(Nav(this)),
+      Nav(this),
       E.main.chi(
         NavBlog(this),
         E.blog.chi(
           E.h2.chi(`Все публикации`),
           AllTags(this),
           // list.slice(-3).map((val) => {
-          list.map((val) => {
+            data.list.map((val) => {
             return E.div.props({id: val.id, dataindex: val.dataindex, class: `filter`}).chi(
               E.span.chi(val.date),
               E.a.props({href: `/blog/` + val.dataindex}).chi(
@@ -158,13 +158,13 @@ class PageSubBlog extends Page {
     const desc = this.sub.desc
     const img = `https://sirseverin.ru/images/severin.jpg`
     return Layout(tit, desc, img,
-      E.header.chi(Nav(this)),
+      Nav(this),
       E.main.chi(
         NavBlog(this),
         E.blog.chi(
           E.h2.chi(this.sub.name),
           AllTags(this),
-          list.filter(val => this.sub.tags.every(tag => val.tags.includes(tag)))
+          data.list.filter(val => this.sub.tags.every(tag => val.tags.includes(tag)))
           .map((val) => {
               return E.div.props({id: val.id, dataindex: val.dataindex, class: `filter`}).chi(
                 E.span.chi(val.date),
@@ -186,7 +186,7 @@ class PageSubBlog extends Page {
 
 function SubBlogs(site) {
   const results = []
-  for (const val of bloglist) {
+  for (const val of data.bloglist) {
     results.push(new PageSubBlog(site, val))
   }
   return results
@@ -208,7 +208,7 @@ class PageArticle extends Page {
     const desc = this.arti.p
     const img = `https://sirseverin.ru/` + this.arti.src
     return Layout(tit, desc, img,
-      E.header.chi(Nav(this)),
+      Nav(this),
       E.main.chi(
         NavBlog(this),
         E.article.chi(new p.Raw(marked(art1)))
@@ -220,7 +220,7 @@ class PageArticle extends Page {
 
 function Articles(site) {
     const results = []
-    for (const val of list) {
+    for (const val of data.list) {
       results.push(new PageArticle(site, val))
     }
     return results
@@ -236,10 +236,10 @@ function Articles(site) {
 //     const tit = `Блог`
 //     const desc = `Личный блог. Рассуждния на социальные темы.`
 //     return Layout(tit, desc, img,
-//       E.header.chi(Nav(this)),
+//       Nav(this),
 //       E.main.chi(
 //         E.blog.chi(
-//           list.map((val) => {
+//           data.list.map((val) => {
 //               return E.div.props({id: val.id, dataindex: val.dataindex}).chi(
 //                 E.span.chi(val.date),
 //                 E.a.props({href: `/blog/` + val.dataindex}).chi(
@@ -272,7 +272,7 @@ function Articles(site) {
 //     const tit = this.arti.h3
 //     const desc = this.arti.p
 //     return Layout(tit, desc, img,
-//       E.header.chi(Nav(this)),
+//       Nav(this),
 //       E.main.chi(
 //         E.art.chi(new p.Raw(marked(art1)))
 //       ),
@@ -283,7 +283,7 @@ function Articles(site) {
 
 // function Articles(site) {
 //     const results = []
-//     for (const val of list) {
+//     for (const val of data.list) {
 //       results.push(new PageArticle(site, val))
 //     }
 //     return results
@@ -299,7 +299,7 @@ class PageBookreview extends Page {
     const desc = `Обзоры прочитанных книг, с личным рейтингом.`
     const img = `https://sirseverin.ru/images/books.jpg`
     return Layout(tit, desc, img,
-      E.header.chi(Nav(this)),
+      Nav(this),
       E.main.chi(
         E.div.props({class: `info-books`}).chi(
           E.search.chi(
@@ -346,7 +346,7 @@ class PageCheese extends Page {
     const desc = `Список сыра, который возможно внедрить на производство.`
     const img = `https://sirseverin.ru/images/cheese.jpg`
     return Layout(tit, desc, img,
-      E.header.chi(Nav(this)),
+      Nav(this),
       E.main.chi(
         E.div.props({class: `info-cheeses`}).chi(
           E.search.chi(
@@ -468,10 +468,18 @@ function Layout(tit, desc, img, ...chi) {
 }
 
 function Nav(page) {
-  return E.nav.props({class: `gap-hor`}).chi(
-    a.map(page.site.nav, PageLink),
+  return E.header.chi(
+    E.menu.chi(`☰`),
+    E.mobilemenu.chi(a.map(page.site.nav, PageLink)),
+    E.nav.chi(a.map(page.site.nav, PageLink),
       // E.button.props({id: `themeSwitcher`, class: `switch`}).chi(`☀`)
+    )
   )
+}
+
+function NavFooter(page) {
+  return E.nav.chi(a.map(page.site.nav, PageLink)
+    )
 }
 
 function NavBlog(page) {
@@ -487,9 +495,9 @@ function Footer(page) {
       допускается только cо ссылкой на источник 
       www.sirseverin.ru и указанием авторства`),
     E.div.chi(
-      Contact(contact)
+      Contact(data.contact)
     ),
-    Nav(page),
+    NavFooter(page),
     E.span.chi(E.a.props({href: `https://github.com/diatom/diatom.github.io`}).
     chi(`© 2024. Сайт сделал Severin B. 👾`)
     )
@@ -502,7 +510,7 @@ function FooterIbri(page) {
     E.p.chi(`Ibri® — все права защищены. Любое использование либо копирование материалов сайта, 
       допускается только cо ссылкой на источник`),
     E.div.chi(
-      Contact(contactIbri)
+      Contact(data.contactIbri)
     ),
     E.span.chi(E.a.props({href: `https://github.com/diatom/diatom.github.io`}).
     chi(`© 2024. Сайт сделал Severin B. 👾`)
@@ -534,7 +542,7 @@ function Contact(cont) {
 function AllTags(page) {
   return E.tags.chi(
     E.span.props({class: `help`}).chi(`Теги:`),
-    arttags.map(val => 
+    data.arttags.map(val => 
       E.button.props({type: `button`, class: `btn`}).chi(E.span.chi(`#`), val)
     )
   )

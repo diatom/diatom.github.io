@@ -3,14 +3,71 @@ import * as p from 'https://cdn.jsdelivr.net/npm/@mitranim/js@0.1.25/prax.mjs'
 
 const {E} = p.Ren.native()
 
+// Menu
+document.addEventListener('DOMContentLoaded', function() {
+  const menuIcon = document.querySelector('menu')
+  const mobileMenu = document.querySelector('mobilemenu')
+
+  menuIcon.addEventListener('click', function() {
+    mobileMenu.style.display = `flex`
+  })
+
+  mobileMenu.addEventListener(`click`, (e) => {
+    if (e.target === mobileMenu) {
+        mobileMenu.style.display = `none`
+    }
+
+  })
+
+  document.addEventListener('click', function(e) {
+    if (mobileMenu.style.display === 'flex' && e.target !== mobileMenu && e.target !== menuIcon) {
+      mobileMenu.style.display = 'none'
+    }
+  })
+})
+
+
+
+
+// Popup image
+const images = document.querySelectorAll(`article img, .cheese img`)
+const popup = document.getElementById(`popup`)
+const popupImage = document.getElementById(`popupImage`)
+const closeBtn = document.getElementById(`closeBtn`)
+
+images.forEach(image => {
+  image.addEventListener(`click`, () => {
+      popupImage.src = image.src
+      popup.style.display = `flex`
+  });
+})
+
+closeBtn.addEventListener(`click`, () => {
+    popup.style.display = `none`
+})
+
+document.addEventListener(`keydown`, (e) => {
+  if (e.key === `Escape`) {
+    popup.style.display = `none`
+  }
+})
+
+popup.addEventListener(`click`, (e) => {
+    if (e.target === popup) {
+        popup.style.display = `none`
+    }
+})
+
+
 // Tags button
-document.addEventListener(`DOMContentLoaded`, function() {
-  const buttons = document.querySelectorAll(`button[type='button']`)
-  const blogDivs = document.querySelectorAll(`.filter`)
+document.addEventListener('DOMContentLoaded', function() {
+  const tagsContainer = document.querySelector('tags')
+  const buttons = tagsContainer.querySelectorAll('button[type="button"]')
+  const blogDivs = document.querySelectorAll('.filter')
   const activeTags = new Set()
 
   buttons.forEach(button => {
-    button.addEventListener(`click`, function() {
+    button.addEventListener('click', function() {
       const buttonTag = this.innerText.trim().toLowerCase()
       
       if (activeTags.has(buttonTag)) {
@@ -20,20 +77,21 @@ document.addEventListener(`DOMContentLoaded`, function() {
       }
 
       blogDivs.forEach(div => {
-        const divButtons = div.querySelectorAll(`button[type='button']`)
+        const divButtons = div.querySelectorAll('arttags button[type="button"]')
         const divTags = Array.from(divButtons).map(btn => btn.innerText.trim().toLowerCase())
 
         const shouldShow = Array.from(activeTags).every(tag => divTags.includes(tag))
         
         if (shouldShow) {
-          div.style.display = `block`
+          div.style.display = 'block'
         } else {
-          div.style.display = `none`
+          div.style.display = 'none'
         }
       })
     })
   })
 })
+
 
 document.addEventListener(`DOMContentLoaded`, function() {
   var buttons = document.querySelectorAll(`.btn`)
