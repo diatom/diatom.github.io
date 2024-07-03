@@ -38,12 +38,6 @@ $hover-scale: 1.03;
 }
 
 // Main
-// html {
-//   background-color: var(--bg-color);
-//   color: var(--text-color);
-//   transition: background-color 0.3s, color 0.3s;
-// }
-
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -87,7 +81,6 @@ header {
     height: 5vh;
     min-height: 40px;
     display: flex;
-    // justify-content: space-between;
     align-items: center;
     width: 100%;
   } 
@@ -209,7 +202,6 @@ aboutibri {
   flex-direction: row;
   padding: 0;
   margin: 0 0 5rem 0;
-  // align-items: center;
   justify-content: flex-start;
   background-image: url('./images/ibri.jpg');
   width: 100%;
@@ -293,6 +285,26 @@ blog {
     border-radius: 5px;
   }
 }
+tags {
+  width: 100%;
+  margin: 2em 0;
+  button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+    padding: 0.5em;
+    font-size: 1.05em;
+  }
+  button:hover {
+    background-color: rgba(128, 128, 128, 0.2);
+  }
+  .help {
+    margin: 0 0.5em 0 0;
+    font-size: 1.05em;
+  }
+}
+
 
 // Article
 article {
@@ -441,9 +453,6 @@ search {
     caret-color: var(--text-color);
     color: var(--text-color);
   }
-  // input[type="text"]::selection {
-  //   background-color: #ffcc00;
-  // }
   input {
     width: 100%; 
   }
@@ -628,6 +637,9 @@ form {
     }
   }
   header {
+    // nav {
+    //   justify-content: space-between;
+    // }
     a {
       font-size: 1em;
       padding: 0.3rem 0.5rem 0.3rem 0.5rem;

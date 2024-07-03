@@ -10,7 +10,7 @@ import * as l from './live.mjs'
 
 import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js'
 
-import { contact, list, contactIbri, bloglist } from './data/data.js'
+import { contact, list, contactIbri, bloglist, arttags } from './data/data.js'
 import { books } from './data/data-books.js'
 import { cheese } from './data/data-cheese.js'
 
@@ -122,15 +122,18 @@ class PageBlog extends Page {
       E.main.chi(
         NavBlog(this),
         E.blog.chi(
-          E.h2.chi(`Последние публикации`),
-          list.slice(-3).map((val) => {
+          E.h2.chi(`Все публикации`),
+          ArtTags(arttags),
+          // list.slice(-3).map((val) => {
+          list.map((val) => {
             return E.div.props({id: val.id, dataindex: val.dataindex}).chi(
               E.span.chi(val.date),
               E.a.props({href: `/blog/` + val.dataindex}).chi(
                 E.h3.chi(val.h3),
                 E.p.chi(val.p),
-                E.img.props({alt: val.alt, src: val.src})
-              )
+                E.img.props({alt: val.alt, src: val.src}),
+              ),
+              ArtTags(val.tags),
             )
           }
           )
@@ -147,7 +150,7 @@ class PageSubBlog extends Page {
     this.sub = sub
   }  
 
-  urlPath() {return `/blog/` + this.sub.tags}
+  urlPath() {return `/blog/` + this.sub.dataindex}
   title() {return this.sub.name}
 
   body() {
@@ -160,15 +163,17 @@ class PageSubBlog extends Page {
         NavBlog(this),
         E.blog.chi(
           E.h2.chi(this.sub.name),
-          list.filter(val => val.tags.startsWith(this.sub.tags.slice(0, 3)))
+          ArtTags(arttags),
+          list.filter(val => this.sub.tags.every(tag => val.tags.includes(tag)))
           .map((val) => {
               return E.div.props({id: val.id, dataindex: val.dataindex}).chi(
                 E.span.chi(val.date),
                 E.a.props({href: '/blog/' + val.dataindex}).chi(
                   E.h3.chi(val.h3),
                   E.p.chi(val.p),
-                  E.img.props({alt: val.alt, src: val.src})
-                )
+                  E.img.props({alt: val.alt, src: val.src}),
+                ),
+                ArtTags(val.tags),
               )
             }
           )
@@ -356,7 +361,7 @@ class PageCheese extends Page {
               )
             )
           ),
-          E.form.props({class: `my-tags`, is: `my-tags`})
+          // E.form.props({class: `my-tags`, is: `my-tags`})
         ),
         E.books.chi(
           cheese.map((val) => {
@@ -521,7 +526,16 @@ function PageLink(page) {
 function Contact(cont) {
   return cont.map((val) => {
     for (let [key, value] of Object.entries(val)) {
-      return E.a.props({href: value}).chi(key);
+      return E.a.props({href: value}).chi(key)
     }
   })
+}
+
+function ArtTags(tag) {
+  return E.tags.chi(
+    E.span.props({class: `help`}).chi(`Теги:`),
+    tag.map(val => 
+      E.button.props({is: `a-tag`, type: `button`}).chi(E.span.chi(`#`), val)
+    )
+  )
 }
