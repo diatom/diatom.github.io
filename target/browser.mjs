@@ -4,6 +4,48 @@ import * as p from 'https://cdn.jsdelivr.net/npm/@mitranim/js@0.1.25/prax.mjs'
 const {E} = p.Ren.native()
 
 // Tags button
+document.addEventListener(`DOMContentLoaded`, function() {
+  const buttons = document.querySelectorAll(`button[type='button']`)
+  const blogDivs = document.querySelectorAll(`.filter`)
+  const activeTags = new Set()
+
+  buttons.forEach(button => {
+    button.addEventListener(`click`, function() {
+      const buttonTag = this.innerText.trim().toLowerCase()
+      
+      if (activeTags.has(buttonTag)) {
+        activeTags.delete(buttonTag)
+      } else {
+        activeTags.add(buttonTag)
+      }
+
+      blogDivs.forEach(div => {
+        const divButtons = div.querySelectorAll(`button[type='button']`)
+        const divTags = Array.from(divButtons).map(btn => btn.innerText.trim().toLowerCase())
+
+        const shouldShow = Array.from(activeTags).every(tag => divTags.includes(tag))
+        
+        if (shouldShow) {
+          div.style.display = `block`
+        } else {
+          div.style.display = `none`
+        }
+      })
+    })
+  })
+})
+
+document.addEventListener(`DOMContentLoaded`, function() {
+  var buttons = document.querySelectorAll(`.btn`)
+
+  buttons.forEach(function(button) {
+      button.addEventListener(`click`, function() {
+          button.classList.toggle(`active`)
+      })
+  })
+})
+
+
 
 
 // Theme switcher

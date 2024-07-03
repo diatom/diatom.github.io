@@ -222,6 +222,28 @@ blog {
   width: 60%;
   justify-content: space-between;
 }
+blog tags {
+  width: 100%;
+  margin: 2em 0;
+}
+blog tags .btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+  padding: 0.5em;
+  font-size: 1.05em;
+}
+blog tags .btn:hover {
+  background-color: rgba(128, 128, 128, 0.2);
+}
+blog tags .btn.active {
+  background-color: rgba(128, 128, 128, 0.4);
+}
+blog tags .help {
+  margin: 0 0.5em 0 0;
+  font-size: 1.05em;
+}
 blog h2 {
   width: 100%;
   font-size: 1.8em;
@@ -232,6 +254,30 @@ blog div {
   display: flex;
   width: 48%;
   flex-direction: column;
+}
+blog div arttags {
+  width: 100%;
+}
+blog div arttags .btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+  padding: 0.5em;
+  font-size: 1.05em;
+}
+blog div arttags .btn:hover {
+  background-color: rgba(128, 128, 128, 0.2);
+}
+blog div arttags .btn.active {
+  background-color: rgba(128, 128, 128, 0.4);
+}
+blog div arttags .help {
+  margin: 0 0.5em 0 0;
+  font-size: 1.05em;
+}
+blog div arttags .btn.active {
+  background-color: rgba(128, 128, 128, 0.4);
 }
 blog a {
   color: var(--text-color);
@@ -253,26 +299,6 @@ blog a:hover {
 blog img {
   width: 100%;
   border-radius: 5px;
-}
-
-tags {
-  width: 100%;
-  margin: 2em 0;
-}
-tags button {
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  color: var(--text-color);
-  padding: 0.5em;
-  font-size: 1.05em;
-}
-tags button:hover {
-  background-color: rgba(128, 128, 128, 0.2);
-}
-tags .help {
-  margin: 0 0.5em 0 0;
-  font-size: 1.05em;
 }
 
 article {

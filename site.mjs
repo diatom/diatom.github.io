@@ -123,10 +123,10 @@ class PageBlog extends Page {
         NavBlog(this),
         E.blog.chi(
           E.h2.chi(`Все публикации`),
-          ArtTags(arttags),
+          AllTags(this),
           // list.slice(-3).map((val) => {
           list.map((val) => {
-            return E.div.props({id: val.id, dataindex: val.dataindex}).chi(
+            return E.div.props({id: val.id, dataindex: val.dataindex, class: `filter`}).chi(
               E.span.chi(val.date),
               E.a.props({href: `/blog/` + val.dataindex}).chi(
                 E.h3.chi(val.h3),
@@ -163,10 +163,10 @@ class PageSubBlog extends Page {
         NavBlog(this),
         E.blog.chi(
           E.h2.chi(this.sub.name),
-          ArtTags(arttags),
+          AllTags(this),
           list.filter(val => this.sub.tags.every(tag => val.tags.includes(tag)))
           .map((val) => {
-              return E.div.props({id: val.id, dataindex: val.dataindex}).chi(
+              return E.div.props({id: val.id, dataindex: val.dataindex, class: `filter`}).chi(
                 E.span.chi(val.date),
                 E.a.props({href: '/blog/' + val.dataindex}).chi(
                   E.h3.chi(val.h3),
@@ -531,11 +531,20 @@ function Contact(cont) {
   })
 }
 
-function ArtTags(tag) {
+function AllTags(page) {
   return E.tags.chi(
     E.span.props({class: `help`}).chi(`Теги:`),
+    arttags.map(val => 
+      E.button.props({type: `button`, class: `btn`}).chi(E.span.chi(`#`), val)
+    )
+  )
+}
+
+function ArtTags(tag) {
+  return E.arttags.chi(
+    E.span.props({class: `help`}).chi(`Теги:`),
     tag.map(val => 
-      E.button.props({is: `a-tag`, type: `button`}).chi(E.span.chi(`#`), val)
+      E.button.props({type: `button`, class: `btn`}).chi(E.span.chi(`#`), val)
     )
   )
 }
