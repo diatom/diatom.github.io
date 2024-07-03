@@ -471,9 +471,9 @@ function Nav(page) {
   return E.header.chi(
     E.menu.chi(`☰`),
     E.mobilemenu.chi(a.map(page.site.nav, PageLink)),
-    E.nav.chi(a.map(page.site.nav, PageLink),
+    E.nav.chi(a.map(page.site.nav, PageLink)),
+    E.h1.chi(`Северин Богучарский`)
       // E.button.props({id: `themeSwitcher`, class: `switch`}).chi(`☀`)
-    )
   )
 }
 
