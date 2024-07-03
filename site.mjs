@@ -506,7 +506,7 @@ function Footer(page) {
 
 function FooterIbri(page) {
   return E.footer.chi(
-    E.img.props({alt: `Ibri`, src: `/images/Ibri-logo.png`}),
+    E.img.props({alt: `Ibri`, src: `/images/Ibri-logo-white.svg`}),
     E.p.chi(`Ibri® — все права защищены. Любое использование либо копирование материалов сайта, 
       допускается только cо ссылкой на источник`),
     E.div.chi(
