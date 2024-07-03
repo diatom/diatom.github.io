@@ -5,7 +5,7 @@
 }
 
 .dark-theme {
-  --bg-color: hsl(0deg, 0%, 14%);
+  --bg-color: hsl(0, 0%, 14%);
   --text-color: white;
   --a-color: #be264c;
 }
@@ -574,15 +574,12 @@ form input[type=checkbox]:checked + label {
   article, blog, books {
     width: 90%;
   }
-
   .info-books, .info-cheeses {
     width: 90%;
   }
-
   principe {
     width: 70%;
   }
-
   header a {
     padding: 0.3rem 1rem 0.3rem 1rem;
   }
@@ -598,7 +595,6 @@ form input[type=checkbox]:checked + label {
     font-size: 1.8em;
     display: none;
   }
-
   .info-books, .info-cheeses {
     width: 80%;
     height: 10em;
@@ -607,7 +603,6 @@ form input[type=checkbox]:checked + label {
   .info-books search div, .info-cheeses search div {
     width: 90%;
   }
-
   footer {
     flex-direction: column;
     flex-wrap: nowrap;
@@ -631,7 +626,6 @@ form input[type=checkbox]:checked + label {
   footer a {
     justify-content: center;
   }
-
   principe {
     width: 80%;
   }
@@ -641,7 +635,6 @@ form input[type=checkbox]:checked + label {
   principe p {
     width: 100%;
   }
-
   books {
     margin: 5em 0 0 0;
   }
@@ -649,7 +642,6 @@ form input[type=checkbox]:checked + label {
     width: 100%;
     margin: 1em 0;
   }
-
   blog {
     flex-wrap: nowrap;
     flex-direction: column;
@@ -659,7 +651,6 @@ form input[type=checkbox]:checked + label {
   blog div {
     width: 100%;
   }
-
   header {
     height: 7vh;
   }
@@ -683,12 +674,10 @@ form input[type=checkbox]:checked + label {
     font-size: 1em;
     padding: 0.3rem 0.5rem 0.3rem 0.5rem;
   }
-
   main nav a, main nav p {
     font-size: 1em;
     padding: 0.3rem 0.5rem 0.3rem 0.5rem;
   }
-
   form label {
     padding: 2px 4px;
   }
