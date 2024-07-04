@@ -2,6 +2,8 @@ import * as p from 'https://cdn.jsdelivr.net/npm/@mitranim/js@0.1.25/prax.mjs'
 
 
 const {E} = p.Ren.native()
+console.log(`Hey ╰(*°▽°*)╯`)
+
 
 // Menu
 document.addEventListener('DOMContentLoaded', function() {
@@ -21,13 +23,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.addEventListener('click', function(e) {
     if (mobileMenu.style.display === 'flex' && e.target !== mobileMenu && e.target !== menuIcon) {
-      mobileMenu.style.display = 'none'
+      mobileMenu.style.display = 'none '
     }
   })
 })
-
-
-
 
 // Popup image
 const images = document.querySelectorAll(`article img, .cheese img`)
@@ -58,50 +57,50 @@ popup.addEventListener(`click`, (e) => {
     }
 })
 
-
 // Tags button
-document.addEventListener('DOMContentLoaded', function() {
-  const tagsContainer = document.querySelector('tags')
-  const buttons = tagsContainer.querySelectorAll('button[type="button"]')
-  const blogDivs = document.querySelectorAll('.filter')
-  const activeTags = new Set()
+if (window.location.pathname === '/blog') {
+  document.addEventListener('DOMContentLoaded', function() {
+    const tagsContainer = document.querySelector('tags')
+    const buttons = tagsContainer.querySelectorAll('button[type="button"]')
+    const blogDivs = document.querySelectorAll('.filter')
+    const activeTags = new Set()
 
-  buttons.forEach(button => {
-    button.addEventListener('click', function() {
-      const buttonTag = this.innerText.trim().toLowerCase()
-      
-      if (activeTags.has(buttonTag)) {
-        activeTags.delete(buttonTag)
-      } else {
-        activeTags.add(buttonTag)
-      }
+    buttons.forEach(button => {
+      button.addEventListener('click', function() {
+        const buttonTag = this.innerText.trim().toLowerCase()
 
-      blogDivs.forEach(div => {
-        const divButtons = div.querySelectorAll('arttags button[type="button"]')
-        const divTags = Array.from(divButtons).map(btn => btn.innerText.trim().toLowerCase())
-
-        const shouldShow = Array.from(activeTags).every(tag => divTags.includes(tag))
-        
-        if (shouldShow) {
-          div.style.display = 'block'
+        if (activeTags.has(buttonTag)) {
+          activeTags.delete(buttonTag)
         } else {
-          div.style.display = 'none'
+          activeTags.add(buttonTag)
         }
+
+        blogDivs.forEach(div => {
+          const divButtons = div.querySelectorAll('arttags button[type="button"]')
+          const divTags = Array.from(divButtons).map(btn => btn.innerText.trim().toLowerCase())
+
+          const shouldShow = Array.from(activeTags).every(tag => divTags.includes(tag))
+
+          if (shouldShow) {
+            div.style.display = 'block'
+          } else {
+            div.style.display = 'none'
+          }
+        })
       })
     })
   })
-})
 
+  document.addEventListener(`DOMContentLoaded`, function() {
+    var buttons = document.querySelectorAll(`.btn`)
 
-document.addEventListener(`DOMContentLoaded`, function() {
-  var buttons = document.querySelectorAll(`.btn`)
-
-  buttons.forEach(function(button) {
+    buttons.forEach(function(button) {
       button.addEventListener(`click`, function() {
-          button.classList.toggle(`active`)
+        button.classList.toggle(`active`)
       })
+    })
   })
-})
+}
 
 
 
@@ -132,42 +131,42 @@ document.addEventListener(`DOMContentLoaded`, function() {
 // })
 
 
+if (window.location.pathname === '/bookreview' && window.location.pathname === '/cheese') {
+  // Search
+  const searchInput = document.getElementById(`searchInput`)
+  const searchButton = document.getElementById(`searchButton`)
 
-// Search
-const searchInput = document.getElementById(`searchInput`)
-const searchButton = document.getElementById(`searchButton`)
+  function searchDataBook(input) {
+    const divb = document.getElementsByClassName(`book`)
+    const divs = document.getElementsByClassName(`cheese`)
+    for (const elem of divb) {
+      let result = elem.innerHTML.toLowerCase().includes(input)
+      if (result) {
+        elem.hidden = false
+      } else {
+        elem.hidden = true
+      } 
+    }
+    for (const elem of divs) {
+      let result = elem.innerHTML.toLowerCase().includes(input)
+      if (result) {
+        elem.hidden = false
+      } else {
+        elem.hidden = true
+      } 
+    }
+  }
+  searchButton.addEventListener(`click`, () => {
+    const userInput = searchInput.value.toLowerCase()
+    searchDataBook(userInput)
+  })
 
-function searchDataBook(input) {
-  const divb = document.getElementsByClassName(`book`)
-  const divs = document.getElementsByClassName(`cheese`)
-  for (const elem of divb) {
-    let result = elem.innerHTML.toLowerCase().includes(input)
-    if (result) {
-      elem.hidden = false
-    } else {
-      elem.hidden = true
-    } 
-  }
-  for (const elem of divs) {
-    let result = elem.innerHTML.toLowerCase().includes(input)
-    if (result) {
-      elem.hidden = false
-    } else {
-      elem.hidden = true
-    } 
-  }
+
+  // Enter click
+  document.addEventListener(`keydown`, function(event) {
+    if (event.key === `Enter`) {
+        document.getElementById(`searchButton`).dispatchEvent(new Event(`click`))
+        event.preventDefault()
+    }
+  })
 }
-searchButton.addEventListener(`click`, () => {
-  const userInput = searchInput.value.toLowerCase()
-  searchDataBook(userInput)
-})
-
-
-// Enter click
-document.addEventListener(`keydown`, function(event) {
-  if (event.key === `Enter`) {
-      document.getElementById(`searchButton`).dispatchEvent(new Event(`click`))
-      event.preventDefault()
-  }
-})
-

@@ -42,7 +42,10 @@ header {
   background-color: #be264c;
   justify-content: left;
   align-items: center;
-  width: 100%;
+  width: 120em;
+  max-width: 90%;
+  border-radius: 5px;
+  margin: 1em 0 0 0;
   height: 5vh;
   min-height: 50px;
 }
@@ -61,20 +64,22 @@ header mobilemenu {
   display: none;
   background-color: #be264c;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 6px 20px rgba(0, 0, 0, 0.4);
-  width: 60%;
+  width: 50%;
   border-radius: 5px;
   position: absolute;
   flex-wrap: no-wrap;
   flex-direction: column;
-  justify-content: center;
   align-items: left;
   top: 0;
   left: 0;
-  height: 15em;
+  padding: 1em;
+  height: 100vh;
   z-index: 1000;
 }
 header mobilemenu a {
   padding: 0.8em 0.8em;
+  font-size: 1.2em;
+  border-bottom: 1px solid white;
 }
 header a {
   padding: 0.3rem 2rem 0.3rem 2rem;
@@ -92,6 +97,10 @@ header nav {
   width: 100%;
 }
 
+.nav-blog {
+  width: 120em;
+  max-width: 90%;
+}
 .nav-blog a, .nav-blog p {
   color: var(--text-color);
 }
@@ -185,7 +194,21 @@ aboutme img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 5px;
+  position: relative;
+  top: -15px;
+  animation: slideDown 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes slideDown {
+  0% {
+    top: -10px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
 }
 aboutme h1 {
   position: absolute;
@@ -226,6 +249,11 @@ principe {
 principe h2 {
   font-size: 1.8em;
   width: 100%;
+}
+principe a {
+  color: var(--text-color);
+  display: inline;
+  text-decoration: underline;
 }
 
 .error {

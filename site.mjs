@@ -451,7 +451,7 @@ function Layout(tit, desc, img, ...chi) {
         E.link.props({rel: `preconnect`, href: `https://fonts.gstatic.com`, crossorigin: ``}),
         E.link.props({rel: `stylesheet`, href: `https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap`}),
         a.vac(DEV) && E.script.chi(`navigator.serviceWorker.register('/sw.mjs')`),
-        E.script.chi(new p.Raw(marked(anal)))
+        new p.Raw(marked(anal))
       ),
       E.body.props({class: `dark-theme`}).chi(chi, 
         E.div.props({class: `popup`, id: `popup`}).chi(
@@ -460,8 +460,8 @@ function Layout(tit, desc, img, ...chi) {
           E.img.props({id: `popupImage`, src: ` `, alt: `Popup Image`})
         ))
       ),
-      E.script.props({type: `module`, src: `/browser.mjs`}),
-      E.script.props({type: `module`, src: `/site.mjs`}),
+      E.script.props({type: `module`, src: `/browser.mjs`, defer: ``}),
+      // E.script.props({type: `module`, src: `/site.mjs`}),
       a.vac(DEV) && E.script.props({type: `module`, src: l.LIVE_CLIENT}),
     )
   )
@@ -472,7 +472,7 @@ function Nav(page) {
     E.menu.chi(`☰`),
     E.mobilemenu.chi(a.map(page.site.nav, PageLink)),
     E.nav.chi(a.map(page.site.nav, PageLink)),
-    E.h1.chi(`Северин Богучарский`)
+    E.h1.chi(E.a.props({href: `/`}).chi(`Северин Богучарский`))
       // E.button.props({id: `themeSwitcher`, class: `switch`}).chi(`☀`)
   )
 }
