@@ -601,7 +601,11 @@ form {
   img {
     width: 50%;
     border-radius: 5px;
-  }
+    @include img-styles($transition-duration)
+    }
+    img:hover {
+      @include hover-transform($hover-scale)
+    }
   .spoiler-header {
     width: 100%;
     cursor: pointer;
