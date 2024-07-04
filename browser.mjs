@@ -58,7 +58,7 @@ popup.addEventListener(`click`, (e) => {
 })
 
 // Tags button
-if (window.location.pathname === '/blog') {
+if (window.location.pathname === '/blog' || window.location.pathname.startsWith('/blog')) {
   document.addEventListener('DOMContentLoaded', function() {
     const tagsContainer = document.querySelector('tags')
     const buttons = tagsContainer.querySelectorAll('button[type="button"]')
