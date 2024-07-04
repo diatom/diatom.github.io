@@ -226,14 +226,14 @@ aboutme {
     object-fit: cover;
     border-radius: 5px;
     position: relative;
-    top: -15px;
-    animation: slideDown 0.5s ease-in-out;
+    top: -20px;
+    animation: slideDown 0.8s ease-in-out;
     animation-fill-mode: forwards;
   }
 
   @keyframes slideDown {
     0% {
-      top: -10px;
+      top: -20px;
       opacity: 0;
     }
     100% {
