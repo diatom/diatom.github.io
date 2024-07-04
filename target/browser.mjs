@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 // Popup image
-const images = document.querySelectorAll(`article img, .cheese img`)
+const images = document.querySelectorAll(`article img, .cheese img, .spoiler img`)
 const popup = document.getElementById(`popup`)
 const popupImage = document.getElementById(`popupImage`)
 const closeBtn = document.getElementById(`closeBtn`)
@@ -167,5 +167,22 @@ if (window.location.pathname === `/bookreview` || window.location.pathname === `
         document.getElementById(`searchButton`).dispatchEvent(new Event(`click`))
         event.preventDefault()
     }
+  })
+}
+
+// Spoiler 
+if (window.location.pathname === `/cheese`) {
+  document.querySelectorAll('.spoiler-header').forEach(header => {
+    header.addEventListener('click', () => {
+      header.classList.toggle('active')
+      const content = header.nextElementSibling
+      if (content.style.display === 'block') {
+        content.style.display = 'none'
+        header.querySelector('.toggle-icon').textContent = '▶'
+      } else {
+        content.style.display = 'block'
+        header.querySelector('.toggle-icon').textContent = '▼'
+      }
+    })
   })
 }

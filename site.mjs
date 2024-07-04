@@ -342,6 +342,7 @@ class PageCheese extends Page {
   title() {return `Сыр`}
 
   body() {
+    const acheese =  Deno.readTextFileSync(`./data/cheese.md`)
     const tit = `Сыр`
     const desc = `Список сыра, который возможно внедрить на производство.`
     const img = `https://sirseverin.ru/images/cheese.jpg`
@@ -362,6 +363,15 @@ class PageCheese extends Page {
             )
           ),
           // E.form.props({class: `my-tags`, is: `my-tags`})
+        ),
+        E.div.props({class: `spoiler`}).chi(
+          E.div.props({class: `spoiler-header`}).chi(
+            E.span.props({class: `toggle-icon`}).chi(`▶`),
+            E.h3.chi(`Подробнее`),
+          ),
+          E.div.props({class: `spoiler-content`}).chi(
+            new p.Raw(marked(acheese))
+          ),
         ),
         E.books.chi(
           cheese.map((val) => {

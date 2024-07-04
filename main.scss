@@ -107,6 +107,9 @@ header {
       font-size: 1.2em;
       border-bottom: 1px solid white;
     }
+    a:last-child {
+      border-bottom: none;
+    }
   }
   a {
     padding: 0.3rem 2rem 0.3rem 2rem;
@@ -582,6 +585,47 @@ form {
   }
 }
 
+// Spoiler
+.spoiler {
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 2em 0;
+  width: 60%;
+  max-width: 70em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-content: left;
+  padding: 1em;
+  img {
+    width: 50%;
+    border-radius: 5px;
+  }
+  .spoiler-header {
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: left;
+    span {
+      margin: 0 1em 0 0;
+      width: 1em;
+    }
+  }
+  .spoiler-header h3 {
+    margin: 0;
+  }
+  .spoiler-content {
+    padding: 10px;
+    display: none;
+    width: 60%;
+    h2 {
+      margin: 3em 0 0 0;
+    }
+  }
+}
+
+
 // Popup image
 .popup {
   display: none;
@@ -641,8 +685,16 @@ form {
   article, blog, books {
     width: 90%;
   }
+  .spoiler {
+    width: 86%;
+    padding: 2%;
+    .spoiler-content {
+      width: 100%;
+    }
+  }
   .info-books, .info-cheeses {
-    width: 90%;
+    width: 86%;
+    padding: 2%;
   }
   principe {
     width: 70%;
