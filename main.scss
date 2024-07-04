@@ -693,7 +693,10 @@ form {
     width: 86%;
     padding: 2%;
     .spoiler-content {
-      width: 100%;
+      width: 90%;
+      img {
+        width: 60%;
+      }
     }
   }
   .info-books, .info-cheeses {

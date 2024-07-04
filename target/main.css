@@ -656,7 +656,10 @@ form input[type=checkbox]:checked + label {
     padding: 2%;
   }
   .spoiler .spoiler-content {
-    width: 100%;
+    width: 90%;
+  }
+  .spoiler .spoiler-content img {
+    width: 60%;
   }
   .info-books, .info-cheeses {
     width: 86%;
