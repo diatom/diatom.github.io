@@ -131,8 +131,8 @@ if (window.location.pathname === '/blog') {
 // })
 
 
-if (window.location.pathname === '/bookreview' && window.location.pathname === '/cheese') {
-  // Search
+// Search
+if (window.location.pathname === `/bookreview` || window.location.pathname === `/cheese`) {
   const searchInput = document.getElementById(`searchInput`)
   const searchButton = document.getElementById(`searchButton`)
 
@@ -150,9 +150,9 @@ if (window.location.pathname === '/bookreview' && window.location.pathname === '
     for (const elem of divs) {
       let result = elem.innerHTML.toLowerCase().includes(input)
       if (result) {
-        elem.hidden = false
+        elem.style.display = `block`
       } else {
-        elem.hidden = true
+        elem.style.display = `none`
       } 
     }
   }
@@ -160,7 +160,6 @@ if (window.location.pathname === '/bookreview' && window.location.pathname === '
     const userInput = searchInput.value.toLowerCase()
     searchDataBook(userInput)
   })
-
 
   // Enter click
   document.addEventListener(`keydown`, function(event) {
