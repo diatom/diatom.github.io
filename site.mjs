@@ -287,7 +287,7 @@ class PageCheese extends Page {
       Nav(this),
       E.main.chi(
         E.div.props({class: `info-cheeses`}).chi(
-          E.h2.chi(`Сыр, который я могу сделать`),
+          E.h2.chi(`Сыр, который я умею делать`),
           E.div.props({class: `spoiler`}).chi(
             E.div.props({class: `spoiler-header`}).chi(
               E.span.props({class: `toggle-icon`}).chi(`▶`),
