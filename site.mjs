@@ -239,9 +239,11 @@ class PageBookreview extends Page {
       Nav(this),
       E.main.chi(
         E.div.props({class: `info-books`}).chi(
+          E.h2.chi(`Краткие оценки прочитанных мною книг`),
           E.img.props({src: `/images/books.jpg`, alt: `Books`, class: `img-info`}),
           E.search.chi(
-            E.label.props({for: `searchInput`}).chi(`Краткие оценки прочитанных мною книг`),
+            E.label.props({for: `searchInput`}),
+            // E.label.props({for: `searchInput`}).chi(`Краткие оценки прочитанных мною книг`),
             E.div.chi(
               E.input.props({type: `text`, id: `searchInput`, placeholder: `Книга, автор, жанр...`}),
               E.button.props({id: `searchButton`, type: `submit`}).chi(

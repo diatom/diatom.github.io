@@ -436,7 +436,7 @@ article {
 books {
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
+  width: 90%;
   margin: 5em 0 10em 0;
   flex-direction: row;
   justify-content: flex-start;
@@ -466,7 +466,8 @@ books {
   }
 
   .cheese {
-    width: 40em;
+    max-width: 40em;
+    width: 45%;
     padding: 0 0 0 0.6em;
     position: relative; 
     display: flex;
@@ -525,7 +526,7 @@ books {
 // }
 search {
   position: absolute;
-  margin: 1em 0 0 1em;
+  margin: 6em 0 0 1em;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -746,6 +747,7 @@ form {
     search {
       position: relative;
       width: 90%;
+      margin: 0;
     }
     .img-info {
       display: none;
