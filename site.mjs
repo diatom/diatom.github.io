@@ -239,16 +239,13 @@ class PageBookreview extends Page {
       Nav(this),
       E.main.chi(
         E.div.props({class: `info-books`}).chi(
-          E.img.props({src: `/images/books.jpg`, alt: `Books`}),
+          E.img.props({src: `/images/books.jpg`, alt: `Books`, class: `img-info`}),
           E.search.chi(
             E.label.props({for: `searchInput`}).chi(`Краткие оценки прочитанных мною книг`),
             E.div.chi(
               E.input.props({type: `text`, id: `searchInput`, placeholder: `Книга, автор, жанр...`}),
               E.button.props({id: `searchButton`, type: `submit`}).chi(
-                E.svg.props({xmlns: `https://www.w3.org/2000/svg`, viewBox: `0 0 48 48`, id: `Search`}).chi(E.path.props({d: `M46.599 40.236L36.054 
-                  29.691C37.89 26.718 39 23.25 39 19.5 39 8.73 30.27 0 19.5 0S0 8.73 0 19.5 8.73 39 19.5 
-                  39c3.75 0 7.218-1.11 10.188-2.943l10.548 10.545a4.501 4.501 0 0 0 6.363-6.366zM19.5 
-                  33C12.045 33 6 26.955 6 19.5S12.045 6 19.5 6 33 12.045 33 19.5 26.955 33 19.5 33z`, fill: `#be264c`, class: `color000000 svgShape`}))
+                E.img.props({src: `/images/search.svg`, alt: `s`, class: `img-svg`})
               )
             )
           ),
@@ -288,32 +285,31 @@ class PageCheese extends Page {
       Nav(this),
       E.main.chi(
         E.div.props({class: `info-cheeses`}).chi(
-          E.img.props({src: `/images/cheese.jpg`, alt: `Cheese`}),
-          E.search.chi(
-            E.label.props({for: `searchInput`}).chi(`Специализируюсь на производстве определённых видов сыра`),
-            E.div.chi(
-              E.input.props({type: `text`, id: `searchInput`, placeholder: `Найти сыр...`}),
-              E.button.props({id: `searchButton`, type: `submit`}).chi(
-                E.svg.props({xmlns: `https://www.w3.org/2000/svg`, viewBox: `0 0 48 48`, id: `Search`}).chi(E.path.props({d: `M46.599 40.236L36.054 
-                  29.691C37.89 26.718 39 23.25 39 19.5 39 8.73 30.27 0 19.5 0S0 8.73 0 19.5 8.73 39 19.5 
-                  39c3.75 0 7.218-1.11 10.188-2.943l10.548 10.545a4.501 4.501 0 0 0 6.363-6.366zM19.5 
-                  33C12.045 33 6 26.955 6 19.5S12.045 6 19.5 6 33 12.045 33 19.5 26.955 33 19.5 33z`, fill: `#be264c`, class: `color000000 svgShape`}))
-              )
-            )
+          E.h2.chi(`Сыр, который я могу сделать`),
+          E.div.props({class: `spoiler`}).chi(
+            E.div.props({class: `spoiler-header`}).chi(
+              E.span.props({class: `toggle-icon`}).chi(`▶`),
+              E.p.chi(`Нажми чтобы прочитать подробности`),
+            ),
+            E.div.props({class: `spoiler-content`}).chi(
+              new p.Raw(marked(acheese))
+            ),
           ),
-        ),
-        E.div.props({class: `spoiler`}).chi(
-          E.div.props({class: `spoiler-header`}).chi(
-            E.span.props({class: `toggle-icon`}).chi(`▶`),
-            E.p.chi(`Нажми для подробной информации`),
-          ),
-          E.div.props({class: `spoiler-content`}).chi(
-            new p.Raw(marked(acheese))
-          ),
+          BookTags(cheese.t),
+          // E.img.props({src: `/images/cheese.jpg`, alt: `Cheese`, class: `img-cheese`}),
+          // E.search.chi(
+          //   E.label.props({for: `searchInput`}).chi(`Специализируюсь на производстве определённых видов сыра`),
+          //   E.div.chi(
+          //     E.input.props({type: `text`, id: `searchInput`, placeholder: `Найти сыр...`}),
+          //     E.button.props({id: `searchButton`, type: `submit`}).chi(
+          //       E.img.props({src: `/images/search.svg`, alt: `s`, class: `img-svg`})
+          //     )
+          //   )
+          // ),
         ),
         E.books.chi(
           cheese.c.map((val) => {
-            return E.div.props({class: `cheese`, dataindex: val.tags, id: val.Id}).chi(
+            return E.div.props({class: `cheese`, id: val.Id}).chi(
               E.div.chi(
                 E.span.chi(val.Id),
                 E.h3.chi(val.name),
@@ -324,7 +320,7 @@ class PageCheese extends Page {
                 E.p.chi(`Вкус: ` + val.taste),
                 E.p.chi(`Плесень: ` + val.mold),
                 E.p.chi(`Описание: ` + val.description),
-                E.span.chi(`Теги: ` + val.tags),
+                ArtTags(val.tags),
               ),
               E.img.props({src: val.img, alt: val.name})
             )

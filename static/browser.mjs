@@ -86,11 +86,11 @@ popup.addEventListener('touchend', (e) => {
 
 
 // Tags button
-if (window.location.pathname.startsWith('/blog') || window.location.pathname === ('/bookreview')) {
+if (window.location.pathname.startsWith('/blog') || window.location.pathname === ('/bookreview') || window.location.pathname === ('/cheese')) {
   document.addEventListener('DOMContentLoaded', function() {
     const tagsContainer = document.querySelector('tags')
     const buttons = tagsContainer.querySelectorAll('button[type="button"]')
-    const blogDivs = document.querySelectorAll('.filter, .book')
+    const blogDivs = document.querySelectorAll('.filter, .book, .cheese')
     const activeTags = new Set()
 
     buttons.forEach(button => {
@@ -160,7 +160,7 @@ if (window.location.pathname.startsWith('/blog') || window.location.pathname ===
 
 
 // Search
-if (window.location.pathname === `/bookreview` || window.location.pathname === `/cheese`) {
+if (window.location.pathname === `/bookreview`) {
   const searchInput = document.getElementById(`searchInput`)
   const searchButton = document.getElementById(`searchButton`)
 
