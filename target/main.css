@@ -283,51 +283,6 @@ blog {
   width: 60%;
   justify-content: space-between;
 }
-blog tags {
-  width: 100%;
-  margin: 2em 0;
-}
-blog tags .btn {
-  cursor: pointer;
-  background-color: rgba(128, 128, 128, 0);
-  border: none;
-  color: var(--text-color);
-  padding: 0.5em;
-  font-size: 1.05em;
-}
-blog tags .btn:hover {
-  background-color: rgba(128, 128, 128, 0.2);
-}
-blog tags .btn.active {
-  background-color: rgba(128, 128, 128, 0.4);
-}
-blog tags .help {
-  margin: 0 0.5em 0 0;
-  font-size: 1.05em;
-}
-blog h2 {
-  width: 100%;
-  font-size: 1.8em;
-  color: grey;
-}
-blog div {
-  margin: 1em 0;
-  display: flex;
-  width: 48%;
-  flex-direction: column;
-}
-blog div arttags {
-  width: 100%;
-}
-blog div arttags .btn {
-  background-color: transparent;
-  border: none;
-  color: grey;
-  padding: 0.5em;
-}
-blog div arttags .help {
-  margin: 0 0.5em 0 0;
-}
 blog a {
   color: var(--text-color);
   flex-direction: column;
@@ -348,6 +303,57 @@ blog a:hover {
 blog img {
   width: 100%;
   border-radius: 5px;
+}
+blog h2 {
+  width: 100%;
+  font-size: 1.8em;
+  color: grey;
+}
+blog div {
+  margin: 1em 0;
+  display: flex;
+  width: 48%;
+  flex-direction: column;
+}
+
+tags {
+  width: 100%;
+  margin: 2em 0;
+}
+tags .btn {
+  cursor: pointer;
+  background-color: rgba(128, 128, 128, 0);
+  border: none;
+  color: var(--text-color);
+  padding: 0.5em;
+  font-size: 1.05em;
+}
+tags .btn span {
+  color: grey;
+}
+tags .btn:hover {
+  background-color: rgba(128, 128, 128, 0.2);
+}
+tags .btn.active {
+  background-color: rgba(128, 128, 128, 0.4);
+}
+tags .help {
+  margin: 0 0.5em 0 0;
+  font-size: 1.05em;
+}
+
+arttags {
+  width: 100%;
+}
+arttags .btn {
+  background-color: transparent;
+  border: none;
+  color: grey;
+  padding: 0.2em;
+  font-size: 0.9em;
+}
+arttags .help {
+  margin: 0 0.5em 0 0;
 }
 
 article {
@@ -454,11 +460,8 @@ books .cheese img:hover {
   display: flex;
   flex-direction: column;
   margin: 5em 0 0 0;
-  padding: 1em;
   width: 60%;
   max-width: 70em;
-  height: 20em;
-  background-image: url("./images/books.jpg");
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center top;
@@ -466,17 +469,22 @@ books .cheese img:hover {
   align-items: left;
   justify-content: flex-start;
 }
-
-.info-cheeses {
-  background-image: url("./images/cheese.jpg");
-  background-position: center;
+.info-books img, .info-cheeses img {
+  width: 100%;
+  height: 20em;
+  object-fit: cover;
+  border-radius: 5px;
+  position: relative;
 }
 
 search {
-  margin: 0;
+  position: absolute;
+  margin: 1em 0 0 1em;
   padding: 0;
   display: flex;
   flex-direction: column;
+  width: 30%;
+  max-width: 30em;
   height: 100px;
   gap: 10px;
 }
@@ -486,7 +494,6 @@ search label {
   width: 80%;
 }
 search div {
-  width: 40%;
   display: flex;
   height: 35px;
   background-color: var(--bg-color);
@@ -546,17 +553,17 @@ form input[type=checkbox]:checked + label {
 }
 
 .spoiler {
-  border: 1px solid grey;
+  border: 1px dotted grey;
   border-radius: 5px;
   margin: 2em 0;
-  width: 60%;
-  max-width: 70em;
+  width: calc(60% - 1px);
+  max-width: calc(70em - 1px);
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-start;
   justify-content: left;
-  padding: 1em;
+  padding: 0;
 }
 .spoiler img {
   width: 50%;
@@ -576,17 +583,16 @@ form input[type=checkbox]:checked + label {
   width: 100%;
   cursor: pointer;
   display: flex;
-  align-items: left;
+  background-color: #586ba4;
 }
 .spoiler .spoiler-header span {
-  margin: 0 1em 0 0;
-  width: 1em;
+  margin: 0 0.8em 0 0.8em;
 }
-.spoiler .spoiler-header h3 {
+.spoiler .spoiler-header p {
   margin: 0;
 }
 .spoiler .spoiler-content {
-  padding: 10px;
+  padding: 2em;
   display: none;
   width: 60%;
 }
@@ -652,18 +658,17 @@ form input[type=checkbox]:checked + label {
     width: 90%;
   }
   .spoiler {
-    width: 86%;
-    padding: 2%;
+    width: calc(90% - 1px);
+    margin: 5em 0 0 0;
   }
   .spoiler .spoiler-content {
-    width: 90%;
+    width: 85%;
   }
   .spoiler .spoiler-content img {
     width: 60%;
   }
   .info-books, .info-cheeses {
-    width: 86%;
-    padding: 2%;
+    width: 90%;
   }
   principe {
     width: 70%;
@@ -685,11 +690,17 @@ form input[type=checkbox]:checked + label {
   }
   .info-books, .info-cheeses {
     width: 80%;
-    height: 10em;
     background-image: none;
   }
-  .info-books search div, .info-cheeses search div {
+  .info-books img, .info-cheeses img {
+    display: none;
+  }
+  .info-books search, .info-cheeses search {
+    position: relative;
     width: 90%;
+  }
+  tags {
+    font-size: 0.9em;
   }
   footer {
     flex-direction: column;
@@ -741,6 +752,9 @@ form input[type=checkbox]:checked + label {
   }
   header {
     height: 7vh;
+    position: fixed;
+    top: 0.5em;
+    z-index: 1000;
   }
   header h1 {
     display: flex;
@@ -761,6 +775,9 @@ form input[type=checkbox]:checked + label {
   header a {
     font-size: 1em;
     padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+  }
+  main {
+    margin: 5.5em 0 0 0;
   }
   main nav a, main nav p {
     font-size: 1em;

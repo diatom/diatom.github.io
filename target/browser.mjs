@@ -29,40 +29,68 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 // Popup image
-const images = document.querySelectorAll(`article img, .cheese img, .spoiler img`)
-const popup = document.getElementById(`popup`)
-const popupImage = document.getElementById(`popupImage`)
-const closeBtn = document.getElementById(`closeBtn`)
+const images = document.querySelectorAll('article img, .cheese img, .spoiler img')
+const popup = document.getElementById('popup')
+const popupImage = document.getElementById('popupImage')
+const closeBtn = document.getElementById('closeBtn')
+
+let startX = 0
+let startY = 0
 
 images.forEach(image => {
-  image.addEventListener(`click`, () => {
+  image.addEventListener('click', () => {
       popupImage.src = image.src
-      popup.style.display = `flex`
-  });
+      popup.style.display = 'flex'
+  })
 })
 
-closeBtn.addEventListener(`click`, () => {
-    popup.style.display = `none`
+closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none'
 })
 
-document.addEventListener(`keydown`, (e) => {
-  if (e.key === `Escape`) {
-    popup.style.display = `none`
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    popup.style.display = 'none'
   }
 })
 
-popup.addEventListener(`click`, (e) => {
+popup.addEventListener('click', (e) => {
     if (e.target === popup) {
-        popup.style.display = `none`
+        popup.style.display = 'none'
     }
 })
 
+popup.addEventListener('touchstart', (e) => {
+  const touch = e.touches[0]
+  startX = touch.clientX
+  startY = touch.clientY
+})
+
+popup.addEventListener('touchend', (e) => {
+  const touch = e.changedTouches[0]
+  const endX = touch.clientX
+  const endY = touch.clientY
+
+  const diffX = endX - startX
+  const diffY = endY - startY
+
+  // Определяем, является ли движение смахиванием
+  if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 30) {
+    // Горизонтальное смахивание
+    popup.style.display = 'none'
+  } else if (Math.abs(diffY) > Math.abs(diffX) && Math.abs(diffY) > 30) {
+    // Вертикальное смахивание
+    popup.style.display = 'none'
+  }
+})
+
+
 // Tags button
-if (window.location.pathname === '/blog' || window.location.pathname.startsWith('/blog')) {
+if (window.location.pathname.startsWith('/blog') || window.location.pathname === ('/bookreview')) {
   document.addEventListener('DOMContentLoaded', function() {
     const tagsContainer = document.querySelector('tags')
     const buttons = tagsContainer.querySelectorAll('button[type="button"]')
-    const blogDivs = document.querySelectorAll('.filter')
+    const blogDivs = document.querySelectorAll('.filter, .book')
     const activeTags = new Set()
 
     buttons.forEach(button => {

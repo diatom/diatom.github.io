@@ -11,8 +11,8 @@ import * as l from './live.mjs'
 import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js'
 
 import * as data from './data/data.js';
-import { books } from './data/data-books.js'
-import { cheese } from './data/data-cheese.js'
+import * as book from './data/data-books.js'
+import * as cheese from './data/data-cheese.js'
 
 const {E} = new p.Ren(dg.document).patchProto(dg.glob.Element)
 
@@ -226,69 +226,6 @@ function Articles(site) {
     return results
 }
 
-
-// // Blog //
-// class PageBlog extends Page {
-//   urlPath() {return `/blog`}
-//   title() {return `Блог`}
-
-//   body() {
-//     const tit = `Блог`
-//     const desc = `Личный блог. Рассуждния на социальные темы.`
-//     return Layout(tit, desc, img,
-//       Nav(this),
-//       E.main.chi(
-//         E.blog.chi(
-//           data.list.map((val) => {
-//               return E.div.props({id: val.id, dataindex: val.dataindex}).chi(
-//                 E.span.chi(val.date),
-//                 E.a.props({href: `/blog/` + val.dataindex}).chi(
-//                   E.h3.chi(val.h3),
-//                   E.p.chi(val.p),
-//                   E.img.props({alt: val.alt, src: val.src})
-//                 )
-//               )
-//             }
-//           )
-//         )
-//       ),
-//       Footer(this)
-//     )
-//   }
-// }
-
-// // Article //
-// class PageArticle extends Page {
-//   constructor(site, arti) {
-//     super(site)
-//     this.arti = arti
-//   }  
-  
-//     urlPath() {return `/blog/` + this.arti.dataindex}
-//     title() {return this.arti.dataindex}
-  
-//     body() {
-//     const art1 = Deno.readTextFileSync(this.arti.path)
-//     const tit = this.arti.h3
-//     const desc = this.arti.p
-//     return Layout(tit, desc, img,
-//       Nav(this),
-//       E.main.chi(
-//         E.art.chi(new p.Raw(marked(art1)))
-//       ),
-//       Footer(this)
-//     )
-//   }
-// }
-
-// function Articles(site) {
-//     const results = []
-//     for (const val of data.list) {
-//       results.push(new PageArticle(site, val))
-//     }
-//     return results
-// }
-
 // Bookreview //
 class PageBookreview extends Page {
   urlPath() {return `/bookreview`}
@@ -302,6 +239,7 @@ class PageBookreview extends Page {
       Nav(this),
       E.main.chi(
         E.div.props({class: `info-books`}).chi(
+          E.img.props({src: `/images/books.jpg`, alt: `Books`}),
           E.search.chi(
             E.label.props({for: `searchInput`}).chi(`Краткие оценки прочитанных мною книг`),
             E.div.chi(
@@ -314,11 +252,11 @@ class PageBookreview extends Page {
               )
             )
           ),
-          // E.form.props({class: `my-tags`, is: `my-tags`})
+          BookTags(book.t),
         ),
         E.books.chi(
-          books.map((val) => {
-            return E.div.props({class: `book`, dataindex: val.tags, id: val.Id}).chi(
+          book.b.map((val) => {
+            return E.div.props({class: `book`, id: val.Id}).chi(
               E.span.chi(val.Id),
               E.h3.chi(val.name),
               E.p.chi(`Автор: ` + val.author),
@@ -326,7 +264,7 @@ class PageBookreview extends Page {
               E.p.chi(`Дата: ` + val.date),
               E.p.chi(val.description),
               E.p.chi(`Мой рейтинг: ` + val.rating),
-              E.span.chi(`Теги: ` + val.tags),
+              ArtTags(val.tags),
             )
           }
           )
@@ -350,6 +288,7 @@ class PageCheese extends Page {
       Nav(this),
       E.main.chi(
         E.div.props({class: `info-cheeses`}).chi(
+          E.img.props({src: `/images/cheese.jpg`, alt: `Cheese`}),
           E.search.chi(
             E.label.props({for: `searchInput`}).chi(`Специализируюсь на производстве определённых видов сыра`),
             E.div.chi(
@@ -362,19 +301,18 @@ class PageCheese extends Page {
               )
             )
           ),
-          // E.form.props({class: `my-tags`, is: `my-tags`})
         ),
         E.div.props({class: `spoiler`}).chi(
           E.div.props({class: `spoiler-header`}).chi(
             E.span.props({class: `toggle-icon`}).chi(`▶`),
-            E.h3.chi(`Подробнее`),
+            E.p.chi(`Нажми для подробной информации`),
           ),
           E.div.props({class: `spoiler-content`}).chi(
             new p.Raw(marked(acheese))
           ),
         ),
         E.books.chi(
-          cheese.map((val) => {
+          cheese.c.map((val) => {
             return E.div.props({class: `cheese`, dataindex: val.tags, id: val.Id}).chi(
               E.div.chi(
                 E.span.chi(val.Id),
@@ -560,6 +498,15 @@ function AllTags(page) {
 
 function ArtTags(tag) {
   return E.arttags.chi(
+    E.span.props({class: `help`}).chi(`Теги:`),
+    tag.map((val) => 
+      E.button.props({type: `button`, class: `btn`}).chi(E.span.chi(`#`), val)
+    )
+  )
+}
+
+function BookTags(tag) {
+  return E.tags.chi(
     E.span.props({class: `help`}).chi(`Теги:`),
     tag.map(val => 
       E.button.props({type: `button`, class: `btn`}).chi(E.span.chi(`#`), val)

@@ -1,4 +1,4 @@
-export const tags = [
+export const t = [
   `молодой`,
   `выдержанный`,
   `коровье молоко`,
@@ -34,7 +34,7 @@ export const tags = [
   `США`, 
 ]
 
-export let cheese = [
+export let c = [
     {
       Id: 1,
       name: `Чеддер`,
