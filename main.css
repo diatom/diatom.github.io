@@ -143,14 +143,15 @@ main nav a:hover {
 footer {
   flex-wrap: wrap;
   height: 20rem;
-  width: 100%;
+  width: 90%;
+  border-radius: 5px;
   justify-content: center;
   align-items: center;
   background: #000000;
   color: white;
   font-size: 0.9em;
   padding: 1.5rem 0 0 0;
-  margin: 15em 0 0 0;
+  margin: 15em 0 2em 0;
 }
 footer img {
   width: 10em;
@@ -242,6 +243,13 @@ aboutibri p {
 }
 
 principe {
+  width: 90%;
+  background-color: rgba(155, 131, 131, 0.089);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
+principe div {
   margin: 4em 0;
   display: flex;
   flex-wrap: wrap;
@@ -484,12 +492,11 @@ books .cheese img:hover {
 }
 
 search {
-  position: absolute;
-  margin: 6em 0 0 1em;
+  margin: 1em 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 60%;
   max-width: 30em;
   height: 100px;
   gap: 10px;
@@ -681,7 +688,7 @@ form input[type=checkbox]:checked + label {
     width: 90%;
   }
 
-  principe {
+  principe div {
     width: 70%;
   }
 
@@ -725,7 +732,7 @@ form input[type=checkbox]:checked + label {
     height: 100%;
     gap: 20px;
     padding: 2em 0;
-    margin: 10em 0 0 0;
+    margin: 10em 0 2em 0;
   }
   footer img {
     margin: 2em 2em;
@@ -741,8 +748,8 @@ form input[type=checkbox]:checked + label {
     justify-content: center;
   }
 
-  principe {
-    width: 80%;
+  principe div {
+    width: 90%;
   }
   principe h2 {
     font-size: 1.8em;
