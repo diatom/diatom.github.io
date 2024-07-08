@@ -60,29 +60,29 @@ popup.addEventListener('click', (e) => {
     }
 })
 
-popup.addEventListener('touchstart', (e) => {
-  const touch = e.touches[0]
-  startX = touch.clientX
-  startY = touch.clientY
-})
+// popup.addEventListener('touchstart', (e) => {
+//   const touch = e.touches[0]
+//   startX = touch.clientX
+//   startY = touch.clientY
+// })
 
-popup.addEventListener('touchend', (e) => {
-  const touch = e.changedTouches[0]
-  const endX = touch.clientX
-  const endY = touch.clientY
+// popup.addEventListener('touchend', (e) => {
+//   const touch = e.changedTouches[0]
+//   const endX = touch.clientX
+//   const endY = touch.clientY
 
-  const diffX = endX - startX
-  const diffY = endY - startY
+//   const diffX = endX - startX
+//   const diffY = endY - startY
 
-  // Определяем, является ли движение смахиванием
-  if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 30) {
-    // Горизонтальное смахивание
-    popup.style.display = 'none'
-  } else if (Math.abs(diffY) > Math.abs(diffX) && Math.abs(diffY) > 30) {
-    // Вертикальное смахивание
-    popup.style.display = 'none'
-  }
-})
+//   // Определяем, является ли движение смахиванием
+//   if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 30) {
+//     // Горизонтальное смахивание
+//     popup.style.display = 'none'
+//   } else if (Math.abs(diffY) > Math.abs(diffX) && Math.abs(diffY) > 30) {
+//     // Вертикальное смахивание
+//     popup.style.display = 'none'
+//   }
+// })
 
 
 // Tags button

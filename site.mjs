@@ -101,7 +101,7 @@ class PageIndex extends Page {
       Nav(this),
       E.main.chi(
         E.aboutme.chi(E.img.props({src: `/images/severin.jpg`, alt: `Severin Bogucharskiy`}), E.h1.chi(`Северин Богучарский`)),
-        E.principe.chi(new p.Raw(marked(principe)))
+        E.principe.chi(E.div.chi(new p.Raw(marked(principe))))
       ),
       Footer(this)
     )
@@ -240,7 +240,7 @@ class PageBookreview extends Page {
       E.main.chi(
         E.div.props({class: `info-books`}).chi(
           E.h2.chi(`Краткие оценки прочитанных мною книг`),
-          E.img.props({src: `/images/books.jpg`, alt: `Books`, class: `img-info`}),
+          // E.img.props({src: `/images/books.jpg`, alt: `Books`, class: `img-info`}),
           E.search.chi(
             E.label.props({for: `searchInput`}),
             // E.label.props({for: `searchInput`}).chi(`Краткие оценки прочитанных мною книг`),

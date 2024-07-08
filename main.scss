@@ -170,14 +170,15 @@ main {
 footer {
   flex-wrap: wrap;
   height: 20rem;
-  width: 100%;
+  width: 90%;
+  border-radius: 5px;
   justify-content: center;
   align-items: center;
   background: #000000;
   color: white;
   font-size: 0.9em;
   padding: 1.5rem 0 0 0;
-  margin: 15em 0 0 0;
+  margin: 15em 0 2em 0;
   img {
     width: 10em;
     margin: 0 2em;
@@ -275,12 +276,20 @@ aboutibri {
 }
 
 principe {
-  margin: 4em 0;
+  width: 90%;
+  background-color: rgba(155, 131, 131, 0.089);
+  border-radius: 5px;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 40%;
-  align-items: center;
+  justify-content: center;
+
+  div {
+    margin: 4em 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 40%;
+    align-items: center;
+  }
   h2 {
     font-size: 1.8em;
     width: 100%;
@@ -525,12 +534,13 @@ books {
 //   background-position: center;
 // }
 search {
-  position: absolute;
-  margin: 6em 0 0 1em;
+  // position: absolute;
+  // margin: 6em 0 0 1em;
+  margin: 1em 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 60%;
   max-width: 30em;
   height: 100px;
   gap: 10px;
@@ -720,7 +730,9 @@ form {
     width: 90%;
   }
   principe {
-    width: 70%;
+    div {
+      width: 70%;
+    }
   }
   header {
     a {
@@ -764,7 +776,7 @@ form {
     height: 100%;
     gap: 20px;
     padding: 2em 0;
-    margin: 10em 0 0 0;
+    margin: 10em 0 2em 0;
     img {
       margin: 2em 2em;
     }
@@ -780,7 +792,9 @@ form {
     }
   }
   principe {
-    width: 80%;
+    div {
+      width: 90%;
+    }
     h2 {
       font-size: 1.8em;
     }
