@@ -170,7 +170,8 @@ main {
 footer {
   flex-wrap: wrap;
   height: 20rem;
-  width: 90%;
+  width: 120em;
+  max-width: 90%;
   border-radius: 5px;
   justify-content: center;
   align-items: center;
@@ -276,7 +277,8 @@ aboutibri {
 }
 
 principe {
-  width: 90%;
+  width: 120em;
+  max-width: 90%;
   background-color: rgba(155, 131, 131, 0.089);
   border-radius: 5px;
   display: flex;
