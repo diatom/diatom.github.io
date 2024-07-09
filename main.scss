@@ -9,6 +9,28 @@ $true-blue: #586ba4ff;
 $marian-blue: #324376ff;
 $flax: #f5dd90ff;
 
+$geologica-font: "Geologica", sans-serif;
+$mulish-font: "Mulish", sans-serif;
+
+
+@mixin geologica($weight: 400, $cursive: 0, $sharpness: 50) {
+    font-family: $geologica-font;
+    font-optical-sizing: auto;
+    font-weight: $weight;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0,
+      "CRSV" $cursive,
+      "SHRP" $sharpness;
+}
+@mixin mulish($weight: 400) {
+    font-family: $mulish-font;
+    font-optical-sizing: auto;
+    font-weight: $weight;
+    font-style: normal;
+}
+
+
 $transition-duration: 0.3s;
 $hover-scale: 1.03;
 
@@ -49,7 +71,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  @include geologica($weight: 400);
 }
 .switch {
   cursor: pointer;
@@ -74,6 +96,7 @@ header {
   margin: 1em 0 0 0;
   height: 5vh;
   min-height: 50px;
+  @include mulish($weight: 800);
   h1 {
     display: none;
   }
@@ -113,7 +136,6 @@ header {
   }
   a {
     padding: 0.3rem 2rem 0.3rem 2rem;
-    font-family: 'Bitter', serif;
     font-size: 1.2rem;
     color: white;
   }
@@ -158,7 +180,7 @@ main {
 
     a, p {
       padding: 0.3rem 1rem 0.3rem 2rem;
-      font-family: 'Bitter', serif;
+      @include mulish($weight: 800);
       font-size: 1.2rem;
       color: white;
     }
@@ -179,7 +201,7 @@ footer {
   color: white;
   font-size: 0.9em;
   padding: 1.5rem 0 0 0;
-  margin: 15em 0 2em 0;
+  margin: 5em 0 2em 0;
   img {
     width: 10em;
     margin: 0 2em;
@@ -254,7 +276,7 @@ aboutme {
     text-shadow: 2px 2px 4px rgba(0,0,0,.5);
     margin: 0 1rem 0 10rem;
     padding: 0;
-    font-family: 'Bitter', serif;
+    @include mulish($weight: 800);
   }
 }
 
@@ -778,7 +800,7 @@ form {
     height: 100%;
     gap: 20px;
     padding: 2em 0;
-    margin: 10em 0 2em 0;
+    margin: 2.5em 0 2em 0;
     img {
       margin: 2em 2em;
     }
@@ -835,7 +857,7 @@ form {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-family: 'Bitter', serif;
+      @include mulish($weight: 800);
     }
     nav {
       display: none;

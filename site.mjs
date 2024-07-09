@@ -348,7 +348,7 @@ class PageIbri extends Page {
   return Layout(tit, desc, img,
       E.main.chi(
         E.aboutibri.chi(E.p.chi(`Отдельный портал к проекту Ibri® сейчас в разработке. Релиз назначен на осень 2024 г.`)),
-        E.principe.chi(new p.Raw(marked(ibri)))
+        E.principe.chi(E.div.chi(new p.Raw(marked(ibri))))
       ),
       FooterIbri(this)
     )
@@ -391,11 +391,10 @@ function Layout(tit, desc, img, ...chi) {
         E.meta.props({property: `og:image:type`, content: `image/jpeg`}),
         E.link.props({rel: `icon`, type: `image/x-icon`, href: `/images/severin.ico`}),
         E.link.props({rel: `stylesheet`, href: `/main.css`}),
-        E.link.props({rel: `preconnect`, href: `https://fonts.googleapis.com`}),
-        E.link.props({rel: `preconnect`, href: `https://fonts.gstatic.com`, crossorigin: ``}),
-        E.link.props({rel: `preconnect`, href: `https://fonts.googleapis.com`}),
-        E.link.props({rel: `preconnect`, href: `https://fonts.gstatic.com`, crossorigin: ``}),
-        E.link.props({rel: `stylesheet`, href: `https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap`}),
+        // E.link.props({rel: `preconnect`, href: `https://fonts.googleapis.com`}),
+        // E.link.props({rel: `preconnect`, href: `https://fonts.gstatic.com`, crossorigin: ``}),
+        // E.link.props({rel: `stylesheet`, href: `https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap`}),
+        E.style.chi(`@import url('https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV,SHRP@100..900,0..1,0..100&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');`),
         a.vac(DEV) && E.script.chi(`navigator.serviceWorker.register('/sw.mjs')`),
         new p.Raw(marked(anal))
       ),
