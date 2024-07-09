@@ -20,7 +20,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Geologica", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "slnt" 0, "CRSV" 0, "SHRP" 50;
 }
 
 .switch {
@@ -48,6 +52,10 @@ header {
   margin: 1em 0 0 0;
   height: 5vh;
   min-height: 50px;
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
 }
 header h1 {
   display: none;
@@ -86,7 +94,6 @@ header mobilemenu a:last-child {
 }
 header a {
   padding: 0.3rem 2rem 0.3rem 2rem;
-  font-family: "Bitter", serif;
   font-size: 1.2rem;
   color: white;
 }
@@ -132,7 +139,10 @@ main nav {
 }
 main nav a, main nav p {
   padding: 0.3rem 1rem 0.3rem 2rem;
-  font-family: "Bitter", serif;
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
   font-size: 1.2rem;
   color: white;
 }
@@ -152,7 +162,7 @@ footer {
   color: white;
   font-size: 0.9em;
   padding: 1.5rem 0 0 0;
-  margin: 15em 0 2em 0;
+  margin: 5em 0 2em 0;
 }
 footer img {
   width: 10em;
@@ -222,7 +232,10 @@ aboutme h1 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin: 0 1rem 0 10rem;
   padding: 0;
-  font-family: "Bitter", serif;
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
 }
 
 aboutibri {
@@ -734,7 +747,7 @@ form input[type=checkbox]:checked + label {
     height: 100%;
     gap: 20px;
     padding: 2em 0;
-    margin: 10em 0 2em 0;
+    margin: 2.5em 0 2em 0;
   }
   footer img {
     margin: 2em 2em;
@@ -792,7 +805,10 @@ form input[type=checkbox]:checked + label {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: "Bitter", serif;
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
   }
   header nav {
     display: none;
