@@ -389,6 +389,7 @@ article h2 {
 article p {
   overflow: hidden;
   border-radius: 5px;
+  margin: 2em 0;
 }
 article span {
   font-size: 0.9em;

@@ -32,6 +32,12 @@ export const bloglist = [
         'dataindex': `social`,
         'tags': [`общество`],
     },
+    {
+        'name': `Сыр`,
+        'desc': 'Самое вкусное',
+        'dataindex': 'cheese',
+        'tags': ['сыр'],
+    },
     // {
     //     'name': `Мир`,
     //     'desc': 'Окружающий мир, города, природа',
@@ -44,19 +50,14 @@ export const bloglist = [
     //     'dataindex': 'travel',
     //     'tags': ['путешествия'],
     // },
-    // {
-    //     'name': `Сыр`,
-    //     'desc': 'Самое вкусное',
-    //     'dataindex': 'cheese',
-    //     'tags': ['сыр'],
-    // },
+
 ]
 
 export const arttags = [
     `общество`,
     `история`,
-    // `мир`,
-    // `сыр`,
+    `сыр`,
+    `производство`,
 ]
 
 export const list = [
@@ -92,5 +93,16 @@ export const list = [
         'date': 'Дата публикации: 14 марта 2024',
         'p': 'Диалог не воспринимается конечным способом решения проблем',
         'tags': [`общество`, `история`,],
+    },
+    {
+        'id': '3', 
+        'dataindex': 'syroprigodnoe-moloko.md',
+        'path': './post/syroprigodnoe-moloko.md',
+        'h3': 'Сыропригодное молоко',
+        'src': '/images/art-images/syroprigodnoe-moloko-1.jpg',
+        'alt': 'Cheese by Severin',
+        'date': 'Дата публикации: 10 июля 2024',
+        'p': 'Условия производства сыропригодного молока для качественного сыра',
+        'tags': [`сыр`, `производство`,],
     },
 ]
