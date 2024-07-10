@@ -96,7 +96,7 @@ export const list = [
     },
     {
         'id': '3', 
-        'dataindex': 'syroprigodnoe-moloko.md',
+        'dataindex': 'syroprigodnoe-moloko',
         'path': './post/syroprigodnoe-moloko.md',
         'h3': 'Сыропригодное молоко',
         'src': '/images/art-images/syroprigodnoe-moloko-1.jpg',
