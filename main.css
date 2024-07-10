@@ -829,6 +829,10 @@ form input[type=checkbox]:checked + label {
     padding: 0.3rem 0.5rem 0.3rem 0.5rem;
   }
 
+  .main-ibri {
+    margin: 0;
+  }
+
   form label {
     padding: 2px 4px;
   }
