@@ -346,7 +346,7 @@ class PageIbri extends Page {
   const desc = `Газированный напиток Ибри от Северина Богучарского.`
   const img = `https://sirseverin.ru/images/ibri.jpg`
   return Layout(tit, desc, img,
-      E.main.chi(
+      E.main.props({class: `main-ibri`}).chi(
         E.aboutibri.chi(E.p.chi(`Отдельный портал к проекту Ibri® сейчас в разработке. Релиз назначен на осень 2024 г.`)),
         E.principe.chi(E.div.chi(new p.Raw(marked(ibri))))
       ),
