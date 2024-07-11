@@ -435,13 +435,16 @@ arttags {
 article {
   margin: 5em 0;
   width: 50%;
+  h1 {
+    font-size: 2em;
+  }
   h2 {
     color: var(--text-color);
   }
   p {
-    overflow: hidden;
     border-radius: 5px;
     margin: 2em 0;
+    overflow: hidden;
   }
   span {
     font-size: 0.9em;
@@ -454,6 +457,9 @@ article {
     width: 100%;
     max-width: 80em;
     border-radius: 5px;
+    object-fit: cover;
+    overflow: hidden;
+    transform-origin: center center;
     @include img-styles($transition-duration)
   }
   img:hover {
