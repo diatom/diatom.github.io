@@ -383,13 +383,16 @@ article {
   margin: 5em 0;
   width: 50%;
 }
+article h1 {
+  font-size: 2em;
+}
 article h2 {
   color: var(--text-color);
 }
 article p {
-  overflow: hidden;
   border-radius: 5px;
   margin: 2em 0;
+  overflow: hidden;
 }
 article span {
   font-size: 0.9em;
@@ -402,6 +405,9 @@ article img {
   width: 100%;
   max-width: 80em;
   border-radius: 5px;
+  object-fit: cover;
+  overflow: hidden;
+  transform-origin: center center;
   cursor: pointer;
   max-width: 100%;
   -moz-transition: all 0.3s;
