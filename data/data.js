@@ -3,7 +3,10 @@ export const contact = [
         'Эл. почта': `mailto: bogucharskiy.s@yandex.ru`
     },
     {
-        'Telegram': `https://telegram.me/Severinz`
+        'Группа Telegram': `https://telegram.me/severinmind`
+    },
+    {
+        'Личный Telegram': `https://telegram.me/Severinz`
     },
     {
         'Discord': `https://discord.com/users/214732781945618442`
