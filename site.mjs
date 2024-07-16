@@ -337,7 +337,7 @@ class PageCheese extends Page {
 
 // Ibri //
 class PageIbri extends Page {
-  urlPath() {return `/ibri`}
+  urlPath() {return `/ibribrand`}
   title() {return `Ibri®`}
 
   body() {
