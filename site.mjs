@@ -125,7 +125,7 @@ class PageBlog extends Page {
           E.h2.chi(`Все публикации`),
           AllTags(this),
           // list.slice(-3).map((val) => {
-            data.list.map((val) => {
+            data.list.reverse().map((val) => {
             return E.div.props({id: val.id, dataindex: val.dataindex, class: `filter`}).chi(
               E.span.chi(val.date),
               E.a.props({href: `/blog/` + val.dataindex}).chi(

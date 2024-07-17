@@ -1,17 +1,13 @@
 $light-bg-color: white;
 $light-text-color: black;
-
 $dark-bg-color: hsl(0, 0%, 14%);
 $dark-text-color: white;
-
 $rose-red: #be264cff;
 $true-blue: #586ba4ff;
 $marian-blue: #324376ff;
 $flax: #f5dd90ff;
-
 $geologica-font: "Geologica", sans-serif;
 $mulish-font: "Mulish", sans-serif;
-
 
 @mixin geologica($weight: 400, $cursive: 0, $sharpness: 50) {
     font-family: $geologica-font;
@@ -29,7 +25,6 @@ $mulish-font: "Mulish", sans-serif;
     font-weight: $weight;
     font-style: normal;
 }
-
 
 $transition-duration: 0.3s;
 $hover-scale: 1.03;
@@ -324,7 +319,6 @@ principe {
     text-decoration: underline;
   }
 }
-
 // 404
 .error {
   color: white;
@@ -340,7 +334,6 @@ principe {
 .error:hover {
   text-decoration: underline 1px solid white;
 }
-
 // Blog
 blog {
   margin: 5em 0;
