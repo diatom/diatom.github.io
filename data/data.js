@@ -1,33 +1,15 @@
 export const contact = [
-    {
-        'Эл. почта': `mailto: bogucharskiy.s@yandex.ru`
-    },
-    {
-        'Группа Telegram': `https://telegram.me/severinmind`
-    },
-    {
-        'Личный Telegram': `https://telegram.me/Severinz`
-    },
-    {
-        'Discord': `https://discord.com/users/214732781945618442`
-    },
-    {
-        'GitHub': `https://github.com/Diatom/`
-    }
+    {'Эл. почта': `mailto: bogucharskiy.s@yandex.ru`},
+    {'Группа Telegram': `https://telegram.me/severinmind`},
+    {'Личный Telegram': `https://telegram.me/Severinz`},
+    {'Discord': `https://discord.com/users/214732781945618442`},
+    {'GitHub': `https://github.com/Diatom/`}
 ]
-
 export const contactIbri = [
-    {
-        'bogucharskiy.s@yandex.ru': `mailto: bogucharskiy.s@yandex.ru`
-    },
-    {
-        'Telegram: @Severinz': `https://telegram.me/Severinz`
-    },
-    {
-        '+7 (903) 186-93-32': `tel:+79031869332`
-    }
+    {'bogucharskiy.s@yandex.ru': `mailto: bogucharskiy.s@yandex.ru`},
+    {'Telegram: @Severinz': `https://telegram.me/Severinz`},
+    {'+7 (903) 186-93-32': `tel:+79031869332`}
 ]
-
 export const bloglist = [
     {
         'name': `Общество`,
@@ -41,28 +23,29 @@ export const bloglist = [
         'dataindex': 'cheese',
         'tags': ['сыр'],
     },
+    {
+        'name': `Путешествия`,
+        'desc': 'Путешествия по миру и России',
+        'dataindex': 'travel',
+        'tags': ['путешествия'],
+    },
     // {
     //     'name': `Мир`,
     //     'desc': 'Окружающий мир, города, природа',
     //     'dataindex': 'world',
     //     'tags': ['мир'],
     // },
-    // {
-    //     'name': `Путешествия`,
-    //     'desc': 'Путешествия по миру и России',
-    //     'dataindex': 'travel',
-    //     'tags': ['путешествия'],
-    // },
+
 
 ]
-
 export const arttags = [
     `общество`,
     `история`,
     `сыр`,
     `производство`,
+    `путешествия`,
+    `Россия`,
 ]
-
 export const list = [
     {
         'id': '0',
@@ -107,5 +90,16 @@ export const list = [
         'date': 'Дата публикации: 10 июля 2024',
         'p': 'Условия производства сыропригодного молока для качественного сыра',
         'tags': [`сыр`, `производство`,],
+    },
+    {
+        'id': '4', 
+        'dataindex': 'festival-bessonica-2024',
+        'path': './post/festival-bessonica-2024.md',
+        'h3': 'Фестиваль Бессоница 2024',
+        'src': '/images/art-images/bessonica-2024-2.jpg',
+        'alt': 'Insomnia Photo',
+        'date': 'Дата публикации: 24 июля 2024',
+        'p': 'Ежегодный загородный фестиваль авторской анимации',
+        'tags': [`путешествия`, `Россия`,],
     },
 ]
