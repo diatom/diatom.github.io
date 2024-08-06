@@ -45,6 +45,7 @@ export const arttags = [
     `производство`,
     `путешествия`,
     `Россия`,
+    `стиль`,
 ]
 export const list = [
     {
@@ -112,5 +113,16 @@ export const list = [
         'date': 'Дата публикации: 31 июля 2024',
         'p': 'Что является основным ресурсом?',
         'tags': [`общество`],
+    },
+    {
+        'id': '6', 
+        'dataindex': 'krasivaya-forma-odezhdy-eto-vazhno',
+        'path': './post/krasivaya-forma-odezhdy-eto-vazhno.md',
+        'h3': 'Красивая форма одежды — это важно',
+        'src': '/images/art-images/forma-1.jpg',
+        'alt': 'Forma',
+        'date': 'Дата публикации: 6 августа 2024',
+        'p': '',
+        'tags': [`общество`, `стиль`],
     },
 ]
