@@ -147,8 +147,12 @@ header {
 .nav-blog {
   width: 120em;
   max-width: 90%;
+  display: flex;
+  flex-wrap: wrap;
   a, p {
   color: var(--text-color);
+    margin: 0;
+    padding: 1em 2em 0 0.5em;
   }
 }
 h2 {
@@ -837,7 +841,7 @@ form {
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
 
     div {
       width: 100%;

@@ -110,9 +110,13 @@ header nav {
 .nav-blog {
   width: 120em;
   max-width: 90%;
+  display: flex;
+  flex-wrap: wrap;
 }
 .nav-blog a, .nav-blog p {
   color: var(--text-color);
+  margin: 0;
+  padding: 1em 2em 0 0.5em;
 }
 
 h2 {
@@ -777,7 +781,6 @@ form input[type=checkbox]:checked + label {
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
   }
   blog div {
     width: 100%;

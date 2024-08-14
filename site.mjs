@@ -123,7 +123,7 @@ class PageBlog extends Page {
         NavBlog(this),
         E.blog.chi(
           E.h2.chi(`Все публикации`),
-          // E.span.props({class: `help`}).chi(`Количество статей: ${data.list.length}`),
+          E.span.props({class: `help`}).chi(`Количество статей: ${data.list.length}`),
           AllTags(this),
             data.list.reverse().map((val) => {
             return E.div.props({id: val.id, dataindex: val.dataindex, class: `filter`}).chi(
