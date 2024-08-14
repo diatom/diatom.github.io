@@ -29,12 +29,12 @@ export const bloglist = [
         'dataindex': 'travel',
         'tags': ['путешествия'],
     },
-    {
-        'name': `Пища`,
-        'desc': 'О еде и напитках',
-        'dataindex': 'meal',
-        'tags': ['пища'],
-    },
+    // {
+    //     'name': `Пища`,
+    //     'desc': 'О еде и напитках',
+    //     'dataindex': 'meal',
+    //     'tags': ['пища'],
+    // },
     // {
     //     'name': `Мир`,
     //     'desc': 'Окружающий мир, города, природа',
