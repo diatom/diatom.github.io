@@ -10,6 +10,12 @@
   --a-color: #be264cff;
 }
 
+canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -94,8 +100,8 @@ header mobilemenu {
   align-items: left;
   top: 0;
   left: 0;
-  padding: 1vh;
-  height: 98vh;
+  padding: 0;
+  height: 100%;
   z-index: 1000;
 }
 header mobilemenu a {
@@ -316,35 +322,30 @@ aboutibri p {
 }
 
 principe {
-  width: 120em;
-  max-width: 90%;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  font-size: 3em;
   display: none;
-  font-family: "Courier Prime", monospace;
-  font-weight: 700;
-  font-style: normal;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 1em;
+  margin: 0;
+  align-items: center;
+  justify-content: space-between;
+  width: 60em;
+  max-width: 90%;
+  background: #242424;
+  border-radius: 5px;
 }
 principe div {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 40%;
-  align-items: center;
+  width: 50em;
+  max-width: 60%;
+  padding: 0 5% 0 0;
 }
-principe h2 {
-  font-size: 1.8em;
-  width: 100%;
-}
-principe a {
-  color: var(--text-color);
-  display: inline;
-  text-decoration: underline;
+principe div a {
+  display: inline-block;
+  color: white;
+  text-decoration: underline solid white;
 }
 principe img {
-  width: 15em;
+  width: 20%;
   object-fit: cover;
   position: relative;
 }
@@ -775,10 +776,6 @@ form input[type=checkbox]:checked + label {
     width: 90%;
   }
 
-  principe div {
-    width: 70%;
-  }
-
   header a {
     padding: 0.3rem 1rem 0.3rem 1rem;
   }
@@ -841,14 +838,21 @@ form input[type=checkbox]:checked + label {
     justify-content: center;
   }
 
-  principe div {
+  principe {
     width: 90%;
+    flex-direction: column;
+    padding: 0;
+    font-size: 0.85em;
+    margin: 2em 0 0 0;
   }
-  principe h2 {
-    font-size: 1.8em;
+  principe div {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
   }
-  principe p {
-    width: 100%;
+  principe img {
+    margin: 2em 0 0 0;
+    width: 60%;
   }
 
   books {
