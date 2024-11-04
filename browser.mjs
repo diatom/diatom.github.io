@@ -60,29 +60,6 @@ popup.addEventListener('click', (e) => {
     }
 })
 
-// popup.addEventListener('touchstart', (e) => {
-//   const touch = e.touches[0]
-//   startX = touch.clientX
-//   startY = touch.clientY
-// })
-
-// popup.addEventListener('touchend', (e) => {
-//   const touch = e.changedTouches[0]
-//   const endX = touch.clientX
-//   const endY = touch.clientY
-
-//   const diffX = endX - startX
-//   const diffY = endY - startY
-
-//   // Определяем, является ли движение смахиванием
-//   if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 30) {
-//     // Горизонтальное смахивание
-//     popup.style.display = 'none'
-//   } else if (Math.abs(diffY) > Math.abs(diffX) && Math.abs(diffY) > 30) {
-//     // Вертикальное смахивание
-//     popup.style.display = 'none'
-//   }
-// })
 
 
 // Tags button
@@ -129,34 +106,6 @@ if (window.location.pathname.startsWith('/blog') || window.location.pathname ===
     })
   })
 }
-
-
-
-
-// Theme switcher
-// document.addEventListener('DOMContentLoaded', () => {
-//   const body = document.body
-//   const themeSwitcher = document.getElementById('themeSwitcher')
-//   const currentTheme = localStorage.getItem('theme')
-
-//   if (currentTheme) {
-//       body.classList.add(currentTheme)
-//       themeSwitcher.textContent = currentTheme === 'dark-theme' ? '☀' : '☽'
-//   } else {
-//       body.classList.add('light-theme')
-//       themeSwitcher.textContent = '☽'
-//   }
-
-//   themeSwitcher.addEventListener('click', () => {
-//       body.classList.toggle('dark-theme')
-//       body.classList.toggle('light-theme')
-
-//       const newTheme = body.classList.contains('dark-theme') ? 'dark-theme' : 'light-theme'
-//       localStorage.setItem('theme', newTheme)
-      
-//       themeSwitcher.textContent = newTheme === 'dark-theme' ? '☀' : '☽'
-//   })
-// })
 
 
 // Search
@@ -213,4 +162,38 @@ if (window.location.pathname === `/cheese`) {
       }
     })
   })
+}
+
+
+// Close button about me
+if (window.location.pathname === `/`) {
+  document.getElementById('close-about').addEventListener('click', function(event) {
+    const aboutMeElement = document.getElementById('aboutme')
+    if (aboutMeElement) {
+        aboutMeElement.style.display = 'none'
+    }
+    event.stopPropagation() // Останавливаем распространение события, чтобы не сработал общий обработчик
+  })
+  document.addEventListener('keydown', function(event) {
+    const aboutMeElement = document.getElementById('aboutme')
+    if (event.key === 'Escape' && aboutMeElement && aboutMeElement.style.display === 'flex') {
+        aboutMeElement.style.display = 'none'
+    }
+  })
+
+  document.getElementById('minimal').addEventListener('click', function() {
+    const canvasContainer = document.getElementById('canvas-container')
+    const button = document.getElementById('minimal')
+    const principe = document.getElementById(`principe`)
+    
+    if (canvasContainer.style.display === 'none') {
+        canvasContainer.style.display = 'block'
+        button.textContent = 'простая версия сайта'
+        principe.style.display = `none`
+    } else {
+        canvasContainer.style.display = 'none'
+        button.textContent = 'сайт с 3D сценой'
+        principe.style.display = `flex`
+    }
+  });
 }
