@@ -99,14 +99,45 @@ class PageIndex extends Page {
   const img = `https://sirseverin.ru/images/severin.jpg`
     return Layout(tit, desc, img,
       Nav(this),
-      E.main.chi(
-        E.aboutme.chi(E.img.props({src: `/images/severin.jpg`, alt: `Severin Bogucharskiy`}), E.h1.chi(`Северин Богучарский`)),
-        E.principe.chi(E.div.chi(new p.Raw(marked(principe))))
+      // E.main.chi(
+      //   E.aboutme.chi(E.img.props({src: `/images/severin.jpg`, alt: `Severin Bogucharskiy`}), E.h1.chi(`Северин Богучарский`)),
+      // ),
+      E.aboutme.props({id: `aboutme`}).chi(
+        E.div.chi(new p.Raw(marked(principe))),
+        E.img.props({src: `/images/severin-2.jpg`, alt: `Severin Bogucharskiy`}),
+        E.button.props({class: `close-about`, id: `close-about`}).chi(`☓`),
       ),
-      Footer(this)
+      E.div.props({id: `canvas-container`}),
+      E.principe.props({id: `principe`}).chi(
+        `:)`
+        // E.div.chi(new p.Raw(marked(principe))),
+        // E.img.props({src: `/images/severin-2.jpg`, alt: `Severin Bogucharskiy`})
+      ),
+      FooterMain(this),
     )
   }
 }
+// class PageIndex extends Page {
+//   urlPath() {return `/`}
+//   fsPath() {return `index.html`}
+//   title() {return `Главная`}
+
+//   body() {
+//   const principe =  Deno.readTextFileSync(`./data/principe.md`)
+//   const tit = `Северин Богучарский`
+//   const desc = `Северин Богучарский — личный сайт. Публикации, блог, обзоры книг, сырный каталог.`
+//   const img = `https://sirseverin.ru/images/severin.jpg`
+//     return Layout(tit, desc, img,
+//       Nav(this),
+//       E.main.chi(
+//         E.aboutme.chi(E.img.props({src: `/images/severin.jpg`, alt: `Severin Bogucharskiy`}), E.h1.chi(`Северин Богучарский`)),
+//         E.principe.chi(E.div.chi(new p.Raw(marked(principe))))
+//       ),
+//       Footer(this),
+//       // E.div.props({id: `container`}),
+//     )
+//   }
+// }
 
 // Blog //
 class PageBlog extends Page {
@@ -120,7 +151,7 @@ class PageBlog extends Page {
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
-        NavBlog(this),
+        // NavBlog(this),
         E.blog.chi(
           E.h2.chi(`Все публикации`),
           E.span.props({class: `help`}).chi(`Количество статей: ${data.list.length}`),
@@ -144,53 +175,53 @@ class PageBlog extends Page {
   }
 }
 
-class PageSubBlog extends Page {
-  constructor(site, sub) {
-    super(site)
-    this.sub = sub
-  }  
+// class PageSubBlog extends Page {
+//   constructor(site, sub) {
+//     super(site)
+//     this.sub = sub
+//   }  
 
-  urlPath() {return `/blog/` + this.sub.dataindex}
-  title() {return this.sub.name}
+//   urlPath() {return `/blog/` + this.sub.dataindex}
+//   title() {return this.sub.name}
 
-  body() {
-    const tit = this.sub.name
-    const desc = this.sub.desc
-    const img = `https://sirseverin.ru/images/severin.jpg`
-    return Layout(tit, desc, img,
-      Nav(this),
-      E.main.chi(
-        NavBlog(this),
-        E.blog.chi(
-          E.h2.chi(this.sub.name),
-          AllTags(this),
-          data.list.filter(val => this.sub.tags.every(tag => val.tags.includes(tag)))
-          .map((val) => {
-              return E.div.props({id: val.id, dataindex: val.dataindex, class: `filter`}).chi(
-                E.span.chi(val.date),
-                E.a.props({href: '/blog/' + val.dataindex}).chi(
-                  E.h3.chi(val.h3),
-                  E.p.chi(val.p),
-                  E.img.props({alt: val.alt, src: val.src}),
-                ),
-                ArtTags(val.tags),
-              )
-            }
-          )
-        )
-      ),
-      Footer(this)
-    )
-  }
-}
+//   body() {
+//     const tit = this.sub.name
+//     const desc = this.sub.desc
+//     const img = `https://sirseverin.ru/images/severin.jpg`
+//     return Layout(tit, desc, img,
+//       Nav(this),
+//       E.main.chi(
+//         NavBlog(this),
+//         E.blog.chi(
+//           E.h2.chi(this.sub.name),
+//           AllTags(this),
+//           data.list.filter(val => this.sub.tags.every(tag => val.tags.includes(tag)))
+//           .map((val) => {
+//               return E.div.props({id: val.id, dataindex: val.dataindex, class: `filter`}).chi(
+//                 E.span.chi(val.date),
+//                 E.a.props({href: '/blog/' + val.dataindex}).chi(
+//                   E.h3.chi(val.h3),
+//                   E.p.chi(val.p),
+//                   E.img.props({alt: val.alt, src: val.src}),
+//                 ),
+//                 ArtTags(val.tags),
+//               )
+//             }
+//           )
+//         )
+//       ),
+//       Footer(this)
+//     )
+//   }
+// }
 
-function SubBlogs(site) {
-  const results = []
-  for (const val of data.bloglist) {
-    results.push(new PageSubBlog(site, val))
-  }
-  return results
-}
+// function SubBlogs(site) {
+//   const results = []
+//   for (const val of data.bloglist) {
+//     results.push(new PageSubBlog(site, val))
+//   }
+//   return results
+// }
 
 // Article //
 class PageArticle extends Page {
@@ -210,7 +241,7 @@ class PageArticle extends Page {
     return Layout(tit, desc, img,
       Nav(this),
       E.main.chi(
-        NavBlog(this),
+        // NavBlog(this),
         E.article.chi(new p.Raw(marked(art1)))
       ),
       Footer(this)
@@ -335,36 +366,19 @@ class PageCheese extends Page {
   }
 }
 
-// Ibri //
-class PageIbri extends Page {
-  urlPath() {return `https://drinkibri.ru/`}
-  title() {return `Ibri®`}
-
-  body() {
-  const ibri = Deno.readTextFileSync(`./data/ibri.md`)
-  const tit = `Ибри`
-  const desc = `Газированный напиток Ибри от Северина Богучарского.`
-  const img = `https://sirseverin.ru/images/ibri.jpg`
-  return Layout(tit, desc, img,
-      E.main.props({class: `main-ibri`}).chi(
-        E.aboutibri.chi(E.p.chi(`Отдельный портал к проекту Ibri® сейчас в разработке. Релиз назначен на осень 2024 г.`)),
-        E.principe.chi(E.div.chi(new p.Raw(marked(ibri))))
-      ),
-      FooterIbri(this)
-    )
-  }
-}
 
 class Site extends a.Emp {
   constructor() {
     super()
     this.notFound = new Page404(this)
-    this.nav = [new PageIndex(this), new PageBlog(this), new PageBookreview(this), new PageCheese(this), new PageIbri(this)]
-    this.blogs = SubBlogs(this)
+    this.cheese = new PageCheese(this)
+    // this.nav = [new PageIndex(this), new PageBlog(this), new PageBookreview(this), new PageCheese(this)]
+    this.nav = [new PageIndex(this), new PageBlog(this), new PageBookreview(this)]
+    // this.blogs = SubBlogs(this)
     this.articles = Articles(this)
     // console.log(`This`, this)
   }
-  all() {return [this.notFound, ...this.nav, ...this.blogs, ...this.articles]}  
+  all() {return [this.notFound, this.cheese, ...this.nav, ...this.articles]}  
 }
 export const site = new Site()
 // console.log(site.all())
@@ -395,8 +409,9 @@ function Layout(tit, desc, img, ...chi) {
         // E.link.props({rel: `preconnect`, href: `https://fonts.gstatic.com`, crossorigin: ``}),
         // E.link.props({rel: `stylesheet`, href: `https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap`}),
         E.style.chi(`@import url('https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV,SHRP@100..900,0..1,0..100&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');`),
+        E.style.chi(`@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');`),
         a.vac(DEV) && E.script.chi(`navigator.serviceWorker.register('/sw.mjs')`),
-        new p.Raw(marked(anal))
+        // new p.Raw(marked(anal))
       ),
       E.body.props({class: `dark-theme`}).chi(chi, 
         E.div.props({class: `popup`, id: `popup`}).chi(
@@ -405,7 +420,14 @@ function Layout(tit, desc, img, ...chi) {
           E.img.props({id: `popupImage`, src: ` `, alt: `Popup Image`})
         ))
       ),
+      E.script.props({type: `importmap`}).chi(`  {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+        }
+      }`),
       E.script.props({type: `module`, src: `/browser.mjs`, defer: ``}),
+      E.script.props({type: `module`, src: `/3d.mjs`, defer: ``}),
       // E.script.props({type: `module`, src: `/site.mjs`}),
       a.vac(DEV) && E.script.props({type: `module`, src: l.LIVE_CLIENT}),
     )
@@ -415,9 +437,16 @@ function Layout(tit, desc, img, ...chi) {
 function Nav(page) {
   return E.header.chi(
     E.menu.chi(`☰`),
-    E.mobilemenu.chi(a.map(page.site.nav, PageLink)),
+    E.mobilemenu.chi(
+      E.div.chi(
+        a.map(page.site.nav, PageLink)
+      ),
+      E.div.props({class: `mobilemenu-contact`}).chi(
+        Contact(data.contact)),
+    ),
     E.nav.chi(a.map(page.site.nav, PageLink)),
-    E.h1.chi(E.a.props({href: `/`}).chi(`Северин Богучарский`))
+    E.button.props({class: `minimal`, id: `minimal`}).chi(`простая версия сайта`)
+    // E.h1.chi(E.a.props({href: `/`}).chi(`Северин Богучарский`))
       // E.button.props({id: `themeSwitcher`, class: `switch`}).chi(`☀`)
   )
 }
@@ -434,6 +463,7 @@ function NavBlog(page) {
   )
 }
 
+const currentYear = new Date().getFullYear();
 function Footer(page) {
   return E.footer.chi(
     E.p.chi(`Любое использование либо копирование материалов или подборки материалов сайта, 
@@ -444,21 +474,17 @@ function Footer(page) {
     ),
     NavFooter(page),
     E.span.chi(E.a.props({href: `https://github.com/diatom/diatom.github.io`}).
-    chi(`© 2024. Сайт сделал Severin B. 👾`)
+    chi(`© ${currentYear}. Сайт сделал Severin B. 👾`)
     )
   )
 }
-
-function FooterIbri(page) {
-  return E.footer.chi(
-    E.img.props({alt: `Ibri`, src: `/images/Ibri-logo-white.svg`}),
-    E.p.chi(`Ibri® — все права защищены. Любое использование либо копирование материалов сайта, 
-      допускается только cо ссылкой на источник`),
+function FooterMain(page) {
+  return E.footermain.chi(
     E.div.chi(
-      Contact(data.contactIbri)
+      Contact(data.contact)
     ),
     E.span.chi(E.a.props({href: `https://github.com/diatom/diatom.github.io`}).
-    chi(`© 2024. Сайт сделал Severin B. 👾`)
+    chi(`© ${currentYear}. Сайт сделал Severin B. 👾`)
     )
   )
 }
@@ -468,10 +494,6 @@ function PageLink(page) {
   const pro = {
     href: page.urlPath(),
     id: page.title(),
-  }
-  if (page.title() === "Ibri®") {
-    pro.target = "_blank"
-    pro.rel = "noopener noreferrer"
   }
   return E.a.props(pro).chi(page.title())
 }
