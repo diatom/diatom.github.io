@@ -60,6 +60,12 @@ $hover-scale: 1.03;
   transform: scale($scale);
 }
 
+canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
 // Main
 body {
   background-color: var(--bg-color);
@@ -135,7 +141,6 @@ header {
     opacity: 0.97;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 6px 20px rgba(0, 0, 0, 0.4);
     width: 100%;
-    // margin: 2.5%;
     // border-radius: 5px;
     position: fixed;
     flex-wrap: no-wrap;
@@ -144,8 +149,8 @@ header {
     align-items: left;
     top: 0;
     left: 0;
-    padding: 1vh;
-    height: 98vh;
+    padding: 0;
+    height: 100%;
     z-index: 1000;
     a {
       padding: 0.8em 0.8em;
@@ -362,7 +367,6 @@ aboutme {
   justify-content: space-between;
   width: 60em;
   max-width: 90%;
-  // height: 30em;
   background: hsl(0, 0%, 14%);
   border-radius: 5px;
   div {
@@ -420,32 +424,30 @@ aboutibri {
 }
 
 principe {
-  width: 120em;
-  max-width: 90%;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  font-size: 3em;
+  // position: absolute;
   display: none;
-  @include courier($weight: 700, $style: normal);
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 1em;
+  margin: 0;
+  align-items: center;
+  justify-content: space-between;
+  width: 60em;
+  max-width: 90%;
+  background: hsl(0, 0%, 14%);
+  border-radius: 5px;
   div {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 40%;
-    align-items: center;
-  }
-  h2 {
-    font-size: 1.8em;
-    width: 100%;
-  }
-  a {
-    color: var(--text-color);
-    display: inline;
-    text-decoration: underline;
+    width: 50em;
+    max-width: 60%;
+    padding: 0 5% 0 0;
+    a {
+      display: inline-block;
+      color: white;
+      text-decoration: underline solid white;
+    }
   }
   img {
-    width: 15em;
+    width: 20%;
     object-fit: cover;
     position: relative;
   }
@@ -885,11 +887,6 @@ form {
   .info-books, .info-cheeses {
     width: 90%;
   }
-  principe {
-    div {
-      width: 70%;
-    }
-  }
   header {
     a {
       padding: 0.3rem 1rem 0.3rem 1rem;
@@ -901,8 +898,6 @@ form {
     width: 90%;
     flex-direction: column;
     padding: 0;
-    // height: 75vh;
-    // margin: 5vh 0 5vh 0;
     font-size: 0.85em;
     div {
       width: 100%;
@@ -952,14 +947,19 @@ form {
     }
   }
   principe {
+    width: 90%;
+    flex-direction: column;
+    padding: 0;
+    font-size: 0.85em;
+    margin: 2em 0 0 0;
     div {
-      width: 90%;
+      max-width: 100%;
+      padding: 0;
+      margin: 0;
     }
-    h2 {
-      font-size: 1.8em;
-    }
-    p {
-      width: 100%;
+    img {
+      margin: 2em 0 0 0;
+      width: 60%;
     }
   }
   books {

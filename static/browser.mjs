@@ -172,7 +172,7 @@ if (window.location.pathname === `/`) {
     if (aboutMeElement) {
         aboutMeElement.style.display = 'none'
     }
-    event.stopPropagation() // Останавливаем распространение события, чтобы не сработал общий обработчик
+    event.stopPropagation()
   })
   document.addEventListener('keydown', function(event) {
     const aboutMeElement = document.getElementById('aboutme')
@@ -180,7 +180,6 @@ if (window.location.pathname === `/`) {
         aboutMeElement.style.display = 'none'
     }
   })
-
   document.getElementById('minimal').addEventListener('click', function() {
     const canvasContainer = document.getElementById('canvas-container')
     const button = document.getElementById('minimal')
@@ -190,10 +189,18 @@ if (window.location.pathname === `/`) {
         canvasContainer.style.display = 'block'
         button.textContent = 'простая версия сайта'
         principe.style.display = `none`
-    } else {
+      } else {
         canvasContainer.style.display = 'none'
         button.textContent = 'сайт с 3D сценой'
         principe.style.display = `flex`
     }
-  });
+  })
 }
+window.addEventListener('DOMContentLoaded', function() {
+  const minimalButton = document.getElementById('minimal')
+  if (window.location.pathname === '/') {
+      minimalButton.style.display = 'block'
+  } else {
+      minimalButton.style.display = 'none'
+  }
+})

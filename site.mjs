@@ -109,9 +109,8 @@ class PageIndex extends Page {
       ),
       E.div.props({id: `canvas-container`}),
       E.principe.props({id: `principe`}).chi(
-        `:)`
-        // E.div.chi(new p.Raw(marked(principe))),
-        // E.img.props({src: `/images/severin-2.jpg`, alt: `Severin Bogucharskiy`})
+        E.div.chi(new p.Raw(marked(principe))),
+        E.img.props({src: `/images/severin-2.jpg`, alt: `Severin Bogucharskiy`}),
       ),
       FooterMain(this),
     )
