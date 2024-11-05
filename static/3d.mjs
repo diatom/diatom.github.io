@@ -29,10 +29,15 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.shadowMap.enabled = true
 renderer.setClearColor(0x000000)
 document.getElementById('canvas-container').appendChild(renderer.domElement);
+const canvas = document.getElementsByTagName('canvas');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
 window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     camera.aspect = window.innerWidth / window.innerHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     camera.updateProjectionMatrix(); // Обновляем матрицу проекции
 });
 camera.updateProjectionMatrix();
