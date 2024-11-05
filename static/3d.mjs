@@ -8,10 +8,10 @@ import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 
 if (window.location.pathname === `/`) {
-let points, starsGroup, camera
+let points, starsGroup, camera, scene, renderer, animationId
 
 // const stars = [];
-const scene = new THREE.Scene();
+scene = new THREE.Scene();
 function createCamera() {
     const fov = window.innerWidth < 860 ? 100 : 50; // Устанавливаем FOV в зависимости от ширины экрана
     const aspect = window.innerWidth / window.innerHeight;
@@ -23,7 +23,7 @@ function createCamera() {
 }
 createCamera()
 
-const renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
+renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.shadowMap.enabled = true
@@ -147,8 +147,8 @@ scene.add(backWall);
 
 
 // Logo text
-const loader = new FontLoader();
-loader.load('fonts/caveat_regular.json', function (font) {
+const loaderLogo = new FontLoader();
+loaderLogo.load('fonts/caveat_regular.json', function (font) {
     const textGeo = new TextGeometry('Severin\nBogucharsky', {
         font: font,
         size: 1,
@@ -550,7 +550,7 @@ function animateLight2() {
 }
 
 function animate() {
-    requestAnimationFrame(animate);
+    animationId = requestAnimationFrame(animate);
     controls.update();
     renderer.render(scene, camera);
     // const time = Date.now() * 0.001;
@@ -598,6 +598,8 @@ function onMouseMove(event) {
         document.body.style.cursor = 'default';
     }
 }
+window.addEventListener('click', onMouseClick);
+window.addEventListener('mousemove', onMouseMove);
 
 if (WebGL.isWebGL2Available()) {
     animate();
@@ -605,4 +607,59 @@ if (WebGL.isWebGL2Available()) {
     const warning = WebGL.getWebGL2ErrorMessage();
     document.getElementById('container').appendChild(warning);
 }
+
+document.getElementById('minimal').addEventListener('click', function () {
+    const canvasContainer = document.getElementById('canvas-container');
+    const button = document.getElementById('minimal');
+    const principe = document.getElementById('principe');
+    
+    if (canvasContainer.style.display === 'none') {
+      // Включаем 3D сцену и делаем кнопку видимой
+      canvasContainer.style.display = 'block';
+      button.textContent = 'простая версия сайта';
+      button.style.display = 'inline-block';
+      principe.style.display = 'none';
+      
+      // Пересоздаем сцену, если она была удалена
+      if (!scene) initScene();
+  
+    } else {
+      // Переходим на "простую версию" - скрываем сцену и очищаем ресурсы
+      canvasContainer.style.display = 'none';
+      button.style.display = 'none';  // Скрываем кнопку
+      principe.style.display = 'flex';
+      
+      // Останавливаем анимацию
+      cancelAnimationFrame(animationId);
+  
+      // Удаляем все ресурсы сцены
+      scene.traverse((object) => {
+        if (object.geometry) object.geometry.dispose();
+        if (object.material) {
+          if (Array.isArray(object.material)) {
+            object.material.forEach((mat) => mat.dispose());
+          } else {
+            object.material.dispose();
+          }
+        }
+      });
+  
+      // Удаляем рендер и его DOM элемент
+      renderer.dispose();
+      renderer.domElement.remove();
+      
+      // Убираем обработчики событий мыши
+      window.removeEventListener('click', onMouseClick);
+      window.removeEventListener('mousemove', onMouseMove);
+  
+      // Очищаем ссылки на объекты
+      scene = null;
+      renderer = null;
+      onMouseClick = null;
+      onMouseMove = null;
+    }
+  });
+
+
 }
+

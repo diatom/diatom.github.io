@@ -113,6 +113,10 @@ class PageIndex extends Page {
         E.img.props({src: `/images/severin-2.jpg`, alt: `Severin Bogucharskiy`}),
       ),
       FooterMain(this),
+      // E.div.props({id: `loading-bar-container`}).chi(
+      //   E.div.props({id: `loading-bar`}),
+      //   E.div.props({id: `loading-text`}).chi(`0%`),
+      // ),
     )
   }
 }

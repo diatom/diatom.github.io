@@ -180,21 +180,21 @@ if (window.location.pathname === `/`) {
         aboutMeElement.style.display = 'none'
     }
   })
-  document.getElementById('minimal').addEventListener('click', function() {
-    const canvasContainer = document.getElementById('canvas-container')
-    const button = document.getElementById('minimal')
-    const principe = document.getElementById(`principe`)
+  // document.getElementById('minimal').addEventListener('click', function() {
+  //   const canvasContainer = document.getElementById('canvas-container')
+  //   const button = document.getElementById('minimal')
+  //   const principe = document.getElementById(`principe`)
     
-    if (canvasContainer.style.display === 'none') {
-        canvasContainer.style.display = 'block'
-        button.textContent = 'простая версия сайта'
-        principe.style.display = `none`
-      } else {
-        canvasContainer.style.display = 'none'
-        button.textContent = 'сайт с 3D сценой'
-        principe.style.display = `flex`
-    }
-  })
+  //   if (canvasContainer.style.display === 'none') {
+  //       canvasContainer.style.display = 'block'
+  //       button.textContent = 'простая версия сайта'
+  //       principe.style.display = `none`
+  //     } else {
+  //       canvasContainer.style.display = 'none'
+  //       button.textContent = 'сайт с 3D сценой'
+  //       principe.style.display = `flex`
+  //   }
+  // })
 }
 window.addEventListener('DOMContentLoaded', function() {
   const minimalButton = document.getElementById('minimal')
