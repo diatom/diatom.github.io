@@ -569,6 +569,7 @@ const mouse = new THREE.Vector2();  // Переносим объявление �
 
 // Обработчик клика
 function onMouseClick(event) {
+    if (!scene) return;  // Проверяем, что сцена существует
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
     raycaster.setFromCamera(mouse, camera);
@@ -577,21 +578,20 @@ function onMouseClick(event) {
     if (intersects.length > 0) {
         const object = intersects[0].object;
         if (object === plane) {
-            plane.showAboutMe(); // Показать элемент aboutme
+            plane.showAboutMe();
         } else if (object === ibri) {
-            ibri.callback(); // Открыть ссылку
+            ibri.callback();
         }
     }
 }
-
 // Обработчик наведения мыши
 function onMouseMove(event) {
+    if (!scene) return;  // Проверяем, что сцена существует
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
     raycaster.setFromCamera(mouse, camera);
     const intersects = raycaster.intersectObjects(scene.children);
 
-    // Устанавливаем курсор pointer при наведении на plane или ibri
     if (intersects.length > 0 && (intersects[0].object === plane || intersects[0].object === ibri)) {
         document.body.style.cursor = 'pointer';
     } else {
@@ -612,53 +612,46 @@ document.getElementById('minimal').addEventListener('click', function () {
     const canvasContainer = document.getElementById('canvas-container');
     const button = document.getElementById('minimal');
     const principe = document.getElementById('principe');
-    
+
     if (canvasContainer.style.display === 'none') {
-      // Включаем 3D сцену и делаем кнопку видимой
-      canvasContainer.style.display = 'block';
-      button.textContent = 'простая версия сайта';
-      button.style.display = 'inline-block';
-      principe.style.display = 'none';
-      
-      // Пересоздаем сцену, если она была удалена
-      if (!scene) initScene();
-  
+        canvasContainer.style.display = 'block';
+        button.textContent = 'простая версия сайта';
+        button.style.display = 'inline-block';
+        principe.style.display = 'none';
+
+        if (!scene) initScene();
+
     } else {
-      // Переходим на "простую версию" - скрываем сцену и очищаем ресурсы
-      canvasContainer.style.display = 'none';
-      button.style.display = 'none';  // Скрываем кнопку
-      principe.style.display = 'flex';
-      
-      // Останавливаем анимацию
-      cancelAnimationFrame(animationId);
-  
-      // Удаляем все ресурсы сцены
-      scene.traverse((object) => {
-        if (object.geometry) object.geometry.dispose();
-        if (object.material) {
-          if (Array.isArray(object.material)) {
-            object.material.forEach((mat) => mat.dispose());
-          } else {
-            object.material.dispose();
-          }
-        }
-      });
-  
-      // Удаляем рендер и его DOM элемент
-      renderer.dispose();
-      renderer.domElement.remove();
-      
-      // Убираем обработчики событий мыши
-      window.removeEventListener('click', onMouseClick);
-      window.removeEventListener('mousemove', onMouseMove);
-  
-      // Очищаем ссылки на объекты
-      scene = null;
-      renderer = null;
-      onMouseClick = null;
-      onMouseMove = null;
+        canvasContainer.style.display = 'none';
+        button.style.display = 'none';
+        principe.style.display = 'flex';
+
+        cancelAnimationFrame(animationId);
+
+        // Очищаем ресурсы сцены
+        scene.traverse((object) => {
+            if (object.geometry) object.geometry.dispose();
+            if (object.material) {
+                if (Array.isArray(object.material)) {
+                    object.material.forEach((mat) => mat.dispose());
+                } else {
+                    object.material.dispose();
+                }
+            }
+        });
+
+        renderer.dispose();
+        renderer.domElement.remove();
+
+        // Убираем обработчики событий
+        window.removeEventListener('click', onMouseClick);
+        window.removeEventListener('mousemove', onMouseMove);
+
+        // Очищаем ссылки на объекты
+        scene = null;
+        renderer = null;
     }
-  });
+});
 
 
 }
