@@ -156,4 +156,15 @@ export const list = [
         'date': 'Дата публикации: 10 сентября 2024',
         'tags': [`общество`,],
     },
+    {
+        'id': '9', 
+        'dataindex': 'socialnya-otvetstvennost',
+        'path': './post/socialnya-otvetstvennost.md',
+        'h3': 'Социльная ответственность',
+        'p': '',
+        'src': '/images/art-images/socialnya-otvetstvennost.jpg',
+        'alt': 'We Like You Too :) Adam Jang. Free to use under the Unsplash License',
+        'date': 'Дата публикации: 5 ноября 2024',
+        'tags': [`общество`,],
+    },
 ]
