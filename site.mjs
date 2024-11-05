@@ -95,7 +95,7 @@ class PageIndex extends Page {
   body() {
   const principe =  Deno.readTextFileSync(`./data/principe.md`)
   const tit = `Северин Богучарский`
-  const desc = `Северин Богучарский — личный сайт. Публикации, блог, обзоры книг, сырный каталог.`
+  const desc = `Северин Богучарский — личный сайт. Публикации, блог, обзоры книг.`
   const img = `https://sirseverin.ru/images/severin.jpg`
     return Layout(tit, desc, img,
       Nav(this),
@@ -113,10 +113,6 @@ class PageIndex extends Page {
         E.img.props({src: `/images/severin-2.jpg`, alt: `Severin Bogucharskiy`}),
       ),
       FooterMain(this),
-      // E.div.props({id: `loading-bar-container`}).chi(
-      //   E.div.props({id: `loading-bar`}),
-      //   E.div.props({id: `loading-text`}).chi(`0%`),
-      // ),
     )
   }
 }
