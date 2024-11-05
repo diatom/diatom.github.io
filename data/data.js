@@ -160,7 +160,7 @@ export const list = [
         'id': '9', 
         'dataindex': 'socialnya-otvetstvennost',
         'path': './post/socialnya-otvetstvennost.md',
-        'h3': 'Социльная ответственность',
+        'h3': 'Социальная ответственность',
         'p': '',
         'src': '/images/art-images/socialnya-otvetstvennost.jpg',
         'alt': 'We Like You Too :) Adam Jang. Free to use under the Unsplash License',
