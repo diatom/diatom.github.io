@@ -10,7 +10,7 @@
   --a-color: #be264cff;
 }
 
-canvas {
+canvas, #canvas-container {
   width: 100vw;
   height: 100vh;
   display: block;
