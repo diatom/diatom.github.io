@@ -410,7 +410,7 @@ function Layout(tit, desc, img, ...chi) {
         E.style.chi(`@import url('https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV,SHRP@100..900,0..1,0..100&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');`),
         E.style.chi(`@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');`),
         a.vac(DEV) && E.script.chi(`navigator.serviceWorker.register('/sw.mjs')`),
-        // new p.Raw(marked(anal))
+        new p.Raw(marked(anal))
       ),
       E.body.props({class: `dark-theme`}).chi(chi, 
         E.div.props({class: `popup`, id: `popup`}).chi(
