@@ -166,41 +166,26 @@ if (window.location.pathname === `/cheese`) {
 
 
 // Close button about me
-if (window.location.pathname === `/`) {
-  document.getElementById('close-about').addEventListener('click', function(event) {
-    const aboutMeElement = document.getElementById('aboutme')
-    if (aboutMeElement) {
-        aboutMeElement.style.display = 'none'
-    }
-    event.stopPropagation()
-  })
-  document.addEventListener('keydown', function(event) {
-    const aboutMeElement = document.getElementById('aboutme')
-    if (event.key === 'Escape' && aboutMeElement && aboutMeElement.style.display === 'flex') {
-        aboutMeElement.style.display = 'none'
-    }
-  })
-  // document.getElementById('minimal').addEventListener('click', function() {
-  //   const canvasContainer = document.getElementById('canvas-container')
-  //   const button = document.getElementById('minimal')
-  //   const principe = document.getElementById(`principe`)
-    
-  //   if (canvasContainer.style.display === 'none') {
-  //       canvasContainer.style.display = 'block'
-  //       button.textContent = 'простая версия сайта'
-  //       principe.style.display = `none`
-  //     } else {
-  //       canvasContainer.style.display = 'none'
-  //       button.textContent = 'сайт с 3D сценой'
-  //       principe.style.display = `flex`
-  //   }
-  // })
-}
-window.addEventListener('DOMContentLoaded', function() {
-  const minimalButton = document.getElementById('minimal')
-  if (window.location.pathname === '/') {
-      minimalButton.style.display = 'block'
-  } else {
-      minimalButton.style.display = 'none'
-  }
-})
+// if (window.location.pathname === `/`) {
+//   document.getElementById('close-about').addEventListener('click', function(event) {
+//     const aboutMeElement = document.getElementById('aboutme')
+//     if (aboutMeElement) {
+//         aboutMeElement.style.display = 'none'
+//     }
+//     event.stopPropagation()
+//   })
+//   document.addEventListener('keydown', function(event) {
+//     const aboutMeElement = document.getElementById('aboutme')
+//     if (event.key === 'Escape' && aboutMeElement && aboutMeElement.style.display === 'flex') {
+//         aboutMeElement.style.display = 'none'
+//     }
+//   })
+// }
+// window.addEventListener('DOMContentLoaded', function() {
+//   const minimalButton = document.getElementById('minimal')
+//   if (window.location.pathname === '/') {
+//       minimalButton.style.display = 'block'
+//   } else {
+//       minimalButton.style.display = 'none'
+//   }
+// })
