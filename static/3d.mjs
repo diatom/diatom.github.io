@@ -7,7 +7,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 
-if (window.location.pathname === `/`) {
+if (window.location.pathname === `/room`) {
 let points, starsGroup, camera, scene, renderer, animationId
 
 // const stars = [];
@@ -348,20 +348,20 @@ textureLoaderCover.load('images/cover.jpg', function(texture) {
     scene.add(plane);
 
     // Показать элемент aboutme при клике на plane
-    plane.showAboutMe = function() {
-        const aboutMeElement = document.getElementById('aboutme');
-        if (aboutMeElement) {
-            aboutMeElement.style.display = 'flex';
-        }
-    };
+    // plane.showAboutMe = function() {
+    //     const aboutMeElement = document.getElementById('aboutme');
+    //     if (aboutMeElement) {
+    //         aboutMeElement.style.display = 'flex';
+    //     }
+    // };
 
-    // Добавить обработчики для клика и наведения
-    document.addEventListener('mousedown', function(event) {
-        onMouseClick(event);
-    });
-    document.addEventListener('mousemove', function(event) {
-        onMouseMove(event);
-    });
+    // // Добавить обработчики для клика и наведения
+    // document.addEventListener('mousedown', function(event) {
+    //     onMouseClick(event);
+    // });
+    // document.addEventListener('mousemove', function(event) {
+    //     onMouseMove(event);
+    // });
 });
 
 // Aluminum can
@@ -445,19 +445,6 @@ loaderIbri.load('fonts/commissioner-extrabold-regular.json', function (font) {
     };
 });
 
-
-
-
-// Light
-// const light1 = new THREE.DirectionalLight(0xffffff, 3);
-// light1.castShadow = true
-// light1.position.set(40, 60, 10);
-// scene.add(light1);
-
-// const light2 = new THREE.DirectionalLight(0xffffff, 3);
-// light2.castShadow = true
-// light2.position.set(5, 35, 50);
-// scene.add(light2);
 
 const sphere2 = new THREE.SphereGeometry( 0.1, 16, 20 );
 const light2 = new THREE.PointLight( 0xffffff, 50 );
@@ -577,29 +564,27 @@ function onMouseClick(event) {
 
     if (intersects.length > 0) {
         const object = intersects[0].object;
-        if (object === plane) {
-            plane.showAboutMe();
-        } else if (object === ibri) {
-            ibri.callback();
+        if (object === ibri) {
+            ibri.callback()
         }
     }
 }
-// Обработчик наведения мыши
-function onMouseMove(event) {
-    if (!scene) return;  // Проверяем, что сцена существует
-    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-    raycaster.setFromCamera(mouse, camera);
-    const intersects = raycaster.intersectObjects(scene.children);
+// // Обработчик наведения мыши
+// function onMouseMove(event) {
+//     if (!scene) return;  // Проверяем, что сцена существует
+//     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+//     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+//     raycaster.setFromCamera(mouse, camera);
+//     const intersects = raycaster.intersectObjects(scene.children);
 
-    if (intersects.length > 0 && (intersects[0].object === plane || intersects[0].object === ibri)) {
-        document.body.style.cursor = 'pointer';
-    } else {
-        document.body.style.cursor = 'default';
-    }
-}
+//     if (intersects.length > 0 && (intersects[0].object === plane || intersects[0].object === ibri)) {
+//         document.body.style.cursor = 'pointer';
+//     } else {
+//         document.body.style.cursor = 'default';
+//     }
+// }
 window.addEventListener('click', onMouseClick);
-window.addEventListener('mousemove', onMouseMove);
+// window.addEventListener('mousemove', onMouseMove);
 
 if (WebGL.isWebGL2Available()) {
     animate();
@@ -608,51 +593,49 @@ if (WebGL.isWebGL2Available()) {
     document.getElementById('container').appendChild(warning);
 }
 
-document.getElementById('minimal').addEventListener('click', function () {
-    const canvasContainer = document.getElementById('canvas-container');
-    const button = document.getElementById('minimal');
-    const principe = document.getElementById('principe');
+// document.getElementById('minimal').addEventListener('click', function () {
+//     const canvasContainer = document.getElementById('canvas-container');
+//     const button = document.getElementById('minimal');
+//     const principe = document.getElementById('principe');
 
-    if (canvasContainer.style.display === 'none') {
-        canvasContainer.style.display = 'block';
-        button.textContent = 'простая версия сайта';
-        button.style.display = 'inline-block';
-        principe.style.display = 'none';
+//     if (canvasContainer.style.display === 'none') {
+//         canvasContainer.style.display = 'block';
+//         button.textContent = 'простая версия сайта';
+//         button.style.display = 'inline-block';
+//         principe.style.display = 'none';
 
-        if (!scene) initScene();
+//         if (!scene) initScene();
 
-    } else {
-        canvasContainer.style.display = 'none';
-        button.style.display = 'none';
-        principe.style.display = 'flex';
+//     } else {
+//         canvasContainer.style.display = 'none';
+//         button.style.display = 'none';
+//         principe.style.display = 'flex';
 
-        cancelAnimationFrame(animationId);
+//         cancelAnimationFrame(animationId);
 
-        // Очищаем ресурсы сцены
-        scene.traverse((object) => {
-            if (object.geometry) object.geometry.dispose();
-            if (object.material) {
-                if (Array.isArray(object.material)) {
-                    object.material.forEach((mat) => mat.dispose());
-                } else {
-                    object.material.dispose();
-                }
-            }
-        });
+//         // Очищаем ресурсы сцены
+//         scene.traverse((object) => {
+//             if (object.geometry) object.geometry.dispose();
+//             if (object.material) {
+//                 if (Array.isArray(object.material)) {
+//                     object.material.forEach((mat) => mat.dispose());
+//                 } else {
+//                     object.material.dispose();
+//                 }
+//             }
+//         });
 
-        renderer.dispose();
-        renderer.domElement.remove();
+//         renderer.dispose();
+//         renderer.domElement.remove();
 
-        // Убираем обработчики событий
-        window.removeEventListener('click', onMouseClick);
-        window.removeEventListener('mousemove', onMouseMove);
+//         // Убираем обработчики событий
+//         window.removeEventListener('click', onMouseClick);
+//         window.removeEventListener('mousemove', onMouseMove);
 
-        // Очищаем ссылки на объекты
-        scene = null;
-        renderer = null;
-    }
-});
-
-
+//         // Очищаем ссылки на объекты
+//         scene = null;
+//         renderer = null;
+//     }
+// })
 }
 

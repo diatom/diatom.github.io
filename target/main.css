@@ -281,8 +281,8 @@ footermain span {
 
 aboutme {
   position: absolute;
-  display: none;
   flex-direction: row;
+  display: flex;
   flex-wrap: wrap;
   padding: 0 1em;
   margin: 0;
@@ -307,6 +307,7 @@ aboutme img {
   width: 20%;
   object-fit: cover;
   position: relative;
+  border-radius: 5px;
 }
 aboutme .close-about {
   width: 2em;
@@ -325,6 +326,11 @@ aboutme .close-about {
 aboutme .close-about:hover {
   color: #be264c;
   border: 1px solid #be264c;
+}
+aboutme h1 {
+  max-width: 80%;
+  font-size: 5.2em;
+  color: grey;
 }
 
 aboutibri {
@@ -811,8 +817,13 @@ form input[type=checkbox]:checked + label {
   aboutme div {
     width: 100%;
   }
+  aboutme h1 {
+    font-size: 3.2em;
+    max-width: 100%;
+    text-align: center;
+  }
   aboutme img {
-    display: none;
+    width: 70%;
   }
   .info-books, .info-cheeses {
     width: 90%;

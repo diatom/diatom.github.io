@@ -103,19 +103,67 @@ class PageIndex extends Page {
       //   E.aboutme.chi(E.img.props({src: `/images/severin.jpg`, alt: `Severin Bogucharskiy`}), E.h1.chi(`Северин Богучарский`)),
       // ),
       E.aboutme.props({id: `aboutme`}).chi(
-        E.div.chi(new p.Raw(marked(principe))),
+        // E.div.chi(new p.Raw(marked(principe))),
+        // E.button.props({class: `close-about`, id: `close-about`}).chi(`☓`),
+        E.h1.chi(`Северин Богучарский`),
         E.img.props({src: `/images/severin-2.jpg`, alt: `Severin Bogucharskiy`}),
-        E.button.props({class: `close-about`, id: `close-about`}).chi(`☓`),
       ),
-      E.div.props({id: `canvas-container`}),
+      // E.div.props({id: `canvas-container`}),
       E.principe.props({id: `principe`}).chi(
-        E.div.chi(new p.Raw(marked(principe))),
-        E.img.props({src: `/images/severin-2.jpg`, alt: `Severin Bogucharskiy`}),
+        // E.div.chi(new p.Raw(marked(principe))),
+        // E.img.props({src: `/images/severin-2.jpg`, alt: `Severin Bogucharskiy`}),
       ),
       FooterMain(this),
     )
   }
 }
+// Severin's room //
+class PageRoom extends Page {
+  urlPath() {return `/room`}
+  fsPath() {return `room.html`}
+  title() {return `Severin's room`}
+
+  body() {
+  const principe =  Deno.readTextFileSync(`./data/principe.md`)
+  const tit = `Severin's room`
+  const desc = `Северин Богучарский — личный сайт. Публикации, блог, обзоры книг.`
+  const img = `https://sirseverin.ru/images/severin.jpg`
+    return Layout(tit, desc, img,
+      Nav(this),
+      E.div.props({id: `canvas-container`}),
+      FooterMain(this),
+    )
+  }
+}
+// class PageIndex extends Page {
+//   urlPath() {return `/`}
+//   fsPath() {return `room.html`}
+//   title() {return `Severin's room`}
+
+//   body() {
+//   const principe =  Deno.readTextFileSync(`./data/principe.md`)
+//   const tit = `Severin's room`
+//   const desc = `Северин Богучарский — личный сайт. Публикации, блог, обзоры книг.`
+//   const img = `https://sirseverin.ru/images/severin.jpg`
+//     return Layout(tit, desc, img,
+//       Nav(this),
+//       // E.main.chi(
+//       //   E.aboutme.chi(E.img.props({src: `/images/severin.jpg`, alt: `Severin Bogucharskiy`}), E.h1.chi(`Северин Богучарский`)),
+//       // ),
+//       E.aboutme.props({id: `aboutme`}).chi(
+//         E.div.chi(new p.Raw(marked(principe))),
+//         E.img.props({src: `/images/severin-2.jpg`, alt: `Severin Bogucharskiy`}),
+//         E.button.props({class: `close-about`, id: `close-about`}).chi(`☓`),
+//       ),
+//       E.div.props({id: `canvas-container`}),
+//       E.principe.props({id: `principe`}).chi(
+//         E.div.chi(new p.Raw(marked(principe))),
+//         E.img.props({src: `/images/severin-2.jpg`, alt: `Severin Bogucharskiy`}),
+//       ),
+//       FooterMain(this),
+//     )
+//   }
+// }
 // class PageIndex extends Page {
 //   urlPath() {return `/`}
 //   fsPath() {return `index.html`}
@@ -137,7 +185,6 @@ class PageIndex extends Page {
 //     )
 //   }
 // }
-
 // Blog //
 class PageBlog extends Page {
   urlPath() {return `/blog`}
@@ -372,7 +419,7 @@ class Site extends a.Emp {
     this.notFound = new Page404(this)
     this.cheese = new PageCheese(this)
     // this.nav = [new PageIndex(this), new PageBlog(this), new PageBookreview(this), new PageCheese(this)]
-    this.nav = [new PageIndex(this), new PageBlog(this), new PageBookreview(this)]
+    this.nav = [new PageIndex(this), new PageBlog(this), new PageBookreview(this), new PageRoom(this)]
     // this.blogs = SubBlogs(this)
     this.articles = Articles(this)
     // console.log(`This`, this)
@@ -444,7 +491,7 @@ function Nav(page) {
         Contact(data.contact)),
     ),
     E.nav.chi(a.map(page.site.nav, PageLink)),
-    E.button.props({class: `minimal`, id: `minimal`}).chi(`простая версия сайта`)
+    // E.button.props({class: `minimal`, id: `minimal`}).chi(`простая версия сайта`)
     // E.h1.chi(E.a.props({href: `/`}).chi(`Северин Богучарский`))
       // E.button.props({id: `themeSwitcher`, class: `switch`}).chi(`☀`)
   )

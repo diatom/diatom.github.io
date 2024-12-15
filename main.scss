@@ -379,8 +379,9 @@ footermain {
 // }
 aboutme {
   position: absolute;
-  display: none;
+  // display: none;
   flex-direction: row;
+  display: flex;
   flex-wrap: wrap;
   padding: 0 1em;
   margin: 0;
@@ -404,6 +405,7 @@ aboutme {
     width: 20%;
     object-fit: cover;
     position: relative;
+    border-radius: 5px;
   }
   .close-about {
     width: 2em;
@@ -423,6 +425,12 @@ aboutme {
   .close-about:hover {
     color: $rose-red;
     border: 1px solid $rose-red;
+  }
+  h1 {
+    max-width: 80%;
+    font-size: 5.2em;
+    // text-transform: uppercase;
+    color: grey;
   }
 }
 
@@ -923,8 +931,13 @@ form {
     div {
       width: 100%;
     }
+    h1 {
+      font-size: 3.2em;
+      max-width: 100%;
+      text-align: center;
+    }
     img {
-      display: none;
+      width: 70%;
     }
   }
   .info-books, .info-cheeses {
