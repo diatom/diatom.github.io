@@ -121,12 +121,12 @@ class PageIndex extends Page {
 class PageRoom extends Page {
   urlPath() {return `/room`}
   fsPath() {return `room.html`}
-  title() {return `Severin's room`}
+  title() {return `3D Severin's room`}
 
   body() {
   const principe =  Deno.readTextFileSync(`./data/principe.md`)
-  const tit = `Severin's room`
-  const desc = `Северин Богучарский — личный сайт. Публикации, блог, обзоры книг.`
+  const tit = `3D Severin's room`
+  const desc = `Виртуальная 3D комната.`
   const img = `https://sirseverin.ru/images/severin.jpg`
     return Layout(tit, desc, img,
       Nav(this),
