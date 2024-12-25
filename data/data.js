@@ -41,8 +41,6 @@ export const bloglist = [
     //     'dataindex': 'world',
     //     'tags': ['мир'],
     // },
-
-
 ]
 export const arttags = [
     `общество`,
@@ -166,5 +164,16 @@ export const list = [
         'alt': 'We Like You Too :) Adam Jang. Free to use under the Unsplash License',
         'date': 'Дата публикации: 5 ноября 2024',
         'tags': [`общество`,],
+    },
+    {
+        'id': '10', 
+        'dataindex': 'stambul-i-chernogoria-2024',
+        'path': './post/stambul-i-chernogoria-2024.md',
+        'h3': 'Стамбул и Черногория 2024',
+        'p': 'В Черногорию через Стамбул и обратно',
+        'src': '/images/art-images/stambul-i-chernogoria-2024/2024-12-25-11-39-29.jpg',
+        'alt': 'Montenegro',
+        'date': 'Дата публикации: 25 декабря 2024',
+        'tags': [`путешествия`,],
     },
 ]
