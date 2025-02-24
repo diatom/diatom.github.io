@@ -27,9 +27,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Courier Prime", monospace;
-  font-weight: 400;
+  font-family: "Geologica", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
   font-style: normal;
+  font-variation-settings: "slnt" 0, "CRSV" 0, "SHRP" 50;
   position: relative;
 }
 
@@ -82,16 +84,14 @@ header {
   max-width: 100%;
   border-radius: 5px;
   min-height: 50px;
-  font-family: "Courier Prime", monospace;
-  font-weight: 400;
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
   font-style: normal;
 }
 header .minimal {
   font-size: 0.6em;
   width: 15em;
-  font-family: "Courier Prime", monospace;
-  font-weight: 400;
-  font-style: normal;
   color: white;
   cursor: pointer;
   margin: 0;
@@ -206,9 +206,6 @@ footer {
   font-size: 0.9em;
   padding: 1.5rem 0 0 0;
   margin: 5em 0 2em 0;
-  font-family: "Courier Prime", monospace;
-  font-weight: 400;
-  font-style: normal;
 }
 footer img {
   width: 10em;
