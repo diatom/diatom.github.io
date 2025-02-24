@@ -176,4 +176,15 @@ export const list = [
         'date': 'Дата публикации: 25 декабря 2024',
         'tags': [`путешествия`,],
     },
+    {
+        'id': '11', 
+        'dataindex': 'sovremennoe-yazychestvo',
+        'path': './post/sovremennoe-yazychestvo.md',
+        'h3': 'Современное язычество',
+        'p': '',
+        'src': '/images/art-images/song-about-oleg.jpg',
+        'alt': 'Oleg',
+        'date': 'Дата публикации: 24 февраля 2025',
+        'tags': [`общество`,],
+    },
 ]

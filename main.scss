@@ -79,8 +79,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // @include geologica($weight: 400);
-  @include courier($weight: 400, $style: normal);
+  @include geologica($weight: 200);
+  // @include courier($weight: 400, $style: normal);
   position: relative;
 }
 #loading-bar-container {
@@ -130,13 +130,13 @@ header {
   // margin: 1em 0 0 0;
   // height: 5vh;
   min-height: 50px;
-  // @include mulish($weight: 800);
-  @include courier($weight: 400, $style: normal);
+  @include mulish($weight: 800);
+  // @include courier($weight: 400, $style: normal);
   .minimal {
     // display: none;
     font-size: 0.6em;
     width: 15em;
-    @include courier($weight: 400, $style: normal);
+    // @include courier($weight: 400, $style: normal);
     color: white;
     cursor: pointer;
     margin: 0;
@@ -254,7 +254,7 @@ footer {
   font-size: 0.9em;
   padding: 1.5rem 0 0 0;
   margin: 5em 0 2em 0;
-  @include courier($weight: 400, $style: normal);
+  // @include courier($weight: 400, $style: normal);
   img {
     width: 10em;
     margin: 0 2em;
