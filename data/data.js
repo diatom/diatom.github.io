@@ -187,4 +187,15 @@ export const list = [
         'date': 'Дата публикации: 24 февраля 2025',
         'tags': [`общество`,],
     },
+    {
+        'id': '12', 
+        'dataindex': 'chuvstvo-socialnogo-loktya',
+        'path': './post/сhuvstvo-socialnogo-loktya.md',
+        'h3': 'Чувство социального локтя. Базовая прошивка',
+        'p': '',
+        'src': '/images/art-images/сhuvstvo-socialnogo-loktya.jpg',
+        'alt': 'сhuvstvo-socialnogo-loktya',
+        'date': 'Дата публикации: 2 марта 2025',
+        'tags': [`общество`,],
+    },
 ]

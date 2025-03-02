@@ -485,12 +485,15 @@ function Nav(page) {
     E.menu.chi(`☰`),
     E.mobilemenu.chi(
       E.div.chi(
-        a.map(page.site.nav, PageLink)
+        a.map(page.site.nav, PageLink),
+        E.a.props({href: `https://statham.fun/`, target: `_blank`}).chi(`statham.fun`),
       ),
       E.div.props({class: `mobilemenu-contact`}).chi(
         Contact(data.contact)),
     ),
-    E.nav.chi(a.map(page.site.nav, PageLink)),
+    E.nav.chi(a.map(page.site.nav, PageLink), 
+      E.a.props({href: `https://statham.fun/`, target: `_blank`}).chi(`statham.fun`),
+    ),
     // E.button.props({class: `minimal`, id: `minimal`}).chi(`простая версия сайта`)
     // E.h1.chi(E.a.props({href: `/`}).chi(`Северин Богучарский`))
       // E.button.props({id: `themeSwitcher`, class: `switch`}).chi(`☀`)
